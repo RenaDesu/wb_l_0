@@ -1,0 +1,127 @@
+.button {
+    display: block;
+    position: relative;
+    text-decoration: none;
+
+    &--icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        width: rem(28px);
+        height: rem(28px);
+
+        padding: 0;
+
+        background-color: transparent;
+
+        &-search {
+            color: $white;
+
+            @media #{$screen-tablet} {
+                color: rgba($white, 0.3);
+            }
+        }
+
+        &-burger {
+            @media #{$screen-tablet} {
+                width: rem(48px);
+                height: rem(48px);
+
+                border: rem(1px) solid rgba(255, 255, 255, 0.45);
+                border-radius: $border-radius-big;
+            }
+        }
+
+        &-item {
+            width: rem(56px);
+            height: rem(56px);
+            
+            font-size: rem($font-size-small);
+            line-height: rem(16px);
+            color: $white;
+        }
+
+        &-nav {
+            color: inherit;
+        }
+    }
+
+    &__line {
+        width: rem(23px);
+        height: rem(2px);
+        background-color: $white;
+        border-radius: rem(2px);
+
+        @media #{$screen-tablet} {
+            width: rem(28px);
+            height: rem(4px);
+        }
+
+        &::before,
+        &::after {
+            content: "";
+
+            position: absolute;
+            left: 8%;
+            width: rem(23px);
+            height: rem(2px);
+            background-color: $white;
+            border-radius: rem(2px);
+
+            @media #{$screen-tablet} {
+                width: rem(28px);
+                height: rem(4px);
+
+                left: 20%;
+            }
+        }
+
+        &::before {
+            top: rem(5px);
+
+            @media #{$screen-tablet} {
+                top: rem(12px);
+            }
+        }
+
+        &::after {
+            width: rem(17px);
+            bottom: rem(5px);
+
+            @media #{$screen-tablet} {
+                width: rem(28px);
+                bottom: rem(12px);
+            }
+        }
+    }
+
+    &__text {
+        margin-top: rem(6px);
+    }
+
+    &__label {
+        position: absolute;
+        top: rem(-2px);
+        right: rem(7px);
+
+        height: rem(16px);
+        min-width: rem(16px);
+
+        font-size: rem($font-size-tiny);
+        line-height: rem(18px);
+        font-weight: $font-weight-bold;
+
+        color: $white;
+
+        background-color: $pomegranate;
+
+        border-radius: $border-radius-circle;
+
+        &--nav {
+            top: rem(-4px);
+            right: rem(-7px);
+        }
+    }
+}

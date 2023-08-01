@@ -1,0 +1,103 @@
+/**
+* Colors
+*
+* Название переменной конкретного цвета генерируется через сервис: http://chir.ag/projects/name-that-color/.
+* Значение цвета всегда указывается в HEX-формате в нижнем регистре (кроме исключительных случаев).
+*/
+
+$white: #ffffff;
+$black: #000000;
+$daisy-bush: #6725a8;
+$red-violet: #cb11ab;
+$silver: #cccccc;
+$santas-gray: #a0a0a4;
+$whisper: #f6f6fa;
+$red-orange: #ff3b30;
+$pomegranate: #f55123;
+$west-side: #ff970d;
+$niagara: #0cb477;
+
+/**
+* Fonts
+*/
+$font-size-base: 16px;
+
+$font-path: "../fonts";
+$font-family-default: "Arial",
+"Helvetica",
+sans-serif;
+$font-family-custom: "Segoe UI";
+$font-family: $font-family-custom,
+$font-family-default;
+
+//text-size
+$font-size-huge: 20px;
+$font-size-big: 16px;
+$font-size-medium: 14px;
+$font-size-small: 13px;
+$font-size-tiny: 10px;
+
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+//letter-spacing
+$letter-spacing-logo: 0.52px;
+
+//headings-size
+$title-size-big: 28px;
+$title-size-medium: 24px;
+$title-size-small: 20px;
+
+
+/**
+* Breakpoints
+*/
+// Пример указания медиазапросов, затем можно использовать ее как '@media #{$screen-medium} {...}'
+$screen-tablet: "(min-width: 1024px)";
+$screen-desktop: "(min-width: 1400px)";
+
+
+
+/**
+* Layout
+*/
+$width-container: 1352px;
+
+
+/**
+* Sizes
+*/
+$height-header-desktop: 112px;
+$height-header-mobile: 80px;
+
+
+/**
+* Transitions and Animations
+*/
+$transition-duration: 300ms;
+$transition-duration-fast: 100ms;
+$transition-finction: ease-in-out;
+
+/**
+* Radius
+*/
+$border-radius-large: 24px;
+$border-radius-big: 8px;
+$border-radius-medium: 4px;
+$border-radius-small: 2px;
+$border-radius-checkbox: 6px;
+$border-radius-section: 16px;
+$border-radius-search: 36px;
+$border-radius-circle: 50%;
+
+
+/**
+* Box-shadows
+*/
+$box-shadow-double: 0 0 rem(1px) 0 rgba(0, 0, 0, 0.30), 0 rem(2px) rem(10px) 0 rgba(0, 0, 0, 0.15);
+
+
+/**
+* Z-indexes
+*/

@@ -1,0 +1,89 @@
+.radio {
+    position: relative;
+    display: block;
+
+    min-height: rem(20px);
+    
+    &:not(:last-child) {
+        margin-bottom: rem(20px);
+    }
+
+    &__input {
+        position: absolute;
+    }
+
+    &__input + &__label {
+        // Text
+        position: relative;
+        display: inline-block;
+        padding-left: $checkbox-size + 6;
+
+        font-size: rem($font-size-medium);
+        line-height: rem(16px);
+
+        cursor: pointer;
+
+        // Checkbox
+        &:before {
+            content: "";
+
+            position: absolute;
+            display: block;
+            left: rem(-2px);
+            top: rem(-1px);
+
+            width: $checkbox-size;
+            height: $checkbox-size;
+
+            background: $white;
+
+            border: rem(1px) solid $curious-blue;
+            border-radius: $border-radius-circle;
+
+            transition: $transition-duration-fast $transition-finction all;
+        }
+
+        // Marker
+        &:after {
+            content: "";
+
+            position: absolute;
+            display: block;
+            top: rem(4px);
+            left: rem(3px);
+
+            width: 10px;
+            height: 10px;
+        }
+    }
+
+    // Checked
+    &__input:checked + &__label {
+            &:after {
+                background: $curious-blue;
+
+                border-radius: $border-radius-circle;
+            }
+    }
+
+    // Disabled
+    &__input:disabled + &__label {
+            cursor: default;
+
+            &:before {
+                background: $athens-gray;
+                border: rem(1px) solid $heather;
+            }
+
+            &:after {
+                border-color: transparent;
+            }
+    }
+
+    // Disabled Checked
+    &__input:checked:disabled + &__label {
+            &:after {
+                background: $heather;
+            }
+    }
+}

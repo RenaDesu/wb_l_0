@@ -1,0 +1,98 @@
+.checkbox {
+    position: relative;
+    display: block;
+
+    min-height: rem(20px);
+
+    &:not(:last-child) {
+        margin-bottom: rem(20px);
+    }
+
+    &__input {
+        position: absolute;
+    }
+
+
+    &__input+&__label {
+        // Text
+        position: relative;
+        display: inline-block;
+        padding-left: $checkbox-size + 8;
+
+        font-size: rem($font-size-medium);
+        line-height: rem(16px);
+
+        cursor: pointer;
+
+        // Checkbox
+        &:before {
+            content: "";
+
+            position: absolute;
+            display: block;
+            left: 0;
+            top: rem(-1px);
+
+            width: $checkbox-size;
+            height: $checkbox-size;
+
+            background: $white;
+
+            border: rem(1px) solid $curious-blue;
+            border-radius: rem($border-radius-small);
+
+            transition: $transition-duration-fast $transition-finction all;
+        }
+
+        // Tick
+        &:after {
+            content: "";
+
+            position: absolute;
+            display: block;
+            top: 6px;
+            left: 5px;
+
+            width: 11px;
+            height: 8px;
+        }
+    }
+
+    // Checked
+    &__input:checked+&__label {
+        &:before {
+            background: $curious-blue;
+        }
+
+        &:after {
+            background-image: url("../images/icons/tick.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+    }
+
+    // Disabled
+    &__input:disabled+&__label {
+        cursor: default;
+
+        &:before {
+            background: $athens-gray;
+            border: rem(1px) solid $heather;
+        }
+
+        &:after {
+            border-color: transparent;
+        }
+    }
+
+    // Disabled Checked
+    &__input:checked:disabled+&__label {
+        &:after {
+            background-image: url("../images/icons/tick-checked.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+    }
+}

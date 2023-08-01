@@ -1,0 +1,20 @@
+.page {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+
+    &__heading {
+        @include visually-hidden;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    &__footer {
+        flex-shrink: 0;
+    }
+}

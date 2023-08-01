@@ -1,0 +1,21 @@
+.footer {
+    font-size: rem($font-size-small);
+    line-height: rem(16px);
+
+    color: rgba(255, 255, 255, 0.70);
+    background-color: $daisy-bush;
+
+    &__copyright-wrapper {
+        height: rem(88px);
+
+        padding-top: rem(48px);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__copyright {
+        margin: 0;
+    }
+}
