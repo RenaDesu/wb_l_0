@@ -1,11 +1,29 @@
 .header {
     height: rem($height-header-mobile);
 
-
+    position: relative;
 
     color: $white;
 
     background-color: $daisy-bush;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+
+        width: 100%;
+        height: rem(25px);
+
+        background-color: $whisper;
+
+        border-top-right-radius: rem($border-radius-large);
+        border-top-left-radius: rem($border-radius-large);
+
+        @media #{$screen-tablet} {
+            height: rem(24px);
+        }
+    }
 
     @media #{$screen-tablet} {
         height: rem($height-header-desktop);

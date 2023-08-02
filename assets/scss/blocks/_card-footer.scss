@@ -1,0 +1,127 @@
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media #{$screen-tablet} {
+        flex-direction: column;
+        justify-content: flex-start;
+        row-gap: rem(8px);
+    }
+
+
+    &__stats {
+        display: flex;
+        align-items: center;
+
+        @media #{$screen-tablet} {
+            flex-direction: column;
+        }
+    }
+
+    &__buttons-group {
+        margin-right: rem(16px);
+
+        position: relative;
+        display: flex;
+
+        width: rem(80px);
+
+        background: $white;
+        border-radius: rem($border-radius-medium);
+
+        @media #{$screen-tablet} {
+            margin-right: 0;
+            margin-bottom: rem(8px);
+
+            padding: rem(8px) rem(3px) rem(13px) rem(4px);
+
+            width: rem(100px);
+        }
+    }
+
+    &__quantity {
+        width: rem(32px);
+        height: rem(32px);
+
+        font-size: rem($font-size-medium);
+        line-height: rem(20px);
+        text-align: center;
+
+        border: none;
+
+        cursor: pointer;
+
+        @media #{$screen-tablet} {
+            width: rem(44px);
+            height: rem(23px);
+
+            font-size: rem($font-size-big);
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &:hover,
+        &:focus {
+            appearance: textfield;
+            -moz-appearance: textfield;
+        }
+
+        &::placeholder {
+            font-size: rem($font-size-medium);
+            line-height: rem(20px);
+            text-align: center;
+        }
+    }
+
+    &__button {
+        &-minus {
+            width: rem(9px);
+            height: rem(1px);
+            background: $black;
+        }
+
+        &-plus {
+            position: relative;
+
+            width: rem(9px);
+            height: rem(1px);
+            background: $black;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+
+                width: rem(9px);
+                height: rem(1px);
+
+                background: $black;
+
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    &__available {
+        margin: 0;
+
+        font-size: $font-size-small;
+        line-height: rem(16px);
+
+        color: $red-orange;
+    }
+
+    &__actions {
+        display: flex;
+
+        @media #{$screen-tablet} {
+            align-self: flex-end;
+            column-gap: rem(16px);
+        }
+    }
+}

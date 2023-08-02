@@ -1,4 +1,9 @@
 .icon {
     width: rem(28px);
     height: rem(28px);
+
+    &--actions {
+        width: rem(20px);
+        height: rem(20px);
+    }
 }

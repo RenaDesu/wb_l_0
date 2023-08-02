@@ -62,7 +62,233 @@
 
     <main class="page__content content">
         <div class="container container--main">
-            Content
+            <section class="cart">
+                <h2 class="cart__heading">Корзина</h2>
+                <form class="cart__selection selection">
+                    <div class="selection__wrapper">
+                        <div class="selection__header">
+                            <div class="selection__checkbox checkbox">
+                                <input class="checkbox__input" name="checkbox-all" type="checkbox" id="checkbox">
+                                <label class="checkbox__label" for="checkbox">Выбрать все</label>
+                            </div>
+                            <button
+                                class="selection__button button button--icon button--icon-actions button--icon-actions-arrow">
+                                <svg class="icon icon--actions">
+                                    <use xlink:href="./public/images/icons/sprite.svg#icon-arrow-up"></use>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <ul class="selection__list">
+                            <li class="selection__item card">
+                                <div class="card__checkbox checkbox">
+                                    <input class="checkbox__input" name="checkbox-1" type="checkbox" id="checkbox1"
+                                        checked>
+                                    <label class="checkbox__label checkbox__label--img" for="checkbox1">
+                                        <img class="checkbox__label-pic" src="./public/images/pic1.png"
+                                            srcset="./public/images/pic1@2x.png" alt="Изображение товара">
+                                    </label>
+                                </div>
+                                <p class="card__price">
+                                    <span class="card__price-current">522 <span
+                                            class="card__price-current-currency">сом</span></span>
+                                    <span class="card__price-old">1051 сом</span>
+                                </p>
+                                <div class="card__content">
+                                    <p class="card__title">
+                                        Футболка UZcotton мужская
+                                    </p>
+                                    <div class="card__characteristics">
+                                        <p class="card__color">
+                                            Цвет:
+                                            <span class="card__color-value">белый</span>
+                                        </p>
+                                        <p class="card__size">
+                                            <span class="card__size-title">Размер:</span>
+                                            <span class="card__size-value">56</span>
+                                        </p>
+                                    </div>
+                                    <p class="card__origin">
+                                        <span class="card__origin-storage">Коледино WB</span>
+                                        <span class="card__origin-company">
+                                            OOO Вайлдберриз
+                                            <svg class="card__origin-company-tooltop icon icon--actions">
+                                                <use xlink:href="./public/images/icons/sprite.svg#icon-info"></use>
+                                            </svg>
+                                        </span>
+                                    </p>
+                                </div>
+
+                                <footer class="card__footer card-footer">
+                                    <div class="card-footer__stats">
+                                        <div class="card-footer__buttons-group">
+                                            <button
+                                                class="card-footer__button card-footer__button--minus button button--quantity button--quantity-minus"
+                                                type="button">
+                                                <span class="card-footer__button-minus"></span>
+                                            </button>
+                                            <input class="card-footer__quantity" name="quantity" type="number"
+                                                id="quantity" value="1">
+                                            <button
+                                                class="card-footer__button card-footer__button--plus button button--quantity button--quantity-plus"
+                                                type="button">
+                                                <span class="card-footer__button-plus"></span>
+                                            </button>
+                                        </div>
+                                        <p class="card-footer__available">
+                                            Осталось 2 шт.
+                                        </p>
+                                    </div>
+                                    <div class="card-footer__actions">
+                                        <button
+                                            class="card-footer__favorites-button button button--icon button--icon-actions">
+                                            <svg class="icon icon--actions">
+                                                <use xlink:href="./public/images/icons/sprite.svg#icon-like"></use>
+                                            </svg>
+                                        </button>
+                                        <button
+                                            class="card-footer__favorites-button button button--icon button--icon-actions">
+                                            <svg class="icon icon--actions">
+                                                <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </footer>
+                            </li>
+                            <li class="selection__item card">
+                                <div class="card__checkbox checkbox">
+                                    <input class="checkbox__input" name="checkbox-2" type="checkbox" id="checkbox2">
+                                    <label class="checkbox__label checkbox__label--img" for="checkbox2">
+                                        <img class="checkbox__label-pic" src="./public/images/pic2.png"
+                                            srcset="./public/images/pic2@2x.png" alt="Изображение товара">
+                                    </label>
+                                </div>
+                                <p class="card__price">
+                                    <span class="card__price-current">2 100 047 <span
+                                            class="card__price-current-currency">сом</span></span>
+                                    <span class="card__price-old">2 300 047 сом</span>
+                                </p>
+                                <div class="card__content">
+                                    <p class="card__title">
+                                        Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на
+                                        Apple iPhone XR, MobiSafe
+                                    </p>
+                                    <div class="card__characteristics">
+                                        <p class="card__color">
+                                            Цвет:
+                                            <span class="card__color-value">прозрачный</span>
+                                        </p>
+                                    </div>
+                                    <p class="card__origin">
+                                        <span class="card__origin-storage">Коледино WB</span>
+                                        <span class="card__origin-company">
+                                            OOO Мегапрофстиль
+                                            <svg class="card__origin-company-tooltop icon icon--actions">
+                                                <use xlink:href="./public/images/icons/sprite.svg#icon-info"></use>
+                                            </svg>
+                                        </span>
+                                    </p>
+                                </div>
+
+                                <footer class="card__footer card-footer">
+                                    <div class="card-footer__stats">
+                                        <div class="card-footer__buttons-group">
+                                            <button
+                                                class="card-footer__button card-footer__button--minus button button--quantity button--quantity-minus"
+                                                type="button">
+                                                <span class="card-footer__button-minus"></span>
+                                            </button>
+                                            <input class="card-footer__quantity" name="quantity" type="number"
+                                                id="quantity" value="200">
+                                            <button
+                                                class="card-footer__button card-footer__button--plus button button--quantity button--quantity-plus"
+                                                type="button">
+                                                <span class="card-footer__button-plus"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer__actions">
+                                        <button
+                                            class="card-footer__favorites-button button button--icon button--icon-actions">
+                                            <svg class="icon icon--actions">
+                                                <use xlink:href="./public/images/icons/sprite.svg#icon-like"></use>
+                                            </svg>
+                                        </button>
+                                        <button
+                                            class="card-footer__favorites-button button button--icon button--icon-actions">
+                                            <svg class="icon icon--actions">
+                                                <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </footer>
+                            </li>
+                            <li class="selection__item card">
+                                <div class="card__checkbox checkbox">
+                                    <input class="checkbox__input" name="checkbox-3" type="checkbox" id="checkbox3">
+                                    <label class="checkbox__label checkbox__label--img" for="checkbox3">
+                                        <img class="checkbox__label-pic" src="./public/images/pic3.png"
+                                            srcset="./public/images/pic3@2x.png" alt="Изображение товара">
+                                    </label>
+                                </div>
+                                <p class="card__price">
+                                    <span class="card__price-current">494 <span
+                                            class="card__price-current-currency">сом</span></span>
+                                    <span class="card__price-old">950 сом</span>
+                                </p>
+                                <div class="card__content">
+                                    <p class="card__title">
+                                        Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
+                                        шестигранные, Faber-Castell
+                                    </p>
+                                    <p class="card__origin">
+                                        <span class="card__origin-storage">Коледино WB</span>
+                                        <span class="card__origin-company">
+                                            OOO Вайлдберриз
+                                            <svg class="card__origin-company-tooltop icon icon--actions">
+                                                <use xlink:href="./public/images/icons/sprite.svg#icon-info"></use>
+                                            </svg>
+                                        </span>
+                                    </p>
+                                </div>
+
+                                <footer class="card__footer card-footer">
+                                    <div class="card-footer__stats">
+                                        <div class="card-footer__buttons-group">
+                                            <button
+                                                class="card-footer__button card-footer__button--minus button button--quantity button--quantity-minus"
+                                                type="button">
+                                                <span class="card-footer__button-minus"></span>
+                                            </button>
+                                            <input class="card-footer__quantity" name="quantity" type="number"
+                                                id="quantity" value="200">
+                                            <button
+                                                class="card-footer__button card-footer__button--plus button button--quantity button--quantity-plus"
+                                                type="button">
+                                                <span class="card-footer__button-plus"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer__actions">
+                                        <button
+                                            class="card-footer__favorites-button button button--icon button--icon-actions">
+                                            <svg class="icon icon--actions">
+                                                <use xlink:href="./public/images/icons/sprite.svg#icon-like"></use>
+                                            </svg>
+                                        </button>
+                                        <button
+                                            class="card-footer__favorites-button button button--icon button--icon-actions">
+                                            <svg class="icon icon--actions">
+                                                <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </footer>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </section>
         </div>
     </main>
 

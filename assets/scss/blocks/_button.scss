@@ -37,7 +37,7 @@
         &-item {
             width: rem(56px);
             height: rem(56px);
-            
+
             font-size: rem($font-size-small);
             line-height: rem(16px);
             color: $white;
@@ -46,6 +46,33 @@
         &-nav {
             color: inherit;
         }
+
+        &-actions {
+            width: rem(44px);
+            height: rem(44px);
+
+            @media #{$screen-tablet} {
+                width: rem(20px);
+                height: rem(20px);
+            }
+
+            &-arrow {
+                color: $santas-gray;
+            }
+        }
+    }
+
+    &--quantity {
+        padding: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: rem(24px);
+
+        background: $white;
+        border-radius: rem($border-radius-medium);
     }
 
     &__line {

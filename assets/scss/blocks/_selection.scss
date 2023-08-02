@@ -1,0 +1,19 @@
+.selection {
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-bottom: rem(6px)
+    }
+
+    &__list {
+        @include list;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(16px);
+
+        list-style-type: none;
+    }
+}

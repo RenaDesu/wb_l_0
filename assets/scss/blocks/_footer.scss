@@ -1,9 +1,25 @@
 .footer {
+    position: relative;
+    
     font-size: rem($font-size-small);
     line-height: rem(16px);
 
     color: rgba(255, 255, 255, 0.70);
     background-color: $daisy-bush;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+
+        width: 100%;
+        height: rem(24px);
+
+        background-color: $whisper;
+
+        border-bottom-right-radius: rem($border-radius-large);
+        border-bottom-left-radius: rem($border-radius-large);
+    }
 
     &__copyright-wrapper {
         height: rem(88px);

@@ -2,11 +2,8 @@
     position: relative;
     display: block;
 
-    min-height: rem(20px);
+    min-height: rem(22px);
 
-    &:not(:last-child) {
-        margin-bottom: rem(20px);
-    }
 
     &__input {
         position: absolute;
@@ -15,12 +12,13 @@
 
     &__input+&__label {
         // Text
+        $checkbox-size: 22px;
         position: relative;
         display: inline-block;
-        padding-left: $checkbox-size + 8;
+        padding-left: $checkbox-size + 11;
 
-        font-size: rem($font-size-medium);
-        line-height: rem(16px);
+        font-size: rem($font-size-big);
+        line-height: rem(24px);
 
         cursor: pointer;
 
@@ -31,15 +29,15 @@
             position: absolute;
             display: block;
             left: 0;
-            top: rem(-1px);
+            top: rem(1px);
 
             width: $checkbox-size;
             height: $checkbox-size;
 
-            background: $white;
+            background: $whisper;
 
-            border: rem(1px) solid $curious-blue;
-            border-radius: rem($border-radius-small);
+            border: rem(1px) solid rgba(0, 0, 0, 0.10);
+            border-radius: rem($border-radius-checkbox);
 
             transition: $transition-duration-fast $transition-finction all;
         }
@@ -50,18 +48,48 @@
 
             position: absolute;
             display: block;
-            top: 6px;
-            left: 5px;
+            top: rem(6px);
+            left: rem(5px);
 
-            width: 11px;
-            height: 8px;
+            width: rem(13px);
+            height: rem(12px);
+        }
+    }
+
+    &__input+&__label--img {
+        padding-left: 0;
+
+        @media #{$screen-tablet} {
+            $checkbox-size: 22px;
+            padding-left: $checkbox-size + 12;
+        }
+
+        &::before {
+            left: rem(4px);
+            top: rem(4px);
+
+            @media #{$screen-tablet} {
+                left: 0;
+                top: 40%;
+            }
+        }
+
+        &::after {
+            left: rem(9px);
+            top: rem(9px);
+
+            @media #{$screen-tablet} {
+                left: rem(5px);
+                top: 45%;
+            }
         }
     }
 
     // Checked
     &__input:checked+&__label {
         &:before {
-            background: $curious-blue;
+            background: $red-violet;
+            border: rem(1px) solid $red-violet;
         }
 
         &:after {
@@ -77,8 +105,7 @@
         cursor: default;
 
         &:before {
-            background: $athens-gray;
-            border: rem(1px) solid $heather;
+            background: $santas-gray;
         }
 
         &:after {
@@ -86,13 +113,15 @@
         }
     }
 
-    // Disabled Checked
-    &__input:checked:disabled+&__label {
-        &:after {
-            background-image: url("../images/icons/tick-checked.svg");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
+    &__label-pic {
+        width: rem(80px);
+        height: rem(106px);
+        object-fit: contain;
+        display: block;
+
+        @media #{$screen-tablet} {
+            width: rem(72px);
+            height: rem(96px);
         }
     }
 }
