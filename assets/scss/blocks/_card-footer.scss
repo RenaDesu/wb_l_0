@@ -9,6 +9,14 @@
         row-gap: rem(8px);
     }
 
+    &--missing {
+        justify-content: flex-end;
+
+        @media #{$screen-tablet} {
+            justify-content: flex-start;
+        }
+    }
+
 
     &__stats {
         display: flex;

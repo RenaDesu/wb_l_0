@@ -2,6 +2,7 @@
     display: block;
     position: relative;
     text-decoration: none;
+    background-color: transparent;
 
     &--icon {
         display: flex;
@@ -14,7 +15,6 @@
 
         padding: 0;
 
-        background-color: transparent;
 
         &-search {
             color: $white;
@@ -73,6 +73,16 @@
 
         background: $white;
         border-radius: rem($border-radius-medium);
+    }
+
+    &--simple {
+        padding: rem(6px) 0;
+
+        font-size: rem($font-size-big);
+        line-height: rem(24px);
+        font-weight: $font-weight-bold;
+
+        color: $red-violet;
     }
 
     &__line {

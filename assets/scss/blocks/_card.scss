@@ -20,6 +20,36 @@
         }
     }
 
+    &--missing {
+        @media #{$screen-tablet} {
+            grid-template-columns: rem(72px) 64% rem(100px) rem(130px);
+        }
+    }
+
+    &--missing & {
+        &__content {
+            grid-row: 1 / 2;
+        }
+    }
+
+    &__img {
+        &-pic {
+            width: rem(80px);
+            height: rem(106px);
+            object-fit: contain;
+            display: block;
+
+            @media #{$screen-tablet} {
+                width: rem(72px);
+                height: rem(96px);
+            }
+
+            &--missing {
+                filter: grayscale(100%);
+            }
+        }
+    }
+
     &__checkbox {
         grid-row: 1 / 3;
     }

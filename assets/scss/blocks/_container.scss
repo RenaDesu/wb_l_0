@@ -4,6 +4,14 @@
     margin-right: auto;
     margin-left: auto;
 
+    &--paddingless {
+        $gap-container: 0;
+        max-width: rem($width-container + 2 * $gap-container);
+
+        padding-left: rem($gap-container);
+        padding-right: rem($gap-container);
+    }
+
     &--header {
         $gap-container: 13px;
         max-width: rem($width-container + 2 * $gap-container);
@@ -15,7 +23,7 @@
     &--main {
         $gap-container: 16px;
         max-width: rem($width-container + 2 * $gap-container);
-        
+
         padding-left: rem($gap-container);
         padding-right: rem($gap-container);
     }
@@ -23,7 +31,7 @@
     &--footer {
         $gap-container: 24px;
         max-width: rem($width-container + 2 * $gap-container);
-        
+
         padding-left: rem($gap-container);
         padding-right: rem($gap-container);
     }
@@ -31,7 +39,7 @@
     &--nav {
         $gap-container: 13px;
         max-width: rem($width-container + 2 * $gap-container);
-        
+
         padding-left: rem($gap-container);
         padding-right: rem($gap-container);
     }

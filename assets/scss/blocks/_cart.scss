@@ -1,11 +1,16 @@
 .cart {
+    margin-bottom: rem(45px);
+
     &__heading {
         margin: 0;
         margin-bottom: rem(8px);
 
-        font-size: rem($title-size-small);
-        line-height: rem(28px);
-        font-weight: $font-weight-bold;
-        letter-spacing: rem(-0.2px);
+        @include title-small;
+
+        @media #{$screen-tablet} {
+            margin-bottom: rem(27px);
+            
+            @include title-big;
+        }
     }
 }

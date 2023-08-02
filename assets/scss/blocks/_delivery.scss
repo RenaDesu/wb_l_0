@@ -1,0 +1,31 @@
+.delivery {
+    padding: rem(16px) rem(16px) rem(24px) rem(16px);
+
+    font-size: rem($font-size-big);
+    line-height: rem(24px);
+
+    background: $white;
+    border-radius: rem($border-radius-section);
+
+    @media #{$screen-tablet} {
+        max-width: rem(638px);
+    }
+
+    @media #{$screen-desktop} {
+        max-width: rem(891px);
+    }
+
+    &__header {
+        margin-bottom: rem(8px);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__heading {
+        margin: 0;
+
+        @include title-small;
+    }
+}

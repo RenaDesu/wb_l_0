@@ -29,3 +29,24 @@
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
+
+@mixin title-small {
+    font-size: rem($title-size-small);
+    line-height: rem(28px);
+    font-weight: $font-weight-bold;
+    letter-spacing: rem(-0.2px);
+}
+
+@mixin title-medium {
+    font-size: rem($title-size-medium);
+    line-height: rem(32px);
+    font-weight: $font-weight-bold;
+    letter-spacing: rem(-0.24px);
+}
+
+@mixin title-big {
+    font-size: rem($title-size-big);
+    line-height: rem(36px);
+    font-weight: $font-weight-bold;
+    letter-spacing: rem(-0.28px);
+}
