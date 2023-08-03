@@ -1,0 +1,102 @@
+.form {
+    &__list {
+        @include list;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(16px);
+
+        list-style-type: none;
+
+        @media #{$screen-tablet} {
+            flex-direction: row;
+            flex-wrap: wrap;
+            row-gap: rem(20px);
+            column-gap: rem(24px);
+        }
+    }
+
+    &__item {
+        position: relative;
+
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+
+        @media #{$screen-tablet} {
+            align-self: flex-start;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        bottom: rem(4px);
+
+        width: 100%;
+
+        font-size: rem($font-size-big);
+        line-height: rem(24px);
+
+        color: $santas-gray;
+
+        cursor: pointer;
+
+        &--notice {
+            bottom: rem(20px);
+        }
+    }
+
+    &__input {
+        display: block;
+
+        width: 100%;
+        height: rem(45px);
+
+        padding: 0;
+        padding-top: rem(14px);
+
+        font-size: rem($font-size-big);
+        line-height: rem(24px);
+
+        color: $black;
+        background-color: transparent;
+
+        border: none;
+        border-bottom: rem(1px) solid rgba(0, 0, 0, 0.20);
+
+        cursor: pointer;
+
+        @media #{$screen-tablet} {
+            min-width: rem(180px);
+            max-width: rem(217px);
+        }
+
+        &:focus,
+        &:active,
+        &:focus-visible {
+            outline: none;
+        }
+
+        &--big {
+            @media #{$screen-tablet} {
+                min-width: rem(283px);
+                max-width: rem(338px);
+            }
+        }
+    }
+
+    &__input:focus~&__label,
+    &__input:valid~&__label {
+        top: 0;
+
+        font-size: rem($font-size-small);
+        line-height: rem(16px);
+    }
+
+    &__notice {
+        padding-top: rem(5px);
+
+        font-size: rem(12px);
+        line-height: rem(14px);
+    }
+}

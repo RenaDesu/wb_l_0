@@ -1,0 +1,24 @@
+.payment-card {
+    display: flex;
+    align-items: center;
+
+    &__icon {
+        display: block;
+
+        margin-right: rem(8px);
+
+        width: rem(32px);
+        height: rem(24px);
+
+        background-image: url("../images/icons/mir.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: $whisper;
+
+        border-radius: rem($border-radius-medium);
+    }
+
+    &__number {
+        margin-right: rem(12px);
+    }
+}

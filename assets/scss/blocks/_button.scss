@@ -85,6 +85,10 @@
         color: $red-violet;
     }
 
+    &--card {
+        padding: 0;
+    }
+
     &__line {
         width: rem(23px);
         height: rem(2px);
@@ -143,8 +147,14 @@
         top: rem(-2px);
         right: rem(7px);
 
+        padding: 0 rem(4px) 0 rem(4px);
+
         height: rem(16px);
         min-width: rem(16px);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         font-size: rem($font-size-tiny);
         line-height: rem(18px);
@@ -154,11 +164,17 @@
 
         background-color: $pomegranate;
 
-        border-radius: $border-radius-circle;
+        border-radius: rem($border-radius-section);
 
         &--nav {
             top: rem(-4px);
             right: rem(-7px);
+        }
+
+        &--card-mini {
+            top: rem(-7px);
+            right: rem(-2px);
+            font-weight: $font-weight-semibold;
         }
     }
 }

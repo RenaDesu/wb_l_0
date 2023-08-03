@@ -1,0 +1,9 @@
+.mini-card {
+    &__img {
+        width: rem(40px);
+        height: rem(56px);
+
+        display: block;
+        object-fit: contain;
+    }
+}

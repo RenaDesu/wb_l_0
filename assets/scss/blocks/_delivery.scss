@@ -1,31 +1,86 @@
 .delivery {
-    padding: rem(16px) rem(16px) rem(24px) rem(16px);
+    &__wrapper {
+        margin-bottom: rem(12px);
 
-    font-size: rem($font-size-big);
-    line-height: rem(24px);
-
-    background: $white;
-    border-radius: rem($border-radius-section);
-
-    @media #{$screen-tablet} {
-        max-width: rem(638px);
+        @media #{$screen-tablet} {
+            margin-bottom: rem(16px); 
+        }
     }
 
-    @media #{$screen-desktop} {
-        max-width: rem(891px);
+    &__row {
+        @media #{$screen-tablet} {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: rem(16px);
+        }
     }
 
-    &__header {
-        margin-bottom: rem(8px);
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    &__heading {
+    &__title {
         margin: 0;
 
-        @include title-small;
+        font-size: rem($font-size-big);
+        line-height: rem(24px);
+        font-weight: $font-weight-semibold;
+    }
+
+    &__address {
+        margin: 0;
+        margin-bottom: rem(4px);
+    }
+
+    &__footer {
+        font-size: rem($font-size-small);
+        line-height: rem(16px);
+    }
+
+    &__cost {
+        margin: 0;
+    }
+
+    &__dates {
+        margin-bottom: rem(24px)
+    }
+
+    &__list {
+        @include list;
+
+        display: flex;
+        column-gap: rem(8px);
+
+        padding-top: rem(12px);
+
+        list-style-type: none;
+    }
+
+    &__special {
+        display: flex;
+        align-items: center;
+        column-gap: rem(8px);
+
+        &-icon {
+            display: block;
+            width: rem(22px);
+            height: rem(22px);
+            background-image: url("../images/icons/green-tick.svg");
+            background-repeat: no-repeat;
+        }
+
+        &-text {
+            margin: 0;
+
+            width: 80%;
+
+            font-size: rem($font-size-small);
+            line-height: rem(16px);
+        }
+
+        &-highlight {
+            color: $niagara;
+
+            border-bottom: 1px dashed rgba($niagara, 0.20);
+        }
     }
 }

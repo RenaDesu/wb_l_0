@@ -1,0 +1,21 @@
+.header-block {
+    margin-bottom: rem(8px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media #{$screen-tablet} {
+        margin-bottom: rem(16px);
+    }
+
+    &__heading {
+        margin: 0;
+
+        @include title-small;
+
+        @media #{$screen-tablet} {
+            @include title-medium;
+        }
+    }
+}

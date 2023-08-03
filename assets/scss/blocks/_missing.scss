@@ -1,4 +1,10 @@
 .missing {
+    margin-bottom: rem(22px);
+
+    @media #{$screen-tablet} {
+        margin-bottom: rem(40px);
+    }
+
     &__header {
         display: flex;
         align-items: center;

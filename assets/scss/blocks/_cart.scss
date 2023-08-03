@@ -3,9 +3,10 @@
 
     &__heading {
         margin: 0;
-        margin-bottom: rem(8px);
+        margin-bottom: rem(16px);
 
         @include title-small;
+        line-height: 56%;
 
         @media #{$screen-tablet} {
             margin-bottom: rem(27px);

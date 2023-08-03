@@ -10,6 +10,15 @@
 
         padding-left: rem($gap-container);
         padding-right: rem($gap-container);
+
+        @media #{$screen-tablet} {
+            $gap-container: 24px;
+
+            max-width: rem($width-container + 2 * $gap-container);
+
+            padding-left: rem($gap-container);
+            padding-right: rem($gap-container);
+        }
     }
 
     &--header {
@@ -26,6 +35,15 @@
 
         padding-left: rem($gap-container);
         padding-right: rem($gap-container);
+
+        @media #{$screen-tablet} {
+            $gap-container: 24px;
+
+            max-width: rem($width-container + 2 * $gap-container);
+
+            padding-left: rem($gap-container);
+            padding-right: rem($gap-container);
+        }
     }
 
     &--footer {
