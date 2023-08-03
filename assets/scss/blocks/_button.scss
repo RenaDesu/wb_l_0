@@ -60,6 +60,10 @@
                 color: $santas-gray;
             }
         }
+
+        &-pencil {
+            color: $red-violet;
+        }
     }
 
     &--quantity {
@@ -87,6 +91,20 @@
 
     &--card {
         padding: 0;
+    }
+
+    &--filled {
+        width: 100%;
+        padding: rem(8px) rem(32px) rem(12px) rem(32px);
+
+        font-size: rem($font-size-big);
+        line-height: rem(24px);
+        font-weight: $font-weight-bold;
+
+        color: $white;
+        background-color: $red-violet;
+
+        border-radius: rem($border-radius-big);
     }
 
     &__line {

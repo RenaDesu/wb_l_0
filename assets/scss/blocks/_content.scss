@@ -1,3 +1,22 @@
 .content {
     background-color: $whisper;
+
+    @media #{$screen-tablet} {
+        display: grid;
+        grid-template-columns: 66% 30%;
+        column-gap: rem(32px);
+    }
+
+    &--left {
+        @media #{$screen-tablet} {
+            grid-column: 1 / 2;
+        }
+    }
+
+    &--right {
+        @media #{$screen-tablet} {
+            grid-column: 2 / -1;
+            grid-row: 1 / 2;
+        }
+    }
 }

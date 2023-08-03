@@ -60,8 +60,8 @@
         </div>
     </header>
 
-    <main class="page__content content">
-        <div class="container container--main">
+    <main class="page__content content container container--paddingless">
+        <div class="container container--main content--left">
             <section class="cart">
                 <h2 class="cart__heading">Корзина</h2>
                 <form class="cart__selection selection">
@@ -261,7 +261,7 @@
                                                 <span class="card-footer__button-minus"></span>
                                             </button>
                                             <input class="card-footer__quantity" name="quantity3" type="number"
-                                                id="quantity3" value="200">
+                                                id="quantity3" value="2">
                                             <button
                                                 class="card-footer__button card-footer__button--plus button button--quantity button--quantity-plus"
                                                 type="button">
@@ -401,153 +401,232 @@
                 </ul>
             </section>
         </div>
-        <section class="delivery">
-            <div class="container container--paddingless">
-                <div class="delivery__wrapper wrapper">
-                    <div class="delivery__header header-block">
-                        <h2 class="delivery__heading header-block__heading">Способ доставки</h2>
-                        <button class="delivery__button button button--simple">Изменить</button>
-                    </div>
-                    <div class="delivery__row">
-                        <h3 class="delivery__title">Пункт выдачи</h3>
-                        <div class="delivery__info">
-                            <p class="delivery__address">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
-                            <div class="delivery__footer">
-                                <svg class="delivery__rating-icon icon icon--star">
-                                    <use xlink:href="./public/images/icons/sprite.svg#icon-star"></use>
-                                </svg>
-                                <span class="delivery__rating-text">4.99</span>
-                                <span class="delivery__hours">Ежедневно с 10 до 21 </span>
-                            </div>
+        <section class="delivery content--left">
+            <div class="delivery__wrapper wrapper">
+                <div class="delivery__header header-block">
+                    <h2 class="delivery__heading header-block__heading">Способ доставки</h2>
+                    <button class="delivery__button button button--simple">Изменить</button>
+                </div>
+                <div class="delivery__row">
+                    <h3 class="delivery__title">Пункт выдачи</h3>
+                    <div class="delivery__info">
+                        <p class="delivery__address">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
+                        <div class="delivery__footer">
+                            <svg class="delivery__rating-icon icon icon--star">
+                                <use xlink:href="./public/images/icons/sprite.svg#icon-star"></use>
+                            </svg>
+                            <span class="delivery__rating-text">4.99</span>
+                            <span class="delivery__hours">Ежедневно с 10 до 21 </span>
                         </div>
-                    </div>
-                    <div class="delivery__row">
-                        <h3 class="delivery__title">Стоимость доставки</h3>
-                        <p class="delivery__cost">Бесплатно</p>
-                    </div>
-
-                    <div class="delivery__dates">
-                        <div class="delivery__row">
-                            <h3 class="delivery__title">5—6 февраля</h3>
-                            <ul class="delivery__list">
-                                <li class="delivery__item mini-card">
-                                    <button class="mini-card__button button button--card" type="button">
-                                            <img class="mini-card__img" src="./public/images/pic1.png"
-                                                srcset="./public/images/pic1@2x.png" alt="Изображение товара">
-                                            <span class="button__label button__label--card-mini">1</span>
-                                    </button>
-                                </li>
-                                <li class="delivery__item mini-card">
-                                    <button class="mini-card__button button button--card" type="button">
-                                            <img class="mini-card__img" src="./public/images/pic2.png"
-                                                srcset="./public/images/pic2@2x.png" alt="Изображение товара">
-                                            <span class="button__label button__label--card-mini">184</span>
-                                    </button>
-                                </li>
-                                <li class="delivery__item mini-card">
-                                    <button class="mini-card__button button button--card" type="button">
-                                            <img class="mini-card__img" src="./public/images/pic3.png"
-                                                srcset="./public/images/pic3@2x.png" alt="Изображение товара">
-                                            <span class="button__label button__label--card-mini">2</span>
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="delivery__row">
-                            <h3 class="delivery__title">7—8 февраля</h3>
-                            <ul class="delivery__list">
-                                <li class="delivery__item mini-card">
-                                    <button class="mini-card__button button button--card" type="button">
-                                            <img class="mini-card__img" src="./public/images/pic2.png"
-                                                srcset="./public/images/pic2@2x.png" alt="Изображение товара">
-                                            <span class="button__label button__label--card-mini">16</span>
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="delivery__special">
-                        <span class="delivery__special-icon"></span>
-                        <p class="delivery__special-text">Обратная доставка товаров на склад при отказе — <span
-                                class="delivery__special-highlight">бесплатно</span></p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-
-        <section class="payment">
-            <div class="container container--paddingless">
-                <div class="payment__wrapper wrapper">
-                    <div class="payment__header header-block">
-                        <h2 class="payment__heading header-block__heading">Способ оплаты</h2>
-                        <button class="payment__button button button--simple">Изменить</button>
-                    </div>
-                    <div class="payment__card payment-card">
-                        <span class="payment-card__icon"></span>
-                        <div class="payment-card__number">
-                            <span class="payment-card__number-section">1234</span>
-                            <span class="payment-card__number-section">56••</span>
-                            <span class="payment-card__number-section">••••</span>
-                            <span class="payment-card__number-section">1234</span>
-                        </div>
-                        <div class="payment-card__expiry">
-                            <span class="payment-card__expiry-month">01</span>/<span
-                                class="payment-card__expiry-day">30</span>
-                        </div>
-                    </div>
-                    <p class="payment__description">
-                        Спишем оплату с карты при получении
-                    </p>
+                <div class="delivery__row">
+                    <h3 class="delivery__title">Стоимость доставки</h3>
+                    <p class="delivery__cost">Бесплатно</p>
                 </div>
-            </div>
-        </section>
 
-        <section class="recipient">
-            <div class="container container--paddingless">
-                <div class="recipient__wrapper wrapper">
-                    <div class="recipient__header header-block">
-                        <h2 class="recipient__heading header-block__heading">Получатель</h2>
-                    </div>
-                    <form class="recipient__form form" action="#" method="post">
-                        <ul class="form__list">
-                            <li class="form__item">
-                                <input class="form__input form__input--big" name="name" id="name" type="text" required>
-                                <label class="form__label" for="name">
-                                    Имя
-                                </label>
+                <div class="delivery__dates">
+                    <div class="delivery__row">
+                        <h3 class="delivery__title">5—6 февраля</h3>
+                        <ul class="delivery__list">
+                            <li class="delivery__item mini-card">
+                                <button class="mini-card__button button button--card" type="button">
+                                    <img class="mini-card__img" src="./public/images/pic1.png"
+                                        srcset="./public/images/pic1@2x.png" alt="Изображение товара">
+                                    <span class="button__label button__label--card-mini">1</span>
+                                </button>
                             </li>
-                            <li class="form__item">
-                                <input class="form__input form__input--big" name="surename" id="surename" type="text" required>
-                                <label class="form__label" for="surename">
-                                    Фамилия
-                                </label>
+                            <li class="delivery__item mini-card">
+                                <button class="mini-card__button button button--card" type="button">
+                                    <img class="mini-card__img" src="./public/images/pic2.png"
+                                        srcset="./public/images/pic2@2x.png" alt="Изображение товара">
+                                    <span class="button__label button__label--card-mini">184</span>
+                                </button>
                             </li>
-                            <li class="form__item">
-                                <input class="form__input" name="email" id="email" type="email" required>
-                                <label class="form__label" for="email">
-                                    Электронная почта
-                                </label>
-                            </li>
-                            <li class="form__item">
-                                <input class="form__input" name="tel" id="tel" type="tel" required>
-                                <label class="form__label" for="tel">
-                                    Телефон
-                                </label>
-                            </li>
-                            <li class="form__item">
-                                <input class="form__input" name="inn" id="inn" type="text" required>
-                                <label class="form__label form__label--notice" for="inn">
-                                    ИНН
-                                </label>
-                                <span class="form__notice">Для таможенного оформления</span>
+                            <li class="delivery__item mini-card">
+                                <button class="mini-card__button button button--card" type="button">
+                                    <img class="mini-card__img" src="./public/images/pic3.png"
+                                        srcset="./public/images/pic3@2x.png" alt="Изображение товара">
+                                    <span class="button__label button__label--card-mini">2</span>
+                                </button>
                             </li>
                         </ul>
-                    </form>
+                    </div>
+                    <div class="delivery__row">
+                        <h3 class="delivery__title">7—8 февраля</h3>
+                        <ul class="delivery__list">
+                            <li class="delivery__item mini-card">
+                                <button class="mini-card__button button button--card" type="button">
+                                    <img class="mini-card__img" src="./public/images/pic2.png"
+                                        srcset="./public/images/pic2@2x.png" alt="Изображение товара">
+                                    <span class="button__label button__label--card-mini">16</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="delivery__special">
+                    <span class="delivery__special-icon"></span>
+                    <p class="delivery__special-text">Обратная доставка товаров на склад при отказе — <span
+                            class="delivery__special-highlight">бесплатно</span></p>
                 </div>
             </div>
         </section>
+
+
+        <section class="payment content--left">
+            <div class="payment__wrapper wrapper">
+                <div class="payment__header header-block">
+                    <h2 class="payment__heading header-block__heading">Способ оплаты</h2>
+                    <button class="payment__button button button--simple">Изменить</button>
+                </div>
+                <div class="payment__card payment-card">
+                    <span class="payment-card__icon"></span>
+                    <div class="payment-card__number">
+                        <span class="payment-card__number-section">1234</span>
+                        <span class="payment-card__number-section">56••</span>
+                        <span class="payment-card__number-section">••••</span>
+                        <span class="payment-card__number-section">1234</span>
+                    </div>
+                    <div class="payment-card__expiry">
+                        <span class="payment-card__expiry-month">01</span>/<span
+                            class="payment-card__expiry-day">30</span>
+                    </div>
+                </div>
+                <p class="payment__description">
+                    Спишем оплату с карты при получении
+                </p>
+            </div>
+        </section>
+
+        <section class="recipient content--left">
+            <div class="recipient__wrapper wrapper">
+                <div class="recipient__header header-block">
+                    <h2 class="recipient__heading header-block__heading">Получатель</h2>
+                </div>
+                <form class="recipient__form form" action="#" method="post">
+                    <ul class="form__list">
+                        <li class="form__item">
+                            <input class="form__input form__input--big" name="name" id="name" type="text" required>
+                            <label class="form__label" for="name">
+                                Имя
+                            </label>
+                        </li>
+                        <li class="form__item">
+                            <input class="form__input form__input--big" name="surename" id="surename" type="text"
+                                required>
+                            <label class="form__label" for="surename">
+                                Фамилия
+                            </label>
+                        </li>
+                        <li class="form__item">
+                            <input class="form__input" name="email" id="email" type="email" required>
+                            <label class="form__label" for="email">
+                                Электронная почта
+                            </label>
+                        </li>
+                        <li class="form__item">
+                            <input class="form__input" name="tel" id="tel" type="tel" required>
+                            <label class="form__label" for="tel">
+                                Телефон
+                            </label>
+                        </li>
+                        <li class="form__item">
+                            <input class="form__input" name="inn" id="inn" type="text" required>
+                            <label class="form__label form__label--notice" for="inn">
+                                ИНН
+                            </label>
+                            <span class="form__notice">Для таможенного оформления</span>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </section>
+
+        <section class="total content--right">
+            <div class="total__wrapper wrapper wrapper--special">
+                <form class="total__form" action="#">
+                    <div class="total__header header-block">
+                        <h2 class="total__heading header-block__heading">Итого</h2>
+                        <p class="total__price header-block__heading">
+                            2 101 063 <span class="total__price-currency">сом</span>
+                        </p>
+                    </div>
+                    <div class="total__container">
+                        <div class="total__row">
+                            <span>203 товара</span>
+                            <span>2 302 048 сом</span>
+                        </div>
+                        <div class="total__row">
+                            <span>Скидка</span>
+                            <span>−200 985 сом</span>
+                        </div>
+                        <div class="total__row">
+                            <span>Доставка</span>
+                            <span>Бесплатно</span>
+                        </div>
+                    </div>
+                    <div class="total__container">
+                        <div class="total__row total__row--special">
+                            <div class="total__delivery delivery--special">
+                                <h3 class="total__row-heading">Доставка в пункт выдачи</h3>
+                                <p class="total__delivery-address">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
+                                <span class="total__delivery-date">5–8 фев</span>
+                            </div>
+                            <button class="total__button button button--icon button--icon-pencil">
+                                <svg class="total__button-icon icon icon--pencil">
+                                    <use xlink:href="./public/images/icons/sprite.svg#icon-pencil"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="delivery__special delivery__special--background">
+                            <span class="delivery__special-icon"></span>
+                            <p class="delivery__special-text">Обратная доставка товаров на склад при отказе — <span
+                                    class="delivery__special-highlight">бесплатно</span></p>
+                        </div>
+                    </div>
+                    <div class="total__container">
+                        <div class="total__row total__row--special">
+                            <div class="total__payment">
+                                <h3 class="total__row-heading">Оплата картой</h3>
+                                <div class="total__card payment-card payment-card--total">
+                                    <span class="payment-card__icon"></span>
+                                    <div class="payment-card__number">
+                                        <span class="payment-card__number-section">1234</span>
+                                        <span class="payment-card__number-section">56••</span>
+                                        <span class="payment-card__number-section">••••</span>
+                                        <span class="payment-card__number-section">1234</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="total__button button button--icon button--icon-pencil">
+                                <svg class="total__button-icon icon icon--pencil">
+                                    <use xlink:href="./public/images/icons/sprite.svg#icon-pencil"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="total__checkbox">
+                            <div class="checkbox">
+                                <input class="checkbox__input" name="checkbox-payment" type="checkbox" id="debit">
+                                <label class="checkbox__label checkbox__label--debit" for="debit">Списать оплату
+                                    сразу</label>
+                            </div>
+                            <span class="total__notice">Спишем оплату с карты при получении</span>
+                        </div>
+                    </div>
+                    <button class="total__submit button button--filled" type="submit">Заказать</button>
+                    <div class="total__checkbox-confirm checkbox">
+                        <input class="checkbox__input" name="checkbox-confirm" type="checkbox" id="confirm" checked>
+                        <label class="checkbox__label checkbox__label--confirm" for="confirm">
+                            Соглашаюсь с <a class="checkbox__label-link" href="#">правилами пользования торговой
+                                площадкой</a> и <a class="checkbox__label-link" href="#">возврата</a>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </section>
+
     </main>
 
     <footer class="page__footer footer">

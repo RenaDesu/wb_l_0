@@ -10,7 +10,7 @@
     gap: 0 rem(16px);
 
     @media #{$screen-tablet} {
-        grid-template-columns: rem(106px) 61% rem(100px) rem(130px);
+        grid-template-columns: rem(106px) 40% rem(100px) rem(130px);
         gap: 0 rem(16px);
     }
 
@@ -22,7 +22,7 @@
 
     &--missing {
         @media #{$screen-tablet} {
-            grid-template-columns: rem(72px) 64% rem(100px) rem(130px);
+            grid-template-columns: rem(72px) 45% rem(100px) rem(130px);
         }
     }
 

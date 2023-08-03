@@ -9,7 +9,6 @@
         position: absolute;
     }
 
-
     &__input+&__label {
         // Text
         $checkbox-size: 22px;
@@ -85,6 +84,69 @@
         }
     }
 
+    &__input+&__label--debit {
+        $checkbox-size: 22px;
+
+        padding-left: $checkbox-size + 8;
+
+        font-size: rem($font-size-small);
+        line-height: rem(16px);
+
+        &::before {
+            top: rem(-2px);
+        }
+
+        &::after {
+            top: rem(3px);
+        }
+    }
+
+
+    &__input+&__label--confirm {
+        // Text
+        $checkbox-size: 13px;
+        position: relative;
+        display: inline-block;
+        padding-left: $checkbox-size + 13;
+
+        font-size: rem($font-size-small);
+        line-height: rem(16px);
+
+        cursor: pointer;
+
+        // Checkbox
+        &:before {
+            content: "";
+
+            position: absolute;
+            display: block;
+            left: 0;
+            top: rem(1px);
+
+            width: $checkbox-size;
+            height: $checkbox-size;
+
+            background: transparent;
+
+            border: none;
+
+            transition: $transition-duration-fast $transition-finction all;
+        }
+
+        // Tick
+        &:after {
+            content: "";
+
+            position: absolute;
+            display: block;
+            top: rem(6px);
+            left: rem(5px);
+
+            width: rem(13px);
+            height: rem(12px);
+        }
+    }
+
     // Checked
     &__input:checked+&__label {
         &:before {
@@ -99,6 +161,21 @@
             background-size: contain;
         }
     }
+
+        // Checked
+        &__input:checked+&__label--confirm {
+            &:before {
+                background: transparent;
+                border: none;
+            }
+    
+            &:after {
+                background-image: url("../images/icons/tick-black.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+        }
 
     // Disabled
     &__input:disabled+&__label {
@@ -123,5 +200,11 @@
             width: rem(72px);
             height: rem(96px);
         }
+    }
+
+    &__label-link {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: rem(1px) solid rgba(0, 0, 0, 0.10);
     }
 }

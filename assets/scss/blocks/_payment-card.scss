@@ -21,4 +21,9 @@
     &__number {
         margin-right: rem(12px);
     }
+
+    &--total {
+        font-size: rem($font-size-small);
+        line-height: rem(16px);
+    }
 }

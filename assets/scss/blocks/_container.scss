@@ -37,7 +37,7 @@
         padding-right: rem($gap-container);
 
         @media #{$screen-tablet} {
-            $gap-container: 24px;
+            $gap-container: 0;
 
             max-width: rem($width-container + 2 * $gap-container);
 
