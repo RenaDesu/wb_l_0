@@ -12,6 +12,9 @@
  */
 // Пример подключения модуля
 // import myModule from './modules/my-module-function';
-import {showDeliveryTooltip} from './modules/tooltip';
+import {showDeliveryTooltip, showCompanyTooltip} from './modules/tooltip';
+import {selectAll} from './modules/main-checkbox';
 
 showDeliveryTooltip();
+showCompanyTooltip();
+selectAll();

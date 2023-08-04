@@ -68,7 +68,7 @@
                     <div class="selection__wrapper">
                         <div class="selection__header">
                             <div class="selection__checkbox checkbox">
-                                <input class="checkbox__input" name="checkbox-all" type="checkbox" id="checkbox">
+                                <input class="checkbox__input" name="checkbox-all" type="checkbox" id="checkbox" data-checkbox-main>
                                 <label class="checkbox__label" for="checkbox">Выбрать все</label>
                             </div>
                             <button
@@ -82,8 +82,7 @@
                         <ul class="selection__list">
                             <li class="selection__item card">
                                 <div class="card__checkbox checkbox">
-                                    <input class="checkbox__input" name="checkbox-1" type="checkbox" id="checkbox1"
-                                        checked>
+                                    <input class="checkbox__input" name="checkbox-1" type="checkbox" id="checkbox1" data-checkbox>
                                     <label class="checkbox__label checkbox__label--img" for="checkbox1">
                                         <img class="checkbox__label-pic" src="./public/images/pic1.png"
                                             srcset="./public/images/pic1@2x.png" alt="Изображение товара">
@@ -108,15 +107,22 @@
                                             <span class="card__size-value">56</span>
                                         </p>
                                     </div>
-                                    <p class="card__origin">
+                                    <div class="card__origin" data-container>
                                         <span class="card__origin-storage">Коледино WB</span>
                                         <span class="card__origin-company">
                                             OOO Вайлдберриз
-                                            <svg class="card__origin-company-tooltop icon icon--actions">
+                                            <svg class="card__origin-company-tooltip icon icon--actions"
+                                                data-tooltip-icon>
                                                 <use xlink:href="./public/images/icons/sprite.svg#icon-info"></use>
                                             </svg>
                                         </span>
-                                    </p>
+                                        <div class="tooltip tooltip--company" data-tooltip-company>
+                                            <p class="tooltip__heading">OOO «Вайлдберриз»</p>
+                                            <p class="tooltip__description">ОГРН: 1067746062449</p>
+                                            <p class="tooltip__description">142181, Московская область, д Коледино, тер.
+                                                Индустриальный Парк Коледино, д. 6 стр. 1</p>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <footer class="card__footer card-footer">
@@ -157,7 +163,7 @@
                             </li>
                             <li class="selection__item card">
                                 <div class="card__checkbox checkbox">
-                                    <input class="checkbox__input" name="checkbox-2" type="checkbox" id="checkbox2">
+                                    <input class="checkbox__input" name="checkbox-2" type="checkbox" id="checkbox2" data-checkbox>
                                     <label class="checkbox__label checkbox__label--img" for="checkbox2">
                                         <img class="checkbox__label-pic" src="./public/images/pic2.png"
                                             srcset="./public/images/pic2@2x.png" alt="Изображение товара">
@@ -179,15 +185,23 @@
                                             <span class="card__color-value">прозрачный</span>
                                         </p>
                                     </div>
-                                    <p class="card__origin">
+                                    <div class="card__origin" data-container>
                                         <span class="card__origin-storage">Коледино WB</span>
                                         <span class="card__origin-company">
                                             OOO Мегапрофстиль
-                                            <svg class="card__origin-company-tooltop icon icon--actions">
+                                            <svg class="card__origin-company-tooltip icon icon--actions"
+                                                data-tooltip-icon>
                                                 <use xlink:href="./public/images/icons/sprite.svg#icon-info"></use>
                                             </svg>
                                         </span>
-                                    </p>
+                                        <div class="tooltip tooltip--company" data-tooltip-company>
+                                            <p class="tooltip__heading">OOO «МЕГАПРОФСТИЛЬ»</p>
+                                            <p class="tooltip__description">ОГРН: 5167746237148</p>
+                                            <p class="tooltip__description">129337, Москва, улица Красная Сосна, 2,
+                                                корпус
+                                                1, стр. 1, помещение 2, офис 34</p>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <footer class="card__footer card-footer">
@@ -225,7 +239,7 @@
                             </li>
                             <li class="selection__item card">
                                 <div class="card__checkbox checkbox">
-                                    <input class="checkbox__input" name="checkbox-3" type="checkbox" id="checkbox3">
+                                    <input class="checkbox__input" name="checkbox-3" type="checkbox" id="checkbox3" data-checkbox>
                                     <label class="checkbox__label checkbox__label--img" for="checkbox3">
                                         <img class="checkbox__label-pic" src="./public/images/pic3.png"
                                             srcset="./public/images/pic3@2x.png" alt="Изображение товара">
@@ -241,15 +255,22 @@
                                         Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
                                         шестигранные, Faber-Castell
                                     </p>
-                                    <p class="card__origin">
+                                    <div class="card__origin" data-container>
                                         <span class="card__origin-storage">Коледино WB</span>
                                         <span class="card__origin-company">
                                             OOO Вайлдберриз
-                                            <svg class="card__origin-company-tooltop icon icon--actions">
+                                            <svg class="card__origin-company-tooltip icon icon--actions tooltip__icon"
+                                                data-tooltip-icon>
                                                 <use xlink:href="./public/images/icons/sprite.svg#icon-info"></use>
                                             </svg>
                                         </span>
-                                    </p>
+                                        <div class="tooltip tooltip--company" data-tooltip-company>
+                                            <p class="tooltip__heading">OOO «Вайлдберриз»</p>
+                                            <p class="tooltip__description">ОГРН: 1067746062449</p>
+                                            <p class="tooltip__description">142181, Московская область, д Коледино, тер.
+                                                Индустриальный Парк Коледино, д. 6 стр. 1</p>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <footer class="card__footer card-footer">
@@ -475,8 +496,7 @@
                 <div class="delivery__special">
                     <span class="delivery__special-icon"></span>
                     <p class="delivery__special-text">Обратная доставка товаров на склад при отказе — <span
-                            class="delivery__special-highlight"
-                            id="deliveryTooltip"
+                            class="delivery__special-highlight" id="deliveryTooltip"
                             data-tooltip="Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно">
                             бесплатно
                         </span>

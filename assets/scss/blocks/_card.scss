@@ -1,6 +1,6 @@
 .card {
     position: relative;
-
+    
     padding-top: rem(11px);
 
     border-top: rem(1px) solid rgba(0, 0, 0, 0.10);
@@ -194,8 +194,8 @@
     }
 
     &__origin {
-        margin: 0;
-
+        position: relative;
+        
         font-size: rem($font-size-small);
         line-height: rem(16px);
 
@@ -214,7 +214,7 @@
                 display: flex;
             }
 
-            &-tooltop {
+            &-tooltip {
                 margin-left: rem(6px);
             }
         }

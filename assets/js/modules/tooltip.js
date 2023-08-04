@@ -1,5 +1,26 @@
-import {TOOLTIP_DATA} from './data';
+const originBoxes = document.querySelectorAll('[data-container]');
 
+function showCompanyTooltip() {
+    for (const originBox of originBoxes) {
+        containerInit(originBox);
+    }
+
+    function containerInit(containerNode) {
+        const tooltip = containerNode.querySelector('[data-tooltip-company]');
+        const tooltipIcon = containerNode.querySelector('[data-tooltip-icon]');
+
+        tooltipIcon.addEventListener('mouseover', (e) => tooltipShow(tooltip));
+        tooltipIcon.addEventListener('mouseout', (e) => tooltipHide(tooltip));
+    }
+
+    function tooltipShow(elemNode) {
+        elemNode.style.display = 'block';
+    }
+
+    function tooltipHide(elemNode) {
+        elemNode.style.display = 'none';
+    }
+}
 
 function showDeliveryTooltip() {
     let tooltipElem;
@@ -10,14 +31,13 @@ function showDeliveryTooltip() {
         let tooltipHtml = target.dataset.tooltip;
         if (!tooltipHtml) return;
 
-        //элемент для подсказки
-
+        //Создается элемент для подсказки
         tooltipElem = document.createElement('div');
         tooltipElem.className = 'tooltip';
         tooltipElem.innerHTML = tooltipHtml;
         document.body.append(tooltipElem);
 
-        // позиционирование
+        //Позиционирование элемента подсказки
         let coords = target.getBoundingClientRect();
 
         if (target.id == 'deliveryTooltip') {
@@ -31,7 +51,7 @@ function showDeliveryTooltip() {
 
         } else {
 
-            if (window.matchMedia('(max-width: 1024px)').matches) {
+            if (window.matchMedia('(max-width: 1023px)').matches) {
                 let left = coords.left + (target.offsetWidth - tooltipElem.offsetWidth) / 2;
                 if (left < 0) left = 0;
 
@@ -73,4 +93,5 @@ function showDeliveryTooltip() {
 
 export {
     showDeliveryTooltip,
+    showCompanyTooltip
 };
