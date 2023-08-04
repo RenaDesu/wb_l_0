@@ -3,7 +3,7 @@
         margin-bottom: rem(16px);
 
         @media #{$screen-tablet} {
-            margin-bottom: 0; 
+            margin-bottom: rem(28px); 
         }
     }
 }

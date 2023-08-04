@@ -17,7 +17,15 @@
         background: transparent;
 
         @media #{$screen-tablet} {
+            position: relative;
+
+            padding: rem(16px) rem(24px) rem(24px) rem(24px);
+
             background: $white;
+
+            box-shadow: $box-shadow-double;
+
+            z-index: 1;
         }
     }
 }

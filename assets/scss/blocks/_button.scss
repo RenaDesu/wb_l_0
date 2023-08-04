@@ -59,10 +59,41 @@
             &-arrow {
                 color: $santas-gray;
             }
+
+            &-like {
+                transition: color $transition-duration ease;
+
+                &:hover,
+                &:focus,
+                &:active,
+                &:focus-visible {
+                    color: $red-violet;
+                }
+            }
+
+            &-trash {
+                transition: color $transition-duration ease;
+
+                &:hover,
+                &:focus,
+                &:active,
+                &:focus-visible {
+                    color: $pomegranate;
+                }
+            }
         }
 
         &-pencil {
             color: $red-violet;
+
+            transition: opacity $transition-duration ease;
+
+            &:hover,
+            &:focus,
+            &:active,
+            &:focus-visible {
+                opacity: 0.5;
+            }
         }
     }
 
@@ -105,6 +136,15 @@
         background-color: $red-violet;
 
         border-radius: rem($border-radius-big);
+
+        transition: opacity $transition-duration ease;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &:focus-visible {
+            opacity: 0.8;
+        }
     }
 
     &__line {
@@ -190,8 +230,8 @@
         }
 
         &--card-mini {
-            top: rem(-7px);
-            right: rem(-2px);
+            top: rem(-10px);
+            right: rem(-5px);
             font-weight: $font-weight-semibold;
         }
     }

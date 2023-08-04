@@ -27,6 +27,11 @@
 
         padding-left: rem($gap-container);
         padding-right: rem($gap-container);
+
+        @media #{$screen-tablet} {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 
     &--main {

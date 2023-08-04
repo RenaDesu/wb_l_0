@@ -6,7 +6,6 @@
     @media #{$screen-tablet} {
         flex-direction: column;
         justify-content: flex-start;
-        row-gap: rem(8px);
     }
 
     &--missing {
@@ -20,7 +19,7 @@
 
     &__stats {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
 
         @media #{$screen-tablet} {
             flex-direction: column;
@@ -122,6 +121,10 @@
         line-height: rem(16px);
 
         color: $red-orange;
+
+        @media #{$screen-tablet} {
+            margin-bottom: rem(8px);
+        }
     }
 
     &__actions {

@@ -71,6 +71,10 @@
             max-width: rem(217px);
         }
 
+        @media #{$screen-desktop} {
+            width: rem(217px);
+        }
+
         &:focus,
         &:active,
         &:focus-visible {
@@ -81,6 +85,10 @@
             @media #{$screen-tablet} {
                 min-width: rem(283px);
                 max-width: rem(338px);
+            }
+
+            @media #{$screen-desktop} {
+                width: rem(338px);
             }
         }
     }

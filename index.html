@@ -141,13 +141,13 @@
                                     </div>
                                     <div class="card-footer__actions">
                                         <button
-                                            class="card-footer__favorites-button button button--icon button--icon-actions">
+                                            class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like">
                                             <svg class="icon icon--actions">
                                                 <use xlink:href="./public/images/icons/sprite.svg#icon-like"></use>
                                             </svg>
                                         </button>
                                         <button
-                                            class="card-footer__favorites-button button button--icon button--icon-actions">
+                                            class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash">
                                             <svg class="icon icon--actions">
                                                 <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
                                             </svg>
@@ -209,13 +209,13 @@
                                     </div>
                                     <div class="card-footer__actions">
                                         <button
-                                            class="card-footer__favorites-button button button--icon button--icon-actions">
+                                            class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like">
                                             <svg class="icon icon--actions">
                                                 <use xlink:href="./public/images/icons/sprite.svg#icon-like"></use>
                                             </svg>
                                         </button>
                                         <button
-                                            class="card-footer__favorites-button button button--icon button--icon-actions">
+                                            class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash">
                                             <svg class="icon icon--actions">
                                                 <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
                                             </svg>
@@ -271,13 +271,13 @@
                                     </div>
                                     <div class="card-footer__actions">
                                         <button
-                                            class="card-footer__favorites-button button button--icon button--icon-actions">
+                                            class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like">
                                             <svg class="icon icon--actions">
                                                 <use xlink:href="./public/images/icons/sprite.svg#icon-like"></use>
                                             </svg>
                                         </button>
                                         <button
-                                            class="card-footer__favorites-button button button--icon button--icon-actions">
+                                            class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash">
                                             <svg class="icon icon--actions">
                                                 <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
                                             </svg>
@@ -325,12 +325,14 @@
 
                         <footer class="card__footer card-footer card-footer--missing">
                             <div class="card-footer__actions">
-                                <button class="card-footer__favorites-button button button--icon button--icon-actions">
+                                <button
+                                    class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like">
                                     <svg class="icon icon--actions">
                                         <use xlink:href="./public/images/icons/sprite.svg#icon-like"></use>
                                     </svg>
                                 </button>
-                                <button class="card-footer__favorites-button button button--icon button--icon-actions">
+                                <button
+                                    class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash">
                                     <svg class="icon icon--actions">
                                         <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
                                     </svg>
@@ -358,12 +360,14 @@
 
                         <footer class="card__footer card-footer card-footer--missing">
                             <div class="card-footer__actions">
-                                <button class="card-footer__favorites-button button button--icon button--icon-actions">
+                                <button
+                                    class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like">
                                     <svg class="icon icon--actions">
                                         <use xlink:href="./public/images/icons/sprite.svg#icon-like"></use>
                                     </svg>
                                 </button>
-                                <button class="card-footer__favorites-button button button--icon button--icon-actions">
+                                <button
+                                    class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash">
                                     <svg class="icon icon--actions">
                                         <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
                                     </svg>
@@ -385,12 +389,14 @@
 
                         <footer class="card__footer card-footer card-footer--missing">
                             <div class="card-footer__actions">
-                                <button class="card-footer__favorites-button button button--icon button--icon-actions">
+                                <button
+                                    class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like">
                                     <svg class="icon icon--actions">
                                         <use xlink:href="./public/images/icons/sprite.svg#icon-like"></use>
                                     </svg>
                                 </button>
-                                <button class="card-footer__favorites-button button button--icon button--icon-actions">
+                                <button
+                                    class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash">
                                     <svg class="icon icon--actions">
                                         <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
                                     </svg>
@@ -469,7 +475,12 @@
                 <div class="delivery__special">
                     <span class="delivery__special-icon"></span>
                     <p class="delivery__special-text">Обратная доставка товаров на склад при отказе — <span
-                            class="delivery__special-highlight">бесплатно</span></p>
+                            class="delivery__special-highlight"
+                            id="deliveryTooltip"
+                            data-tooltip="Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно">
+                            бесплатно
+                        </span>
+                    </p>
                 </div>
             </div>
         </section>
@@ -547,9 +558,9 @@
         <section class="total content--right">
             <div class="total__wrapper wrapper wrapper--special">
                 <form class="total__form" action="#">
-                    <div class="total__header header-block">
-                        <h2 class="total__heading header-block__heading">Итого</h2>
-                        <p class="total__price header-block__heading">
+                    <div class="total__header header-block header-block--special">
+                        <h2 class="total__heading header-block__heading header-block__heading--special">Итого</h2>
+                        <p class="total__price header-block__heading header-block__heading--special">
                             2 101 063 <span class="total__price-currency">сом</span>
                         </p>
                     </div>
@@ -583,7 +594,11 @@
                         <div class="delivery__special delivery__special--background">
                             <span class="delivery__special-icon"></span>
                             <p class="delivery__special-text">Обратная доставка товаров на склад при отказе — <span
-                                    class="delivery__special-highlight">бесплатно</span></p>
+                                    class="delivery__special-highlight"
+                                    data-tooltip="Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно">
+                                    бесплатно
+                                </span>
+                            </p>
                         </div>
                     </div>
                     <div class="total__container">

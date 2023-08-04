@@ -10,8 +10,12 @@
     gap: 0 rem(16px);
 
     @media #{$screen-tablet} {
-        grid-template-columns: rem(106px) 40% rem(100px) rem(130px);
+        grid-template-columns: rem(106px) 43% rem(100px) rem(115px);
         gap: 0 rem(16px);
+    }
+
+    @media #{$screen-desktop} {
+        grid-template-columns: rem(106px) 59% rem(100px) rem(115px);
     }
 
     &:not(:first-child) {
@@ -22,13 +26,23 @@
 
     &--missing {
         @media #{$screen-tablet} {
-            grid-template-columns: rem(72px) 45% rem(100px) rem(130px);
+            grid-template-columns: rem(72px) 48% rem(100px) rem(130px);
+        }
+
+        @media #{$screen-desktop} {
+            grid-template-columns: rem(72px) 63% rem(100px) rem(130px);
         }
     }
 
     &--missing & {
         &__content {
             grid-row: 1 / 2;
+        }
+
+        &__title {
+            @media #{$screen-tablet} {
+                max-width: rem(290px);
+            }
         }
     }
 
@@ -71,8 +85,8 @@
             flex-direction: column;
             align-items: flex-end;
 
-            font-size: rem($font-size-huge);
-            line-height: rem(28px);
+            font-size: rem(18px);
+            line-height: rem(24px);
         }
 
         &-current {

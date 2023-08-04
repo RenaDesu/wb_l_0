@@ -39,6 +39,10 @@
 
         &-address {
             margin: 0;
+
+            @media #{$screen-tablet} {
+                margin-bottom: rem(5px);
+            }
         }
 
         &-date {

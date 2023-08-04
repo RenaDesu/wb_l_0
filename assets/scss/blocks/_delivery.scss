@@ -3,14 +3,18 @@
         margin-bottom: rem(12px);
 
         @media #{$screen-tablet} {
-            margin-bottom: rem(16px); 
+            margin-bottom: rem(16px);
         }
     }
 
     &__row {
         @media #{$screen-tablet} {
             display: grid;
-            grid-template-columns: 1fr 4fr;
+            grid-template-columns: 31% 69%;
+        }
+
+        @media #{$screen-desktop} {
+            grid-template-columns: 22% 78%;
         }
 
         &:not(:last-child) {
@@ -36,6 +40,14 @@
         line-height: rem(16px);
     }
 
+    &__rating {
+        &-text {
+            @media #{$screen-tablet} {
+                margin-right: rem(5px);
+            }
+        }
+    }
+
     &__cost {
         margin: 0;
     }
@@ -53,6 +65,10 @@
         padding-top: rem(12px);
 
         list-style-type: none;
+
+        @media #{$screen-tablet} {
+            padding-top: 0;
+        }
     }
 
     &__special {
@@ -79,7 +95,7 @@
         &-text {
             margin: 0;
 
-            width: 84%;
+            width: 85%;
 
             font-size: rem($font-size-small);
             line-height: rem(16px);
@@ -89,6 +105,10 @@
             color: $niagara;
 
             border-bottom: 1px dashed rgba($niagara, 0.20);
+
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }

@@ -107,12 +107,17 @@
         $checkbox-size: 13px;
         position: relative;
         display: inline-block;
-        padding-left: $checkbox-size + 13;
+        padding-left: $checkbox-size + 7;
 
         font-size: rem($font-size-small);
         line-height: rem(16px);
 
         cursor: pointer;
+
+        @media #{$screen-tablet} {
+            width: 90%;
+        }
+
 
         // Checkbox
         &:before {
@@ -139,8 +144,8 @@
 
             position: absolute;
             display: block;
-            top: rem(6px);
-            left: rem(5px);
+            top: rem(3px);
+            left: rem(-2px);
 
             width: rem(13px);
             height: rem(12px);

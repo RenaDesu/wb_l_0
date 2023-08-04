@@ -1,6 +1,10 @@
 .cart {
     margin-bottom: rem(45px);
 
+    @media #{$screen-tablet} {
+        margin-bottom: rem(33px);
+    }
+
     &__heading {
         margin: 0;
         margin-bottom: rem(16px);
@@ -9,9 +13,12 @@
         line-height: 56%;
 
         @media #{$screen-tablet} {
-            margin-bottom: rem(27px);
+            margin-bottom: rem(37px);
+            margin-top: rem(20px);
             
             @include title-big;
+
+            line-height: 56%;
         }
     }
 }

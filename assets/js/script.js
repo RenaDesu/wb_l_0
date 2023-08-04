@@ -12,3 +12,6 @@
  */
 // Пример подключения модуля
 // import myModule from './modules/my-module-function';
+import {showDeliveryTooltip} from './modules/tooltip';
+
+showDeliveryTooltip();

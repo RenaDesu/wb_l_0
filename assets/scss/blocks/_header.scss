@@ -48,6 +48,9 @@
             @media #{$screen-tablet} {
                 width: 60%;
             }
+            @media #{$screen-desktop} {
+                width: 71%;
+            }
         }
 
         &--right {
@@ -70,8 +73,12 @@
 
         min-width: rem(169px);
         display: flex;
-        column-gap: rem(40px);
+        column-gap: rem(35px);
 
         list-style-type: none;
+
+        @media #{$screen-desktop} {
+            padding: 0 0 0 rem(9px);
+        }
     }
 }
