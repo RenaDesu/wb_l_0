@@ -20,7 +20,7 @@ const innLabel = document.querySelector('#inn ~ .form__label');
 function validateForm() {
     const isEmpty = str => !str.trim().length;
 
-    //name
+    //name label
     name.addEventListener('change', function (event) {
         if (isEmpty(this.value)) {
             nameLabel.style.top = '15px';
@@ -35,7 +35,7 @@ function validateForm() {
         }
     });
 
-    //surename
+    //surename label
     surename.addEventListener('change', function (event) {
         if (isEmpty(this.value)) {
             surenameLabel.style.top = '15px';
@@ -50,7 +50,7 @@ function validateForm() {
         }
     });
 
-    //email
+    //email label
     email.addEventListener('change', function (event) {
         if (isEmpty(this.value)) {
             emailLabel.style.top = '15px';
@@ -65,7 +65,7 @@ function validateForm() {
         }
     });
 
-    //tel 
+    //tel label
     tel.addEventListener('change', function (event) {
         if (isEmpty(this.value)) {
             telLabel.style.top = '15px';
@@ -80,7 +80,7 @@ function validateForm() {
         }
     });
 
-    //inn
+    //inn label
     inn.addEventListener('change', function (event) {
         if (isEmpty(this.value)) {
             innLabel.style.top = '15px';
@@ -99,7 +99,7 @@ function validateForm() {
 
         if (!name.validity.valid || !surename.validity.valid || !email.validity.valid || !tel.validity.valid || !inn.validity.valid) {
             event.preventDefault();
-            
+            document.querySelector('input:invalid').focus();
             showError();
 
             name.addEventListener('change', function (event) {
