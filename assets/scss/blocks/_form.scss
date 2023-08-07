@@ -30,7 +30,7 @@
 
     &__label {
         position: absolute;
-        bottom: rem(4px);
+        top: rem(15px);
 
         width: 100%;
 
@@ -40,10 +40,6 @@
         color: $santas-gray;
 
         cursor: pointer;
-
-        &--notice {
-            bottom: rem(20px);
-        }
     }
 
     &__input {
@@ -81,6 +77,11 @@
             outline: none;
         }
 
+        &--error {
+            color: $pomegranate;
+            border-bottom: rem(1px) solid $pomegranate;
+        }
+
         &--big {
             @media #{$screen-tablet} {
                 min-width: rem(283px);
@@ -106,5 +107,11 @@
 
         font-size: rem(12px);
         line-height: rem(14px);
+    }
+
+    &__error {
+        font-size: rem(12px);
+        line-height: rem(14px);
+        color: $pomegranate;
     }
 }
