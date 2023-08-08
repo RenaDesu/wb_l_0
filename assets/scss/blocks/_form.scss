@@ -41,6 +41,14 @@
         @media #{$screen-tablet} {
             align-self: flex-start;
         }
+
+        &--modal {
+            width: 100%;
+            
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
     }
 
     &__label {

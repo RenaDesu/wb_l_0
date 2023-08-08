@@ -1,13 +1,21 @@
 const paymentChangeButtons = document.querySelectorAll('[data-payment-change]');
-const closeButtons = document.querySelectorAll('[data-close-button]');
-const submitButtons = document.querySelectorAll('[data-submit-button]');
+const deliveryChangeButtons = document.querySelectorAll('[data-delivery-change]');
+const paymentCloseButton = document.querySelector('[data-payment-close-button]');
+const deliveryCloseButton = document.querySelector('[data-delivery-close-button]');
+const paymentSubmitButton = document.querySelector('[data-payment-submit-button]');
+const deliverySubmitButtons = document.querySelectorAll('[data-delivery-submit-button]');
 const paymentModal = document.querySelector('#modal-payment');
+const deliveryModal = document.querySelector('#modal-delivery');
+const paymentForm = document.querySelector('[data-payment-form]');
+const deliveryForm = document.querySelector('[data-delivery-form]');
+
 const cardsSelected = document.querySelectorAll('[data-payment-card-selected]');
-const cards = document.querySelectorAll('[data-payment-card]');
 const radioCards = document.querySelectorAll('[data-radio-card]');
 
-// const paymentCard1 = document.querySelector('#payment-card1');
-// const paymentCard2 = document.querySelector('#payment-card2');
+const deliverySelected = document.querySelectorAll('[data-delivery-selected]');
+const deliveryAddressSelected = document.querySelector('[data-address-selected]');
+const radioDelivery = document.querySelectorAll('[data-radio-delivery]');
+
 
 function modal() {
 
@@ -15,40 +23,77 @@ function modal() {
         paymentModal.classList.toggle('modal-container--closed');
     }
 
+    function onDeliveryButtonClick() {
+        deliveryModal.classList.toggle('modal-container--closed');
+    }
 
+    function onPaymentRadioChange() {
+        radioCards.forEach((radio) => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.checked) {
+                    const parent = e.target.closest('.radio');
+                    const cardContainer = parent.querySelector('[data-payment-card]');
+                    const cardContainerContent = cardContainer.innerHTML;
+                    cardsSelected.forEach((card) => {
+                        card.innerHTML = cardContainerContent;
+                    });
+                }
+            });
+        });
+    }
 
-    //  const innerHTML1 = paymentCard1.innerHTML;
-    //  paymentCard2.innerHTML = innerHTML1;
+    function onDeliveryRadioChange() {
+        radioDelivery.forEach((radio) => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.checked) {
+                    const parent = e.target.closest('.radio');
+                    const cardContainer = parent.querySelector('[data-delivery-address]');
+                    const cardContainerContent = cardContainer.innerHTML;
+                    const addressContainer = parent.querySelector('.delivery__address')
+                    const addressContent = addressContainer.innerHTML;
+                    deliverySelected.forEach((card) => {
+                        card.innerHTML = cardContainerContent;
+                    });
+                    deliveryAddressSelected.innerHTML = addressContent;
+                }
+            });
+        });
+    }
 
 
     //events
     paymentChangeButtons.forEach((button) => {
-        button.addEventListener('click', onPaymentButtonClick);
-    });
-
-    closeButtons.forEach((button) => {
         button.addEventListener('click', () => {
             onPaymentButtonClick();
-        })
-    });
-
-    submitButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-            onPaymentButtonClick();
-        })
-    });
-
-    radioCards.forEach((radio) => {
-        radio.addEventListener('change', (e) => {
-            if (e.target.checked) {
-                const parent = e.target.closest('.radio');
-                const cardContainer = parent.querySelector('[data-payment-card]');
-                const cardContainerContent = cardContainer.innerHTML;
-                cardsSelected.forEach((card) => {
-                    card.innerHTML = cardContainerContent;
-                });
-            }
+            onPaymentRadioChange()
         });
+    });
+
+    deliveryChangeButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            onDeliveryButtonClick();
+            onDeliveryRadioChange();
+        });
+    });
+
+    paymentCloseButton.addEventListener('click', () => {
+        paymentForm.reset();
+        onPaymentButtonClick();
+    });
+
+    deliveryCloseButton.addEventListener('click', () => {
+        deliveryForm.reset();
+        onDeliveryButtonClick();
+    });
+
+    paymentSubmitButton.addEventListener('click', () => {
+        onPaymentButtonClick();
+    });
+
+    deliverySubmitButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            onDeliveryButtonClick();
+        })
     });
 }
 

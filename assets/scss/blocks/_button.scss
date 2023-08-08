@@ -80,6 +80,13 @@
                 &:focus-visible {
                     color: $pomegranate;
                 }
+
+                &-modal {
+                    justify-content: flex-start;
+                    align-items: flex-end;
+
+                    color: $santas-gray;
+                }
             }
         }
 

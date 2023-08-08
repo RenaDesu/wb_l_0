@@ -30,6 +30,11 @@
         font-weight: $font-weight-semibold;
     }
 
+    &__info {
+        display: flex;
+        flex-direction: column;
+    }
+
     &__address {
         margin: 0;
         margin-bottom: rem(4px);
@@ -110,5 +115,12 @@
                 cursor: pointer;
             }
         }
+    }
+
+    &__point {
+        font-size: rem($font-size-small);
+        line-height: rem(16px);
+
+        color: $santas-gray;
     }
 }

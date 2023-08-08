@@ -446,11 +446,12 @@
                 <div class="delivery__wrapper wrapper">
                     <div class="delivery__header header-block">
                         <h2 class="delivery__heading header-block__heading">Способ доставки</h2>
-                        <button class="delivery__button button button--simple" type="button">Изменить</button>
+                        <button class="delivery__button button button--simple" type="button"
+                            data-delivery-change>Изменить</button>
                     </div>
                     <div class="delivery__row">
                         <h3 class="delivery__title">Пункт выдачи</h3>
-                        <div class="delivery__info">
+                        <div class="delivery__info" data-delivery-selected>
                             <p class="delivery__address">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
                             <div class="delivery__footer">
                                 <svg class="delivery__rating-icon icon icon--star">
@@ -623,10 +624,11 @@
                         <div class="total__row total__row--special">
                             <div class="total__delivery delivery--special">
                                 <h3 class="total__row-heading">Доставка в пункт выдачи</h3>
-                                <p class="total__delivery-address">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
+                                <p class="total__delivery-address" data-address-selected>Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
                                 <span class="total__delivery-date">5–8 фев</span>
                             </div>
-                            <button class="total__button button button--icon button--icon-pencil" type="button">
+                            <button class="total__button button button--icon button--icon-pencil" type="button"
+                                data-delivery-change>
                                 <svg class="total__button-icon icon icon--pencil">
                                     <use xlink:href="./public/images/icons/sprite.svg#icon-pencil"></use>
                                 </svg>
@@ -741,14 +743,14 @@
             <div class="modal-container__header">
                 <h2 class="modal-container__heading">Способ оплаты</h2>
                 <button class="modal-container__close-button button button--icon button--icon-close" type="button"
-                    data-close-button>
+                    data-payment-close-button>
                     <span class="modal-container__close-button-text">Закрыть</span>
                     <svg class="modal-container__close-button-icon icon icon--close">
                         <use xlink:href="./public/images/icons/sprite.svg#icon-close"></use>
                     </svg>
                 </button>
             </div>
-            <form class="modal-container__form form form--modal">
+            <form class="modal-container__form form form--modal" data-payment-form>
                 <ul class="form__list form__list--modal">
                     <li class="form__item">
                         <div class="radio">
@@ -821,9 +823,198 @@
                 </ul>
                 <div class="modal-container____button-wrapper">
                     <button class="modal-container__submit-button button button--filled button--filled-payment"
-                        type="button" data-submit-button>Выбрать</button>
+                        type="button" data-payment-submit-button>Выбрать</button>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <div class="modal-container modal-container--closed modal-container--delivery" id="modal-delivery">
+        <div class="modal-container__wrapper">
+            <div class="modal-container__header">
+                <h2 class="modal-container__heading">Способ доставки</h2>
+                <button class="modal-container__close-button button button--icon button--icon-close" type="button"
+                    data-delivery-close-button>
+                    <span class="modal-container__close-button-text">Закрыть</span>
+                    <svg class="modal-container__close-button-icon icon icon--close">
+                        <use xlink:href="./public/images/icons/sprite.svg#icon-close"></use>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-container__tabs tabs" data-tabs>
+                <nav class="tabs__items">
+                    <ul class="tabs__list">
+                        <li class="tabs__item tabs__item--active" data-tab>
+                            В пункт выдачи
+                        </li>
+                        <li class="tabs__item" data-tab>
+                            Курьером
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs__body">
+                    <div class="tabs__block tabs__block--active" data-tab-section>
+                        <form class="modal-container__form form form--modal" data-delivery-form>
+                            <h3 class="modal-container__sub-heading">Мои адреса</h3>
+                            <ul class="form__list form__list--modal">
+
+                                <li class="form__item form__item--modal">
+                                    <div class="radio">
+                                        <input class="radio__input" type="radio" id="point1" data-radio-delivery
+                                            name="delivery-point" value="point1">
+                                        <label class="radio__label" for="point1">
+                                            <span class="delivery__info" data-delivery-address>
+                                                <span class="delivery__address">г. Бишкек, микрорайон Джал, улица
+                                                    Ахунбаева Исы, д. 67/1</span>
+                                                <span class="delivery__footer">
+                                                    <svg class="delivery__rating-icon icon icon--star">
+                                                        <use xlink:href="./public/images/icons/sprite.svg#icon-star">
+                                                        </use>
+                                                    </svg>
+                                                    <span class="delivery__point">Пункт выдачи</span>
+                                                </span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <button
+                                        class="button button--icon button--icon-actions button--icon-actions-trash button--icon-actions-trash-modal">
+                                        <svg class="icon icon--actions">
+                                            <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                    </button>
+                                </li>
+
+                                <li class="form__item form__item--modal">
+                                    <div class="radio">
+                                        <input class="radio__input" type="radio" id="point2" data-radio-delivery
+                                            name="delivery-point" value="point2">
+                                        <label class="radio__label" for="point2">
+                                            <span class="delivery__info" data-delivery-address>
+                                                <span class="delivery__address">г. Бишкек, микрорайон Джал, улица
+                                                    Ахунбаева Исы, д. 67/1</span>
+                                                <span class="delivery__footer">
+                                                    <svg class="delivery__rating-icon icon icon--star">
+                                                        <use xlink:href="./public/images/icons/sprite.svg#icon-star">
+                                                        </use>
+                                                    </svg>
+                                                    <span class="delivery__rating-text">4.99</span>
+                                                    <span class="delivery__point">Пункт выдачи</span>
+                                                </span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <button
+                                        class="button button--icon button--icon-actions button--icon-actions-trash button--icon-actions-trash-modal">
+                                        <svg class="icon icon--actions">
+                                            <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                    </button>
+                                </li>
+
+                                <li class="form__item form__item--modal">
+                                    <div class="radio">
+                                        <input class="radio__input" type="radio" id="point3" data-radio-delivery
+                                            name="delivery-point" value="point3">
+                                        <label class="radio__label" for="point3">
+                                            <span class="delivery__info" data-delivery-address>
+                                                <span class="delivery__address">г. Бишкек, улица Табышалиева, д.
+                                                    57</span>
+                                                <span class="delivery__footer">
+                                                    <svg class="delivery__rating-icon icon icon--star">
+                                                        <use xlink:href="./public/images/icons/sprite.svg#icon-star">
+                                                        </use>
+                                                    </svg>
+                                                    <span class="delivery__rating-text">4.99</span>
+                                                    <span class="delivery__point">Пункт выдачи</span>
+                                                </span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <button
+                                        class="button button--icon button--icon-actions button--icon-actions-trash button--icon-actions-trash-modal">
+                                        <svg class="icon icon--actions">
+                                            <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="modal-container____button-wrapper">
+                                <button
+                                    class="modal-container__submit-button button button--filled button--filled-payment"
+                                    type="button" data-delivery-submit-button>Выбрать</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tabs__block" data-tab-section>
+                        <form class="modal-container__form form form--modal" data-delivery-form>
+                            <h3 class="modal-container__sub-heading">Мои адреса</h3>
+                            <ul class="form__list form__list--modal">
+
+                                <li class="form__item form__item--modal">
+                                    <div class="radio">
+                                        <input class="radio__input" type="radio" id="address1" data-radio-delivery
+                                            name="delivery-address" value="address1">
+                                        <label class="radio__label" for="address1">
+                                            <span class="delivery__info" data-delivery-address>
+                                                <span class="delivery__address">Бишкек, улица Табышалиева, 57</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <button
+                                        class="button button--icon button--icon-actions button--icon-actions-trash button--icon-actions-trash-modal">
+                                        <svg class="icon icon--actions">
+                                            <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                    </button>
+                                </li>
+
+                                <li class="form__item form__item--modal">
+                                    <div class="radio">
+                                        <input class="radio__input" type="radio" id="address2" data-radio-delivery
+                                            name="delivery-address" value="address2">
+                                        <label class="radio__label" for="address2">
+                                            <span class="delivery__info" data-delivery-address>
+                                                <span class="delivery__address">Бишкек, улица Жукеева-Пудовкина,
+                                                    77/1</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <button
+                                        class="button button--icon button--icon-actions button--icon-actions-trash button--icon-actions-trash-modal">
+                                        <svg class="icon icon--actions">
+                                            <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                    </button>
+                                </li>
+
+                                <li class="form__item form__item--modal">
+                                    <div class="radio">
+                                        <input class="radio__input" type="radio" id="address3" data-radio-delivery
+                                            name="delivery-address" value="address3">
+                                        <label class="radio__label" for="address3">
+                                            <span class="delivery__info" data-delivery-address>
+                                                <span class="delivery__address">Бишкек, микрорайон Джал, улица Ахунбаева
+                                                    Исы, 67/1</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <button
+                                        class="button button--icon button--icon-actions button--icon-actions-trash button--icon-actions-trash-modal">
+                                        <svg class="icon icon--actions">
+                                            <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="modal-container____button-wrapper">
+                                <button
+                                    class="modal-container__submit-button button button--filled button--filled-payment"
+                                    type="button" data-delivery-submit-button>Выбрать</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
