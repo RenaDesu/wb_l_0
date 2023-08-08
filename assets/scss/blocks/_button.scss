@@ -95,6 +95,20 @@
                 opacity: 0.5;
             }
         }
+
+        &-close {
+            width: rem(24px);
+            height: rem(24px);
+
+            opacity: 0.5;
+
+            &:hover,
+            &:focus,
+            &:active,
+            &:focus-visible {
+                opacity: 1;
+            }
+        }
     }
 
     &--quantity {
@@ -144,6 +158,12 @@
         &:active,
         &:focus-visible {
             opacity: 0.8;
+        }
+
+        &-payment {
+            @media #{$screen-tablet} {
+                width: rem(164px);
+            }  
         }
     }
 

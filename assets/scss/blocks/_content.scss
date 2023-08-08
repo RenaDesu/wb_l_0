@@ -20,7 +20,7 @@
     &--right {
         @media #{$screen-tablet} {
             grid-column: 2 / -1;
-            grid-row: 1 / 2;
+            grid-row: 1 / 3;
         }
     }
 }

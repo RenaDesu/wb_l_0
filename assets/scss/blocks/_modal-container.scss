@@ -1,0 +1,71 @@
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 0, 10, 0.30);
+
+    &--closed {
+        display: none;
+    }
+
+    &__wrapper {
+        width: 100%;
+        height: 100%;
+
+        padding: rem(16px);
+
+        background-color: $white;
+
+        @media #{$screen-tablet} {
+            width: rem(432px);
+            height: rem(440px);
+
+            padding: rem(24px) rem(22px) rem(24px) rem(22px);
+
+            border-radius: rem($border-radius-section);
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-bottom: rem(13px);
+
+        @media #{$screen-tablet} {
+            padding: 0 rem(2px);
+        }
+    }
+
+    &__heading {
+        margin: 0;
+
+        font-size: rem($title-size-small);
+        line-height: rem(28px);
+        font-weight: rem($font-weight-bold);
+        letter-spacing: rem(-0.2px);
+    }
+
+    &__close-button {
+        &-text {
+            @include visually-hidden;
+        }
+    }
+
+    &__form {
+        height: 90%;
+    }
+
+    &____button-wrapper {
+        @media #{$screen-tablet} {
+            padding: 0 rem(2px);
+        }
+    }
+}

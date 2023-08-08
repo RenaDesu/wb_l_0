@@ -7,6 +7,12 @@
         height: rem(20px);
 
         cursor: pointer;
+
+        transition: transform $transition-duration ease;
+
+        &-hide {
+            transform: rotate(180deg);
+        }
     }
 
     &--star {

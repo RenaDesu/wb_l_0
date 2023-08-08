@@ -15,8 +15,12 @@
 import {showDeliveryTooltip, showCompanyTooltip} from './modules/tooltip';
 import {selectAll} from './modules/main-checkbox';
 import {validateForm} from './modules/form-validation';
+import {spoiler} from './modules/spoiler';
+import {modal} from './modules/modal';
 
 showDeliveryTooltip();
 showCompanyTooltip();
 selectAll();
 validateForm();
+spoiler();
+modal();

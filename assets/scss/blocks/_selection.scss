@@ -1,15 +1,37 @@
 .selection {
     &__header {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        margin-bottom: rem(6px);
+        padding-bottom: rem(6px);
+
+        border-bottom: rem(1px) solid rgba(0, 0, 0, 0.10);
 
         @media #{$screen-tablet} {
-            margin-bottom: rem(16px);
+            padding-bottom: rem(16px);
         }
-        
+    }
+
+    &__heading {
+        display: none;
+
+        margin: 0;
+
+        font-size: rem($font-size-big);
+        line-height: rem(24px);
+        font-weight: $font-weight-semibold;
+
+        &--active {
+            display: block
+        }
+    }
+
+    &__checkbox {
+        &--hidden {
+            display: none
+        }
     }
 
     &__list {
@@ -23,6 +45,10 @@
 
         @media #{$screen-tablet} {
             row-gap: rem(20px);
+        }
+
+        &--hidden {
+            display: none;
         }
     }
 }

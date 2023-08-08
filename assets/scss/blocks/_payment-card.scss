@@ -10,12 +10,27 @@
         width: rem(32px);
         height: rem(24px);
 
-        background-image: url("../images/icons/mir.svg");
         background-repeat: no-repeat;
         background-position: center;
         background-color: $whisper;
 
         border-radius: rem($border-radius-medium);
+
+        &--mir {
+            background-image: url("../images/icons/mir.svg");
+        }
+
+        &--visa {
+            background-image: url("../images/icons/visa.svg");
+        }
+
+        &--mastercard {
+            background-image: url("../images/icons/mastercard.svg");
+        }
+
+        &--maestro {
+            background-image: url("../images/icons/maestro.svg");
+        }
     }
 
     &__number {

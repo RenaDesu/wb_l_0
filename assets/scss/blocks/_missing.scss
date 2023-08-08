@@ -33,5 +33,9 @@
         @media #{$screen-tablet} {
             row-gap: rem(20px);
         }
+
+        &--hidden {
+            display: none;
+        }
     }
 }

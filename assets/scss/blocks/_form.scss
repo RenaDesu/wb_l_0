@@ -1,4 +1,10 @@
 .form {
+    &--modal {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
     &__list {
         @include list;
 
@@ -13,6 +19,15 @@
             flex-wrap: wrap;
             row-gap: rem(20px);
             column-gap: rem(24px);
+        }
+
+        &--modal {
+            @media #{$screen-tablet} {
+                display: flex;
+                flex-direction: column;
+                row-gap: rem(16px);
+                column-gap: 0;
+            }
         }
     }
 
