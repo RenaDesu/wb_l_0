@@ -17,6 +17,7 @@ import {selectAll} from './modules/main-checkbox';
 import {validateForm} from './modules/form-validation';
 import {spoiler} from './modules/spoiler';
 import {modal} from './modules/modal';
+import {tabs} from './modules/tabs';
 
 showDeliveryTooltip();
 showCompanyTooltip();
@@ -24,3 +25,4 @@ selectAll();
 validateForm();
 spoiler();
 modal();
+tabs();

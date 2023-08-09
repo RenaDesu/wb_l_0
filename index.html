@@ -450,7 +450,7 @@
                             data-delivery-change>Изменить</button>
                     </div>
                     <div class="delivery__row">
-                        <h3 class="delivery__title">Пункт выдачи</h3>
+                        <h3 class="delivery__title" data-delivery-point1>Пункт выдачи</h3>
                         <div class="delivery__info" data-delivery-selected>
                             <p class="delivery__address">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
                             <div class="delivery__footer">
@@ -623,7 +623,7 @@
                     <div class="total__container">
                         <div class="total__row total__row--special">
                             <div class="total__delivery delivery--special">
-                                <h3 class="total__row-heading">Доставка в пункт выдачи</h3>
+                                <h3 class="total__row-heading" data-delivery-point2>Доставка в пункт выдачи</h3>
                                 <p class="total__delivery-address" data-address-selected>Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
                                 <span class="total__delivery-date">5–8 фев</span>
                             </div>
@@ -844,16 +844,16 @@
             <div class="modal-container__tabs tabs" data-tabs>
                 <nav class="tabs__items">
                     <ul class="tabs__list">
-                        <li class="tabs__item tabs__item--active" data-tab>
+                        <li class="tabs__item tabs__item--active" data-tab="point">
                             В пункт выдачи
                         </li>
-                        <li class="tabs__item" data-tab>
+                        <li class="tabs__item" data-tab="address">
                             Курьером
                         </li>
                     </ul>
                 </nav>
                 <div class="tabs__body">
-                    <div class="tabs__block tabs__block--active" data-tab-section>
+                    <div class="tabs__block tabs__block--active" data-tab-section="point">
                         <form class="modal-container__form form form--modal" data-delivery-form>
                             <h3 class="modal-container__sub-heading">Мои адреса</h3>
                             <ul class="form__list form__list--modal">
@@ -945,7 +945,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="tabs__block" data-tab-section>
+                    <div class="tabs__block" data-tab-section="address">
                         <form class="modal-container__form form form--modal" data-delivery-form>
                             <h3 class="modal-container__sub-heading">Мои адреса</h3>
                             <ul class="form__list form__list--modal">
@@ -1016,6 +1016,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
 
     <script src="./public/js/script.js" type="module"></script>
