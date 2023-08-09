@@ -87,7 +87,7 @@
                             </div>
 
                             <ul class="selection__list" id="selection-container">
-                                <li class="selection__item card">
+                                <li class="selection__item card" data-id="1">
                                     <div class="card__checkbox checkbox">
                                         <input class="checkbox__input" name="checkbox-1" type="checkbox" id="checkbox1"
                                             data-checkbox>
@@ -97,9 +97,13 @@
                                         </label>
                                     </div>
                                     <p class="card__price">
-                                        <span class="card__price-current">522 <span
-                                                class="card__price-current-currency">сом</span></span>
-                                        <span class="card__price-old">1051 сом</span>
+                                        <span class="card__price-current">
+                                            522
+                                            <span class="card__price-current-currency">сом</span>
+                                        </span>
+                                        <span class="card__price-old">
+                                            1051 сом
+                                        </span>
                                     </p>
                                     <div class="card__content">
                                         <p class="card__title">
@@ -139,14 +143,14 @@
                                             <div class="card-footer__buttons-group">
                                                 <button
                                                     class="card-footer__button card-footer__button--minus button button--quantity button--quantity-minus"
-                                                    type="button">
+                                                    type="button" data-action="minus">
                                                     <span class="card-footer__button-minus"></span>
                                                 </button>
                                                 <input class="card-footer__quantity" name="quantity" type="number"
-                                                    id="quantity" value="1">
+                                                    id="quantity" value="1" data-counter>
                                                 <button
                                                     class="card-footer__button card-footer__button--plus button button--quantity button--quantity-plus"
-                                                    type="button">
+                                                    type="button" data-action="plus">
                                                     <span class="card-footer__button-plus"></span>
                                                 </button>
                                             </div>
@@ -170,7 +174,7 @@
                                         </div>
                                     </footer>
                                 </li>
-                                <li class="selection__item card">
+                                <li class="selection__item card" data-id="2">
                                     <div class="card__checkbox checkbox">
                                         <input class="checkbox__input" name="checkbox-2" type="checkbox" id="checkbox2"
                                             data-checkbox>
@@ -180,9 +184,9 @@
                                         </label>
                                     </div>
                                     <p class="card__price">
-                                        <span class="card__price-current">2 100 047 <span
+                                        <span class="card__price-current">10 500 <span
                                                 class="card__price-current-currency">сом</span></span>
-                                        <span class="card__price-old">2 300 047 сом</span>
+                                        <span class="card__price-old">11 500 сом</span>
                                     </p>
                                     <div class="card__content">
                                         <p class="card__title">
@@ -219,14 +223,14 @@
                                             <div class="card-footer__buttons-group">
                                                 <button
                                                     class="card-footer__button card-footer__button--minus button button--quantity button--quantity-minus"
-                                                    type="button">
+                                                    type="button" data-action="minus">
                                                     <span class="card-footer__button-minus"></span>
                                                 </button>
                                                 <input class="card-footer__quantity" name="quantity2" type="number"
-                                                    id="quantity2" value="200">
+                                                    id="quantity2" value="1" data-counter>
                                                 <button
                                                     class="card-footer__button card-footer__button--plus button button--quantity button--quantity-plus"
-                                                    type="button">
+                                                    type="button" data-action="plus">
                                                     <span class="card-footer__button-plus"></span>
                                                 </button>
                                             </div>
@@ -247,7 +251,7 @@
                                         </div>
                                     </footer>
                                 </li>
-                                <li class="selection__item card">
+                                <li class="selection__item card" data-id="3">
                                     <div class="card__checkbox checkbox">
                                         <input class="checkbox__input" name="checkbox-3" type="checkbox" id="checkbox3"
                                             data-checkbox>
@@ -257,9 +261,9 @@
                                         </label>
                                     </div>
                                     <p class="card__price">
-                                        <span class="card__price-current">494 <span
+                                        <span class="card__price-current">247 <span
                                                 class="card__price-current-currency">сом</span></span>
-                                        <span class="card__price-old">950 сом</span>
+                                        <span class="card__price-old">475 сом</span>
                                     </p>
                                     <div class="card__content">
                                         <p class="card__title">
@@ -290,14 +294,14 @@
                                             <div class="card-footer__buttons-group">
                                                 <button
                                                     class="card-footer__button card-footer__button--minus button button--quantity button--quantity-minus"
-                                                    type="button">
+                                                    type="button" data-action="minus">
                                                     <span class="card-footer__button-minus"></span>
                                                 </button>
                                                 <input class="card-footer__quantity" name="quantity3" type="number"
-                                                    id="quantity3" value="2">
+                                                    id="quantity3" value="1" data-counter>
                                                 <button
                                                     class="card-footer__button card-footer__button--plus button button--quantity button--quantity-plus"
-                                                    type="button">
+                                                    type="button" data-action="plus">
                                                     <span class="card-footer__button-plus"></span>
                                                 </button>
                                             </div>
@@ -603,17 +607,17 @@
                     <div class="total__header header-block header-block--special">
                         <h2 class="total__heading header-block__heading header-block__heading--special">Итого</h2>
                         <p class="total__price header-block__heading header-block__heading--special">
-                            2 101 063 <span class="total__price-currency">сом</span>
+                            0 <span class="total__price-currency">сом</span>
                         </p>
                     </div>
                     <div class="total__container">
                         <div class="total__row">
-                            <span>203 товара</span>
-                            <span>2 302 048 сом</span>
+                            <span id="total-products">0 товара</span>
+                            <span id="total-price">0 сом</span>
                         </div>
                         <div class="total__row">
                             <span>Скидка</span>
-                            <span>−200 985 сом</span>
+                            <span id="discount">-0 сом</span>
                         </div>
                         <div class="total__row">
                             <span>Доставка</span>
@@ -624,7 +628,8 @@
                         <div class="total__row total__row--special">
                             <div class="total__delivery delivery--special">
                                 <h3 class="total__row-heading" data-delivery-point2>Доставка в пункт выдачи</h3>
-                                <p class="total__delivery-address" data-address-selected>Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
+                                <p class="total__delivery-address" data-address-selected>Бишкек, улица Ахматбека
+                                    Суюмбаева, 12/1</p>
                                 <span class="total__delivery-date">5–8 фев</span>
                             </div>
                             <button class="total__button button button--icon button--icon-pencil" type="button"
@@ -674,7 +679,7 @@
                             <span class="total__notice">Спишем оплату с карты при получении</span>
                         </div>
                     </div>
-                    <button class="total__submit button button--filled" type="submit">Заказать</button>
+                    <button class="total__submit button button--filled" type="submit" id="order">Заказать</button>
                     <div class="total__checkbox-confirm checkbox">
                         <input class="checkbox__input" name="checkbox-confirm" type="checkbox" id="confirm" checked>
                         <label class="checkbox__label checkbox__label--confirm" for="confirm">
@@ -1016,7 +1021,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 
     <script src="./public/js/script.js" type="module"></script>
