@@ -109,7 +109,7 @@ function validateForm() {
                     showError();
                 }
             });
-    
+
             surename.addEventListener('change', function (event) {
                 if (surename.validity.valid) {
                     removeError(surenameError, surename);
@@ -117,16 +117,16 @@ function validateForm() {
                     showError();
                 }
             });
-    
+
             email.addEventListener('change', function (event) {
-    
+
                 if (email.validity.valid) {
                     removeError(emailError, email);
                 } else {
                     showError();
                 }
             });
-    
+
             tel.addEventListener('change', function (event) {
                 if (tel.validity.valid) {
                     removeError(telError, tel);
@@ -134,7 +134,7 @@ function validateForm() {
                     showError();
                 }
             });
-    
+
             inn.addEventListener('change', function (event) {
                 if (inn.validity.valid) {
                     removeError(innError, inn);
