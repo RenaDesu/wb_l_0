@@ -77,7 +77,18 @@ function modal() {
     });
 
     paymentCloseButton.addEventListener('click', () => {
-        paymentForm.reset();
+        const defaultCheckbox = radioCards[0];
+
+        defaultCheckbox.checked = true;
+        
+        const parent = defaultCheckbox.closest('.radio');     
+        const cardContainer = parent.querySelector('[data-payment-card]');
+        const cardContainerContent = cardContainer.innerHTML;
+
+        cardsSelected.forEach((card) => {
+            card.innerHTML = cardContainerContent;
+        });
+        
         onPaymentButtonClick();
     });
 

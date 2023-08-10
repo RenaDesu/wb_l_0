@@ -97,11 +97,11 @@
                                         </label>
                                     </div>
                                     <p class="card__price">
-                                        <span class="card__price-current">
+                                        <span class="card__price-current" data-current="522">
                                             522
                                             <span class="card__price-current-currency">сом</span>
                                         </span>
-                                        <span class="card__price-old">
+                                        <span class="card__price-old" data-old="1051">
                                             1051 сом
                                         </span>
                                     </p>
@@ -147,7 +147,7 @@
                                                     <span class="card-footer__button-minus"></span>
                                                 </button>
                                                 <input class="card-footer__quantity" name="quantity" type="number"
-                                                    id="quantity" value="1" data-counter>
+                                                    id="quantity" value="1" readonly data-counter>
                                                 <button
                                                     class="card-footer__button card-footer__button--plus button button--quantity button--quantity-plus"
                                                     type="button" data-action="plus">
@@ -160,14 +160,14 @@
                                         </div>
                                         <div class="card-footer__actions">
                                             <button
-                                                class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like">
+                                                class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like" type="button">
                                                 <svg class="icon icon--actions">
                                                     <use xlink:href="./public/images/icons/sprite.svg#icon-like"></use>
                                                 </svg>
                                             </button>
                                             <button
-                                                class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash">
-                                                <svg class="icon icon--actions">
+                                                class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash" type="button">
+                                                <svg class="icon icon--actions" data-remove>
                                                     <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
                                                 </svg>
                                             </button>
@@ -184,9 +184,9 @@
                                         </label>
                                     </div>
                                     <p class="card__price">
-                                        <span class="card__price-current">10 500 <span
+                                        <span class="card__price-current" data-current="10500">10 500 <span
                                                 class="card__price-current-currency">сом</span></span>
-                                        <span class="card__price-old">11 500 сом</span>
+                                        <span class="card__price-old" data-old="11500">11 500 сом</span>
                                     </p>
                                     <div class="card__content">
                                         <p class="card__title">
@@ -227,7 +227,7 @@
                                                     <span class="card-footer__button-minus"></span>
                                                 </button>
                                                 <input class="card-footer__quantity" name="quantity2" type="number"
-                                                    id="quantity2" value="1" data-counter>
+                                                    id="quantity2" value="1" readonly data-counter>
                                                 <button
                                                     class="card-footer__button card-footer__button--plus button button--quantity button--quantity-plus"
                                                     type="button" data-action="plus">
@@ -237,14 +237,14 @@
                                         </div>
                                         <div class="card-footer__actions">
                                             <button
-                                                class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like">
+                                                class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like" type="button">
                                                 <svg class="icon icon--actions">
                                                     <use xlink:href="./public/images/icons/sprite.svg#icon-like"></use>
                                                 </svg>
                                             </button>
                                             <button
-                                                class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash">
-                                                <svg class="icon icon--actions">
+                                                class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash" type="button">
+                                                <svg class="icon icon--actions" data-remove>
                                                     <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
                                                 </svg>
                                             </button>
@@ -261,9 +261,9 @@
                                         </label>
                                     </div>
                                     <p class="card__price">
-                                        <span class="card__price-current">247 <span
+                                        <span class="card__price-current" data-current="247">247 <span
                                                 class="card__price-current-currency">сом</span></span>
-                                        <span class="card__price-old">475 сом</span>
+                                        <span class="card__price-old" data-old="475">475 сом</span>
                                     </p>
                                     <div class="card__content">
                                         <p class="card__title">
@@ -298,7 +298,7 @@
                                                     <span class="card-footer__button-minus"></span>
                                                 </button>
                                                 <input class="card-footer__quantity" name="quantity3" type="number"
-                                                    id="quantity3" value="1" data-counter>
+                                                    id="quantity3" value="1" readonly data-counter>
                                                 <button
                                                     class="card-footer__button card-footer__button--plus button button--quantity button--quantity-plus"
                                                     type="button" data-action="plus">
@@ -308,14 +308,14 @@
                                         </div>
                                         <div class="card-footer__actions">
                                             <button
-                                                class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like">
+                                                class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like" type="button">
                                                 <svg class="icon icon--actions">
                                                     <use xlink:href="./public/images/icons/sprite.svg#icon-like"></use>
                                                 </svg>
                                             </button>
                                             <button
-                                                class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash">
-                                                <svg class="icon icon--actions">
+                                                class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash" type="button">
+                                                <svg class="icon icon--actions" data-remove>
                                                     <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
                                                 </svg>
                                             </button>
@@ -365,14 +365,14 @@
                             <footer class="card__footer card-footer card-footer--missing">
                                 <div class="card-footer__actions">
                                     <button
-                                        class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like">
+                                        class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like" type="button">
                                         <svg class="icon icon--actions">
                                             <use xlink:href="./public/images/icons/sprite.svg#icon-like"></use>
                                         </svg>
                                     </button>
                                     <button
-                                        class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash">
-                                        <svg class="icon icon--actions">
+                                        class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash" type="button">
+                                        <svg class="icon icon--actions" data-remove>
                                             <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
                                         </svg>
                                     </button>
@@ -400,14 +400,14 @@
                             <footer class="card__footer card-footer card-footer--missing">
                                 <div class="card-footer__actions">
                                     <button
-                                        class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like">
+                                        class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like" type="button">
                                         <svg class="icon icon--actions">
                                             <use xlink:href="./public/images/icons/sprite.svg#icon-like"></use>
                                         </svg>
                                     </button>
                                     <button
-                                        class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash">
-                                        <svg class="icon icon--actions">
+                                        class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash" type="button">
+                                        <svg class="icon icon--actions" data-remove>
                                             <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
                                         </svg>
                                     </button>
@@ -429,14 +429,14 @@
                             <footer class="card__footer card-footer card-footer--missing">
                                 <div class="card-footer__actions">
                                     <button
-                                        class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like">
+                                        class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-like" type="button">
                                         <svg class="icon icon--actions">
                                             <use xlink:href="./public/images/icons/sprite.svg#icon-like"></use>
                                         </svg>
                                     </button>
                                     <button
-                                        class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash">
-                                        <svg class="icon icon--actions">
+                                        class="card-footer__favorites-button button button--icon button--icon-actions button--icon-actions-trash" type="button">
+                                        <svg class="icon icon--actions" data-remove>
                                             <use xlink:href="./public/images/icons/sprite.svg#icon-trash"></use>
                                         </svg>
                                     </button>

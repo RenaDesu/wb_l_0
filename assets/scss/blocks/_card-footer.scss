@@ -78,6 +78,13 @@
             -moz-appearance: textfield;
         }
 
+        &:hover,
+        &:focus,
+        &:active,
+        &:focus-visible {
+            outline: none;
+        }
+
         &::placeholder {
             font-size: rem($font-size-medium);
             line-height: rem(20px);
