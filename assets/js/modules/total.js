@@ -68,6 +68,11 @@ function total() {
                 const priceTotalFull = priceTotalSpaces + ' ' + 'сом';
                 totalPriceEl.innerText = priceTotalFull;
 
+                if (debitToggle.checked) {
+                    const newText = totalPriceEl.innerText;
+                    orderButton.innerText = 'Оплатить' + ' ' + newText;
+                }
+
                 //без скидки
                 let priceTotalNoDisc = totalPriceNoDiscountEl.innerText;
                 let priceTotalNoDiscNoSpaces = priceTotalNoDisc.replace(/[^0-9]/g, '');
@@ -140,6 +145,13 @@ function total() {
                 const priceTotalFull = priceTotalSpaces + ' ' + 'сом';
                 totalPriceEl.innerText = priceTotalFull;
 
+
+                if (debitToggle.checked) {
+                    const newText = totalPriceEl.innerText;
+                    orderButton.innerText = 'Заказать' + ' ' + newText;
+                }
+
+
                 //без скидки
                 let priceTotalNoDisc = totalPriceNoDiscountEl.innerText;
                 let priceTotalNoDiscNoSpaces = priceTotalNoDisc.replace(/[^0-9]/g, '');
@@ -209,6 +221,11 @@ function total() {
                     const priceTotalSpaces = priceTotalClean.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                     const priceTotalFull = priceTotalSpaces + ' ' + 'сом';
                     totalPriceEl.innerText = priceTotalFull;
+
+                    if (debitToggle.checked) {
+                        const newText = totalPriceEl.innerText;
+                        orderButton.innerText = 'Заказать' + ' ' + newText;
+                    }
                 });
 
                 //без скидки
@@ -270,6 +287,11 @@ function total() {
                 //с учетом скидки 
                 totalPriceEl.innerText = '0 сом';
 
+                if (debitToggle.checked) {
+                    const newText = totalPriceEl.innerText;
+                    orderButton.innerText = 'Заказать' + ' ' + newText;
+                }
+
                 //без скидки
                 totalPriceNoDiscountEl.innerText = '0 сом';
 
@@ -281,14 +303,18 @@ function total() {
         }
     });
 
-    debitToggle.addEventListener('change', function (event) {
-        if (event.target.checked) {
-            const newText = totalPriceEl.innerText;
-            orderButton.innerText = 'Оплатить' + ' ' + newText;
-        } else {
-            orderButton.innerText = 'Заказать';
-        }
-    });
+    function debitFunds() {
+        debitToggle.addEventListener('change', function (event) {
+            if (event.target.checked) {
+                const newText = totalPriceEl.innerText;
+                orderButton.innerText = 'Оплатить' + ' ' + newText;
+            } else {
+                orderButton.innerText = 'Заказать';
+            }
+        });
+    }
+
+    debitFunds();
 }
 
 export {
