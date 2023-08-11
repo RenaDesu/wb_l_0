@@ -14,7 +14,7 @@ const filePath = {
         style: './assets/scss/style.scss',
         icons: './assets/icons/icons.js'
     },
-    dist:  './public/'
+    dist: './public/'
 };
 
 function createJSModule() {
@@ -25,14 +25,14 @@ function createJSModule() {
             loader: 'babel-loader',
             options: {
                 presets: [
-                  [
-                    '@babel/preset-env',
-                    {
-                      modules: false,
-                      useBuiltIns: 'entry',
-                      corejs: 3,
-                    },
-                  ],
+                    [
+                        '@babel/preset-env',
+                        {
+                            modules: false,
+                            useBuiltIns: 'entry',
+                            corejs: 3,
+                        },
+                    ],
                 ],
                 babelrc: false,
             }
@@ -140,11 +140,20 @@ module.exports = (env, argv) => {
                 plainSprite: true
             }),
             new CopyWebpackPlugin({
-            patterns: [
-                {from:'assets/images', to: 'images'},
-                {from: 'assets/fonts', to: 'fonts'}
-            ],
-        }),
+                patterns: [{
+                        from: 'assets/images',
+                        to: 'images'
+                    },
+                    {
+                        from: 'assets/fonts',
+                        to: 'fonts'
+                    },
+                    {
+                        from: path.resolve(__dirname, 'index.html'),
+                        to: path.resolve(__dirname, 'public')
+                    },
+                ],
+            }),
         ]
     }
 };

@@ -129,6 +129,18 @@ function productCounter() {
 
                 //Новое значение кол-ва выбранных товаров
                 totalProductsEl.innerText = totalProductsNew + ' ' + 'товаров';
+
+                //Кол-во товаров в доставке
+                if (card.getAttribute('data-id') === '1') {
+                    const label = document.querySelector('[data-label="1"]')
+                    label.innerText = counter.value;
+                } else if (card.getAttribute('data-id') === '2') {
+                    const label = document.querySelector('[data-label="2"]')
+                    label.innerText = counter.value;
+                } else if (card.getAttribute('data-id') === '3') {
+                    const label = document.querySelector('[data-label="3"]')
+                    label.innerText = counter.value;
+                } 
             }
         }
 
@@ -227,6 +239,18 @@ function productCounter() {
 
                     //Новое значение кол-ва выбранных товаров
                     totalProductsEl.innerText = totalProductsNew + ' ' + 'товаров';
+
+                    //Кол-во товаров в доставке
+                    if (card.getAttribute('data-id') === '1') {
+                        const label = document.querySelector('[data-label="1"]')
+                        label.innerText = counter.value;
+                    } else if (card.getAttribute('data-id') === '2') {
+                        const label = document.querySelector('[data-label="2"]')
+                        label.innerText = counter.value;
+                    } else if (card.getAttribute('data-id') === '3') {
+                        const label = document.querySelector('[data-label="3"]')
+                        label.innerText = counter.value;
+                    } 
                 }
             }
 
