@@ -20,6 +20,7 @@ import {tabs} from './modules/tabs';
 import {productCounter} from './modules/product-counter';
 import {total} from './modules/total';
 import {removeCard} from './modules/remove-card'
+import {delivery} from './modules/delivery';
 
 showDeliveryTooltip();
 showCompanyTooltip();
@@ -30,3 +31,4 @@ tabs();
 productCounter();
 total();
 removeCard();
+delivery();

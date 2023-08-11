@@ -12,16 +12,12 @@
     @media #{$screen-tablet} {
         grid-template-columns: rem(106px) 43% rem(100px) rem(115px);
         gap: 0 rem(16px);
+
+        border: none;
     }
 
     @media #{$screen-desktop} {
         grid-template-columns: rem(106px) 59% rem(100px) rem(115px);
-    }
-
-    &:not(:first-child) {
-        @media #{$screen-tablet} {
-            border: none;
-        }
     }
 
     &--missing {
@@ -31,6 +27,12 @@
 
         @media #{$screen-desktop} {
             grid-template-columns: rem(72px) 63% rem(100px) rem(130px);
+        }
+
+        &:first-child {
+            @media #{$screen-tablet} {
+                border-top: rem(1px) solid rgba(0, 0, 0, 0.10);
+            }
         }
     }
 
