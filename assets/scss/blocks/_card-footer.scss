@@ -59,6 +59,9 @@
 
         cursor: pointer;
 
+        appearance: textfield;
+        -moz-appearance: textfield;
+
         @media #{$screen-tablet} {
             width: rem(44px);
             height: rem(23px);

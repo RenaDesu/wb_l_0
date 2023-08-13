@@ -21,7 +21,7 @@
             @media #{$screen-tablet} {
                 width: rem(500px);
                 min-height: rem(408px);
-    
+
                 padding: rem(16px) rem(22px) rem(24px) rem(22px);
             }
         }
@@ -36,6 +36,8 @@
     }
 
     &__wrapper {
+        position: relative;
+
         width: 100%;
         min-height: 100%;
 
@@ -90,12 +92,21 @@
     }
 
     &__form {
-        height: 90%;
+        @media #{$screen-tablet} {
+            margin-bottom: 100px;
+        }
     }
 
     &____button-wrapper {
+        position: absolute;
+        bottom: rem(16px);
+
+        width: 90%;
+
         @media #{$screen-tablet} {
             padding: 0 rem(2px);
+
+            bottom: rem(24px);
         }
     }
 }

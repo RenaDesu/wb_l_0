@@ -1,3 +1,5 @@
+import {getNoun} from './utils';
+
 const totalPriceEl = document.querySelector('.total__price');
 const totalPriceNoDiscountEl = document.querySelector('#total-price');
 const totalDiscount = document.querySelector('#discount');
@@ -42,9 +44,7 @@ function total() {
                 const productsCounterText = productsCounter.value;
                 productsTotalClean += parseInt(productsCounterText);
 
-                const productsTotalSpaces = productsTotalClean.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                const productsTotalFull = productsTotalSpaces + ' ' + 'товара';
-                totalProductsEl.innerText = productsTotalFull;
+                totalProductsEl.innerText = `${productsTotalClean} ${getNoun(productsTotalClean, 'товар', 'товара', 'товаров')} `;
             };
 
             totalProducts();
@@ -119,9 +119,7 @@ function total() {
                 const productsCounterText = productsCounter.value;
                 productsTotalClean -= parseInt(productsCounterText);
 
-                const productsTotalSpaces = productsTotalClean.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                const productsTotalFull = productsTotalSpaces + ' ' + 'товара';
-                totalProductsEl.innerText = productsTotalFull;
+                totalProductsEl.innerText = `${productsTotalClean} ${getNoun(productsTotalClean, 'товар', 'товара', 'товаров')} `;
             };
 
             totalProducts();
@@ -197,9 +195,7 @@ function total() {
                     const productsCounterText = counter.value;
                     productsTotalClean += parseInt(productsCounterText);
 
-                    const productsTotalSpaces = productsTotalClean.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                    const productsTotalFull = productsTotalSpaces + ' ' + 'товара';
-                    totalProductsEl.innerText = productsTotalFull;
+                    totalProductsEl.innerText = `${productsTotalClean} ${getNoun(productsTotalClean, 'товар', 'товара', 'товаров')} `;
                 });
             };
 

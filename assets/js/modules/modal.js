@@ -6,7 +6,6 @@ const paymentSubmitButton = document.querySelector('[data-payment-submit-button]
 const deliverySubmitButtons = document.querySelectorAll('[data-delivery-submit-button]');
 const paymentModal = document.querySelector('#modal-payment');
 const deliveryModal = document.querySelector('#modal-delivery');
-const paymentForm = document.querySelector('[data-payment-form]');
 const deliveryForm = document.querySelector('[data-delivery-form]');
 
 const cardsSelected = document.querySelectorAll('[data-payment-card-selected]');
@@ -21,10 +20,12 @@ function modal() {
 
     function onPaymentButtonClick() {
         paymentModal.classList.toggle('modal-container--closed');
+        document.body.classList.toggle('page--modal');
     }
 
     function onDeliveryButtonClick() {
         deliveryModal.classList.toggle('modal-container--closed');
+        document.body.classList.toggle('page--modal');
     }
 
     function onPaymentRadioChange() {

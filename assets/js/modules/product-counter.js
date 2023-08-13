@@ -1,3 +1,5 @@
+import {getNoun} from './utils';
+
 const totalProducts = document.querySelector('[data-total-products]');
 const totalSum = document.querySelector('[data-total-sum]');
 const totalPriceEl = document.querySelector('.total__price');
@@ -89,7 +91,7 @@ function productCounter() {
             const totalProductsNew = parseInt(totalProductsTextNoSpaces) + 1;
 
             //Новое значение кол-ва товаров в корзине (где заголовок спойлера)
-            totalProducts.innerText = totalProductsNew + ' ' + 'товаров';
+            totalProducts.innerText = `${totalProductsNew} ${getNoun(totalProductsNew, 'товар', 'товара', 'товаров')} `;
 
             if (checkbox.checked) {
                 // Расчет итоговой цены выбранных товаров со скидкой и без
@@ -128,7 +130,7 @@ function productCounter() {
                 const totalProductsNew = parseInt(totalProductsTextNoSpaces) + 1;
 
                 //Новое значение кол-ва выбранных товаров
-                totalProductsEl.innerText = totalProductsNew + ' ' + 'товаров';
+                totalProductsEl.innerText = `${totalProductsNew} ${getNoun(totalProductsNew, 'товар', 'товара', 'товаров')} `;
 
                 //Кол-во товаров в доставке
                 if (card.getAttribute('data-id') === '1') {
@@ -199,7 +201,7 @@ function productCounter() {
                 const totalProductsNew = parseInt(totalProductsTextNoSpaces) - 1;
 
                 //Новое значение кол-ва товаров в корзине (где заголовок спойлера)
-                totalProducts.innerText = totalProductsNew + ' ' + 'товаров';
+                totalProducts.innerText = `${totalProductsNew} ${getNoun(totalProductsNew, 'товар', 'товара', 'товаров')} `;
 
                 if (checkbox.checked) {
                     // Расчет итоговой цены выбранных товаров со скидкой и без
@@ -238,7 +240,7 @@ function productCounter() {
                     const totalProductsNew = parseInt(totalProductsTextNoSpaces) - 1;
 
                     //Новое значение кол-ва выбранных товаров
-                    totalProductsEl.innerText = totalProductsNew + ' ' + 'товаров';
+                    totalProductsEl.innerText = `${totalProductsNew} ${getNoun(totalProductsNew, 'товар', 'товара', 'товаров')} `;
 
                     //Кол-во товаров в доставке
                     if (card.getAttribute('data-id') === '1') {
