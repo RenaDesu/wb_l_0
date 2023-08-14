@@ -1,4 +1,7 @@
-import {getNoun} from './utils';
+import {
+    getNoun
+} from './utils';
+import {DATES} from './delivery';
 
 const totalProducts = document.querySelector('[data-total-products]');
 const totalSum = document.querySelector('[data-total-sum]');
@@ -6,6 +9,9 @@ const totalPriceEl = document.querySelector('.total__price');
 const totalPriceNoDiscountEl = document.querySelector('#total-price');
 const totalProductsEl = document.querySelector('#total-products');
 const totalDiscount = document.querySelector('#discount');
+
+const deliveryContainer = document.querySelector('[data-delivery-container]');
+const deliveryList = document.querySelector('[data-delivery-list]');
 
 function productCounter() {
 
@@ -139,10 +145,35 @@ function productCounter() {
                 } else if (card.getAttribute('data-id') === '2') {
                     const label = document.querySelector('[data-label="2"]')
                     label.innerText = counter.value;
+
+                    if (parseInt(counter.value) > 10) {
+                        const liOtherDate = document.querySelector('[data-date="other"]')
+                        const labelOtherDate = liOtherDate.querySelector('.button__label');
+                        labelOtherDate.innerText = counter.value;
+                    }
+
+                    if (parseInt(counter.value) == 10) {
+                        const productInfo = {
+                            id: card.dataset.id,
+                            imgSrc: card.querySelector('.checkbox__label-pic').getAttribute('src'),
+                            imgSrcSet: card.querySelector('.checkbox__label-pic').getAttribute('srcset'),
+                            value: counter.value,
+                        };
+
+
+                        const deliveryRow = createDeliveryRow(productInfo);
+                        const deliveryNewList = createDeliveryList();
+
+                        const deliveryItemOtherDate = createDeliveryItemOtherDate(productInfo);
+                        deliveryNewList.appendChild(deliveryItemOtherDate);
+                        deliveryRow.appendChild(deliveryNewList);
+                        deliveryContainer.appendChild(deliveryRow);
+                    }
+
                 } else if (card.getAttribute('data-id') === '3') {
                     const label = document.querySelector('[data-label="3"]')
                     label.innerText = counter.value;
-                } 
+                }
             }
         }
 
@@ -249,15 +280,69 @@ function productCounter() {
                     } else if (card.getAttribute('data-id') === '2') {
                         const label = document.querySelector('[data-label="2"]')
                         label.innerText = counter.value;
+
+                        if (parseInt(counter.value) >= 10) {
+                        const liOtherDate = document.querySelector('[data-date="other"]')
+                        const labelOtherDate = liOtherDate.querySelector('.button__label');
+                        labelOtherDate.innerText = counter.value;
+                        }
+
+                        const row = document.querySelector('[data-rowid="2"]');
+                        if (parseInt(counter.value) == 9) {
+                            row.remove();
+                        }
+
                     } else if (card.getAttribute('data-id') === '3') {
                         const label = document.querySelector('[data-label="3"]')
                         label.innerText = counter.value;
-                    } 
+                    }
                 }
             }
 
         }
     });
+
+    // Функция для создания элементов
+    const makeElement = function (tagName, className, text) {
+        const element = document.createElement(tagName);
+        element.classList.add(className);
+        if (text) {
+            element.textContent = text;
+        }
+        return element;
+    };
+
+    const createDeliveryItemOtherDate = function (product) {
+        const deliveryItem = makeElement('li', 'delivery__item');
+        deliveryItem.classList.add('mini-card');
+        deliveryItem.setAttribute("data-cardid", `${product.id}`);
+        deliveryItem.setAttribute("data-date", "other");
+
+        deliveryItem.innerHTML = `<button class="mini-card__button button button--card" type="button">
+                <img class="mini-card__img" src="${product.imgSrc}"
+                    srcset="${product.imgSrcSet}">
+                <span class="button__label button__label--card-mini">${product.value}</span>
+            </button>`;
+
+        return deliveryItem;
+    };
+
+    // Функция для создания блок с датами
+    const createDeliveryRow = function (product) {
+        const deliveryRow = makeElement('div', 'delivery__row');
+        deliveryRow.setAttribute("data-rowid", `${product.id}`);
+        const title = makeElement('h3', 'delivery__title', DATES.date2);
+
+        deliveryRow.appendChild(title);
+
+        return deliveryRow;
+    };
+
+    // Функция для создания списка доставки
+    const createDeliveryList = function () {
+        const deliveryList = makeElement('ul', 'delivery__list');
+        return deliveryList;
+    };
 }
 
 export {

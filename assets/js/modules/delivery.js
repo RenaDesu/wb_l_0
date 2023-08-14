@@ -1,6 +1,7 @@
 const deliveryContainer = document.querySelector('[data-delivery-container]');
 const deliveryList = document.querySelector('[data-delivery-list]');
 const deliveryTitle = document.querySelector('[data-delivery-title]');
+const cards = document.querySelectorAll('.selection__item');
 
 const DATES = {
     date1: '5—6 февраля',
@@ -17,7 +18,7 @@ function delivery() {
 
     window.addEventListener('change', function (event) {
         if (event.target.hasAttribute('data-checkbox')) {
-            
+
             // Карточка с выбранным чекбоксом
             card = event.target.closest('.card');
             counter = card.querySelector('[data-counter]');
@@ -80,13 +81,77 @@ function delivery() {
             }
         }
 
-        // if (event.target.hasAttribute('data-checkbox-main') && event.target.checked) {
-        // 
-        // }
+        if (event.target.hasAttribute('data-checkbox-main') && event.target.checked) {
+            deliveryTitle.innerText = `${DATES.date1}`
+            let productsInfo;
 
-        // if (event.target.hasAttribute('data-checkbox-main') && !event.target.checked) {
-        // 
-        // }
+            const card2 = document.querySelector('[data-id="2"]');
+            const cardMini = document.querySelector('[data-cardid="2"]');
+            const counter2 = card2.querySelector('[data-counter]');
+
+            cards.forEach((card) => {
+                const counter = card.querySelector('[data-counter]');
+                productsInfo = {
+                    id: card.dataset.id,
+                    imgSrc: card.querySelector('.checkbox__label-pic').getAttribute('src'),
+                    imgSrcSet: card.querySelector('.checkbox__label-pic').getAttribute('srcset'),
+                    value: counter.value,
+                };
+
+                // Добавляются товары в список доставки
+                deliveryItem = createDeliveryItem(productsInfo);
+                
+
+                if (cardMini) {
+                    cardMini.remove();
+                }
+
+                deliveryList.appendChild(deliveryItem);
+            });
+
+
+            
+
+            if (card2 && parseInt(counter2.value) >= 10) {
+
+                const card2Info = {
+                    id: card2.dataset.id,
+                    imgSrc: card2.querySelector('.checkbox__label-pic').getAttribute('src'),
+                    imgSrcSet: card2.querySelector('.checkbox__label-pic').getAttribute('srcset'),
+                    value: counter2.value,
+                }
+
+                // Добавляются товары в список доставки
+                const deliveryItemOtherDate = createDeliveryItemOtherDate(card2Info);
+
+                const deliveryListNew = createDeliveryList();
+                deliveryListNew.appendChild(deliveryItemOtherDate);
+                const deliveryRowNew = createDeliveryRow(card2Info);
+                deliveryRowNew.appendChild(deliveryListNew);
+
+                if (!deliveryRowNew) {
+                    deliveryContainer.appendChild(deliveryRowNew);
+                }
+            }
+        }
+
+        if (event.target.hasAttribute('data-checkbox-main') && !event.target.checked) {
+            const deliveryCards = document.querySelectorAll('.mini-card');
+            deliveryCards.forEach((card) => {
+                card.remove();
+            });
+
+            const listCollection = deliveryList.children;
+
+            if (listCollection.length == 0) {
+                deliveryTitle.innerText = '';
+            }
+
+            const row = document.querySelector('[data-rowid="2"]');
+            if (row) {
+                deliveryContainer.removeChild(row);
+            }
+        }
     });
 
     // Функция для создания элементов
@@ -148,5 +213,6 @@ function delivery() {
 }
 
 export {
-    delivery
+    delivery,
+    DATES
 };

@@ -21,6 +21,7 @@ import {productCounter} from './modules/product-counter';
 import {total} from './modules/total';
 import {removeCard} from './modules/remove-card'
 import {delivery} from './modules/delivery';
+import {croppText} from './modules/cropp-text';
 
 showDeliveryTooltip();
 showCompanyTooltip();
@@ -32,3 +33,4 @@ productCounter();
 total();
 removeCard();
 delivery();
+croppText();
