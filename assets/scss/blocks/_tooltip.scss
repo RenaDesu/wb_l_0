@@ -37,4 +37,36 @@
         width: rem(280px);
         min-height: rem(104px);
     }
+
+    &--price {
+        display: none;
+
+        position: absolute;
+
+        left: rem(-35px);
+
+        width: rem(239px);
+        min-height: rem(64px);
+
+        font-weight: $font-weight-regular;
+
+        @media #{$screen-tablet} {
+            bottom: rem(-70px);
+            left: rem(-120px);
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:not(:last-child) {
+            margin-bottom: rem(8px);
+        }
+    }
+
+    &__text {
+        color: $santas-gray;
+    }
 }

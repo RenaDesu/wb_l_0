@@ -12,7 +12,7 @@
  */
 // Пример подключения модуля
 // import myModule from './modules/my-module-function';
-import {showDeliveryTooltip, showCompanyTooltip} from './modules/tooltip';
+import {showDeliveryTooltip, showCompanyTooltip, showPriceTooltip} from './modules/tooltip';
 import {validateForm} from './modules/form-validation';
 import {spoiler} from './modules/spoiler';
 import {modal} from './modules/modal';
@@ -25,6 +25,7 @@ import {croppText} from './modules/cropp-text';
 
 showDeliveryTooltip();
 showCompanyTooltip();
+showPriceTooltip();
 validateForm();
 spoiler();
 modal();
