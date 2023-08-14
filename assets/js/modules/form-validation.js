@@ -20,6 +20,15 @@ const innLabel = document.querySelector('#inn ~ .form__label');
 function validateForm() {
     const isEmpty = str => !str.trim().length;
 
+    // Пробелы при заполнении телефона
+    tel.addEventListener('keyup', function () {
+        const txt = this.value;
+        if (txt.length == 2 || txt.length == 6 || txt.length == 10 || txt.length == 13) {
+            this.value = this.value + " ";
+        }
+
+    });
+
     //name label
     name.addEventListener('change', function (event) {
         if (isEmpty(this.value)) {

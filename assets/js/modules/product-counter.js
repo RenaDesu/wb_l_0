@@ -2,6 +2,7 @@ import {
     getNoun
 } from './utils';
 import {DATES} from './delivery';
+import {setSmallText} from './small-text'
 
 const totalProducts = document.querySelector('[data-total-products]');
 const totalSum = document.querySelector('[data-total-sum]');
@@ -11,7 +12,6 @@ const totalProductsEl = document.querySelector('#total-products');
 const totalDiscount = document.querySelector('#discount');
 
 const deliveryContainer = document.querySelector('[data-delivery-container]');
-const deliveryList = document.querySelector('[data-delivery-list]');
 
 function productCounter() {
 
@@ -99,6 +99,8 @@ function productCounter() {
             //Новое значение кол-ва товаров в корзине (где заголовок спойлера)
             totalProducts.innerText = `${totalProductsNew} ${getNoun(totalProductsNew, 'товар', 'товара', 'товаров')} `;
 
+            setSmallText(price);
+           
             if (checkbox.checked) {
                 // Расчет итоговой цены выбранных товаров со скидкой и без
                 const totalPriceElText = totalPriceEl.innerText;
@@ -232,7 +234,9 @@ function productCounter() {
                 const totalProductsNew = parseInt(totalProductsTextNoSpaces) - 1;
 
                 //Новое значение кол-ва товаров в корзине (где заголовок спойлера)
-                totalProducts.innerText = `${totalProductsNew} ${getNoun(totalProductsNew, 'товар', 'товара', 'товаров')} `;
+                totalProducts.innerText = `${totalProductsNew} ${getNoun(totalProductsNew, 'товар', 'товара', 'товаров')}`;
+
+                setSmallText(price);
 
                 if (checkbox.checked) {
                     // Расчет итоговой цены выбранных товаров со скидкой и без
