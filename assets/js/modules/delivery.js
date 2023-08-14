@@ -82,14 +82,12 @@ function delivery() {
             if (listCollection.length == 0) {
                 deliveryTitle.innerText = '';
             }
-            
+
         } else if (event.target.hasAttribute('data-checkbox-main') && event.target.checked) {
             deliveryTitle.innerText = `${DATES.date1}`
             let productsInfo;
 
-            const card2 = document.querySelector('[data-id="2"]');
             const cardsMini = document.querySelectorAll('[data-cardid]');
-            const counter2 = card2.querySelector('[data-counter]');
 
             cards.forEach((card) => {
                 const counter = card.querySelector('[data-counter]');
@@ -112,8 +110,11 @@ function delivery() {
                 deliveryList.appendChild(deliveryItem);
             });
 
+            const card2 = document.querySelector('[data-id="2"]');
+            const counter2 = card2.querySelector('[data-counter]');
 
             if (card2 && parseInt(counter2.value) >= 11) {
+                const rows = document.querySelectorAll('[data-rowid]');
 
                 const card2Info = {
                     id: card2.dataset.id,
@@ -129,6 +130,13 @@ function delivery() {
                 deliveryListNew.appendChild(deliveryItemOtherDate);
                 const deliveryRowNew = createDeliveryRow(card2Info);
                 deliveryRowNew.appendChild(deliveryListNew);
+
+                rows.forEach((row) => {
+                    if (row) {
+                        row.remove();
+                    }
+                })
+
                 deliveryContainer.appendChild(deliveryRowNew);
 
                 const cardMin = deliveryContainer.querySelector('[data-cardid="2"]');

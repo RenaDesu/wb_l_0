@@ -7,6 +7,9 @@
         "start": "webpack --mode=development --progress --watch",
         "build": "webpack --mode=production"
     },
+    "engines": {
+        "node": "^16"
+      },
     "license": "ISC",
     "browserslist": [
         "ie >= 10"

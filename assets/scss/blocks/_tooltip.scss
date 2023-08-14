@@ -45,7 +45,8 @@
 
         left: rem(-35px);
 
-        width: rem(239px);
+        min-width: rem(239px);
+        max-width: rem(250px);
         min-height: rem(64px);
 
         font-weight: $font-weight-regular;
