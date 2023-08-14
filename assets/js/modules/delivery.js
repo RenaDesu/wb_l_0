@@ -44,22 +44,25 @@ function delivery() {
             // Добавляются товары в список доставки
             deliveryList.appendChild(deliveryItem);
 
-            if (card.getAttribute('data-id') === '2' && parseInt(counter.value) >= 10) {
+            if (card.getAttribute('data-id') === '2' && parseInt(counter.value) >= 11) {
                 // Добавляются товары в список доставки
                 const deliveryItemOtherDate = createDeliveryItemOtherDate(productInfo);
                 deliveryList.appendChild(deliveryItem);
                 deliveryNewList.appendChild(deliveryItemOtherDate);
                 deliveryRow.appendChild(deliveryNewList);
                 deliveryContainer.appendChild(deliveryRow);
-            }
-        }
 
-        if (event.target.hasAttribute('data-checkbox') && !event.target.checked) {
+                const cardMin = deliveryContainer.querySelector('[data-cardid="2"]');
+                const label = cardMin.querySelector('.button__label');
+                label.innerText = '10';
+            }
+
+        } else if (event.target.hasAttribute('data-checkbox') && !event.target.checked) {
 
             if (card.getAttribute('data-id') === '1') {
                 const li = document.querySelector('[data-cardid="1"]');
                 deliveryList.removeChild(li);
-            } else if (card.getAttribute('data-id') === '2' && parseInt(counter.value) < 10) {
+            } else if (card.getAttribute('data-id') === '2' && parseInt(counter.value) < 11) {
                 const li = document.querySelector('[data-cardid="2"]');
                 deliveryList.removeChild(li);
             } else if (card.getAttribute('data-id') === '3') {
@@ -67,7 +70,7 @@ function delivery() {
                 deliveryList.removeChild(li);
             }
 
-            if (card.getAttribute('data-id') === '2' && parseInt(counter.value) >= 10) {
+            if (card.getAttribute('data-id') === '2' && parseInt(counter.value) >= 11) {
                 const li = document.querySelector('[data-cardid="2"]');
                 deliveryList.removeChild(li);
                 const row = document.querySelector('[data-rowid="2"]');
@@ -79,14 +82,13 @@ function delivery() {
             if (listCollection.length == 0) {
                 deliveryTitle.innerText = '';
             }
-        }
-
-        if (event.target.hasAttribute('data-checkbox-main') && event.target.checked) {
+            
+        } else if (event.target.hasAttribute('data-checkbox-main') && event.target.checked) {
             deliveryTitle.innerText = `${DATES.date1}`
             let productsInfo;
 
             const card2 = document.querySelector('[data-id="2"]');
-            const cardMini = document.querySelector('[data-cardid="2"]');
+            const cardsMini = document.querySelectorAll('[data-cardid]');
             const counter2 = card2.querySelector('[data-counter]');
 
             cards.forEach((card) => {
@@ -100,19 +102,18 @@ function delivery() {
 
                 // Добавляются товары в список доставки
                 deliveryItem = createDeliveryItem(productsInfo);
-                
 
-                if (cardMini) {
-                    cardMini.remove();
-                }
+                cardsMini.forEach((card) => {
+                    if (card) {
+                        card.remove();
+                    }
+                })
 
                 deliveryList.appendChild(deliveryItem);
             });
 
 
-            
-
-            if (card2 && parseInt(counter2.value) >= 10) {
+            if (card2 && parseInt(counter2.value) >= 11) {
 
                 const card2Info = {
                     id: card2.dataset.id,
@@ -128,14 +129,14 @@ function delivery() {
                 deliveryListNew.appendChild(deliveryItemOtherDate);
                 const deliveryRowNew = createDeliveryRow(card2Info);
                 deliveryRowNew.appendChild(deliveryListNew);
+                deliveryContainer.appendChild(deliveryRowNew);
 
-                if (!deliveryRowNew) {
-                    deliveryContainer.appendChild(deliveryRowNew);
-                }
+                const cardMin = deliveryContainer.querySelector('[data-cardid="2"]');
+                const label = cardMin.querySelector('.button__label');
+                label.innerText = '10';
             }
-        }
 
-        if (event.target.hasAttribute('data-checkbox-main') && !event.target.checked) {
+        } else if (event.target.hasAttribute('data-checkbox-main') && !event.target.checked) {
             const deliveryCards = document.querySelectorAll('.mini-card');
             deliveryCards.forEach((card) => {
                 card.remove();
@@ -188,7 +189,7 @@ function delivery() {
         deliveryItem.innerHTML = `<button class="mini-card__button button button--card" type="button">
                 <img class="mini-card__img" src="${product.imgSrc}"
                     srcset="${product.imgSrcSet}">
-                <span class="button__label button__label--card-mini">${product.value}</span>
+                <span class="button__label button__label--card-mini">${parseInt(product.value) - 10}</span>
             </button>`;
 
         return deliveryItem;

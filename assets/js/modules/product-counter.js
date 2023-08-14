@@ -1,8 +1,12 @@
 import {
     getNoun
 } from './utils';
-import {DATES} from './delivery';
-import {setSmallText} from './small-text'
+import {
+    DATES
+} from './delivery';
+import {
+    setSmallText
+} from './small-text'
 
 const totalProducts = document.querySelector('[data-total-products]');
 const totalSum = document.querySelector('[data-total-sum]');
@@ -100,7 +104,7 @@ function productCounter() {
             totalProducts.innerText = `${totalProductsNew} ${getNoun(totalProductsNew, 'товар', 'товара', 'товаров')} `;
 
             setSmallText(price);
-           
+
             if (checkbox.checked) {
                 // Расчет итоговой цены выбранных товаров со скидкой и без
                 const totalPriceElText = totalPriceEl.innerText;
@@ -148,18 +152,13 @@ function productCounter() {
                     const label = document.querySelector('[data-label="2"]')
                     label.innerText = counter.value;
 
-                    if (parseInt(counter.value) > 10) {
-                        const liOtherDate = document.querySelector('[data-date="other"]')
-                        const labelOtherDate = liOtherDate.querySelector('.button__label');
-                        labelOtherDate.innerText = counter.value;
-                    }
-
-                    if (parseInt(counter.value) == 10) {
+                    if (parseInt(counter.value) == 11) {
+                        label.innerText = 10;
                         const productInfo = {
                             id: card.dataset.id,
                             imgSrc: card.querySelector('.checkbox__label-pic').getAttribute('src'),
                             imgSrcSet: card.querySelector('.checkbox__label-pic').getAttribute('srcset'),
-                            value: counter.value,
+                            value: counter.value - 10 + 1,
                         };
 
 
@@ -170,6 +169,13 @@ function productCounter() {
                         deliveryNewList.appendChild(deliveryItemOtherDate);
                         deliveryRow.appendChild(deliveryNewList);
                         deliveryContainer.appendChild(deliveryRow);
+                    }
+
+                    if (parseInt(counter.value) > 10) {
+                        label.innerText = 10;
+                        const liOtherDate = document.querySelector('[data-date="other"]')
+                        const labelOtherDate = liOtherDate.querySelector('.button__label');
+                        labelOtherDate.innerText = counter.value - 10;
                     }
 
                 } else if (card.getAttribute('data-id') === '3') {
@@ -286,13 +292,14 @@ function productCounter() {
                         label.innerText = counter.value;
 
                         if (parseInt(counter.value) >= 10) {
-                        const liOtherDate = document.querySelector('[data-date="other"]')
-                        const labelOtherDate = liOtherDate.querySelector('.button__label');
-                        labelOtherDate.innerText = counter.value;
+                            label.innerText = 10;
+                            const liOtherDate = document.querySelector('[data-date="other"]')
+                            const labelOtherDate = liOtherDate.querySelector('.button__label');
+                            labelOtherDate.innerText = counter.value - 10;
                         }
 
                         const row = document.querySelector('[data-rowid="2"]');
-                        if (parseInt(counter.value) == 9) {
+                        if (parseInt(counter.value) == 10) {
                             row.remove();
                         }
 
