@@ -36,7 +36,12 @@
         padding: rem(11px) 0 rem(46px) 0;
 
         @media #{$screen-tablet} {
-            padding: rem(16px) 0 rem(40px) rem(11px);
+            column-gap: rem(30px);
+            padding: rem(16px) rem(3px) rem(16px) rem(24px);
+        }
+
+        @media #{$screen-desktop} {
+            padding: rem(16px) rem(3px) rem(16px) rem(12px);
         }
     }
 
@@ -47,6 +52,9 @@
         &--center {
             @media #{$screen-tablet} {
                 width: 60%;
+            }
+            @media #{$screen-tablet-md} {
+                width: 65%;
             }
             @media #{$screen-desktop} {
                 width: 71%;
@@ -63,13 +71,11 @@
     }
 
     &__menu-button {
-        margin-right: rem(20px);
+        margin-right: rem(16px);
     }
 
     &__list {
         @include list;
-
-        padding: 0 0 0 rem(12px);
 
         min-width: rem(169px);
         display: flex;

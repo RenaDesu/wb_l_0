@@ -63,10 +63,7 @@
             &-like {
                 transition: color $transition-duration ease;
 
-                &:hover,
-                &:focus,
-                &:active,
-                &:focus-visible {
+                &:hover {
                     color: $red-violet;
                 }
             }
@@ -128,7 +125,17 @@
         width: rem(24px);
 
         background: $white;
+        background-repeat: no-repeat;
+        background-position: center;
         border-radius: rem($border-radius-medium);
+
+        &-plus {
+            background-image: url('../images/icons/plus.svg');
+        }
+
+        &-minus {
+            background-image: url('../images/icons/minus.svg');
+        }
     }
 
     &--simple {

@@ -20,12 +20,17 @@ function modal() {
 
     function onPaymentButtonClick() {
         paymentModal.classList.toggle('modal-container--closed');
-        document.body.classList.toggle('page--modal');
     }
 
     function onDeliveryButtonClick() {
         deliveryModal.classList.toggle('modal-container--closed');
-        document.body.classList.toggle('page--modal');
+    }
+
+    function onDeleteAddressButtonClick(e) {
+        if (e.target.hasAttribute('data-delete-address')) {
+            const address = e.target.closest('.form__item');
+            address.remove();
+        }
     }
 
     function onPaymentRadioChange() {
@@ -106,6 +111,10 @@ function modal() {
         button.addEventListener('click', () => {
             onDeliveryButtonClick();
         })
+    });
+
+    window.addEventListener('click', function(e) {
+        onDeleteAddressButtonClick(e);
     });
 }
 

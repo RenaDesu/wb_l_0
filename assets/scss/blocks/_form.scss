@@ -62,7 +62,7 @@
 
         color: $santas-gray;
 
-        cursor: pointer;
+        cursor: text;
     }
 
     &__input {
@@ -82,8 +82,6 @@
 
         border: none;
         border-bottom: rem(1px) solid rgba(0, 0, 0, 0.20);
-
-        cursor: pointer;
 
         @media #{$screen-tablet} {
             min-width: rem(180px);

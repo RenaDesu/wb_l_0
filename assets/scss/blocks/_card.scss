@@ -1,6 +1,6 @@
 .card {
     position: relative;
-    
+
     padding-top: rem(11px);
 
     border-top: rem(1px) solid rgba(0, 0, 0, 0.10);
@@ -72,7 +72,7 @@
 
     &__price {
         position: relative;
-        
+
         grid-column: 2 / -1;
         grid-row: 1 / 2;
 
@@ -132,6 +132,14 @@
 
         font-size: rem($font-size-medium);
         line-height: rem(20px);
+
+        @media #{$screen-mobile-only} {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
 
         @media #{$screen-tablet} {
             max-width: rem(250px);
@@ -201,7 +209,7 @@
 
     &__origin {
         position: relative;
-        
+
         font-size: rem($font-size-small);
         line-height: rem(16px);
 

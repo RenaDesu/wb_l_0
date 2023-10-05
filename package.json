@@ -9,7 +9,7 @@
     },
     "engines": {
         "node": "^16"
-      },
+    },
     "license": "ISC",
     "browserslist": [
         "ie >= 10"

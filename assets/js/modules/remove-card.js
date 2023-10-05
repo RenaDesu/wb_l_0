@@ -12,16 +12,28 @@ const deliveryTitle = document.querySelector('[data-delivery-title]');
 const totalSumCart = document.querySelector('[data-total-sum]');
 const totalProductsCart = document.querySelector('[data-total-products]');
 const cartLabels = document.querySelectorAll('[data-cart-label]');
+const missingQty = document.querySelector('[data-missing-qty]');
 
 function removeCard() {
     window.addEventListener('click', function (event) {
         if (event.target.hasAttribute('data-remove')) {
             const card = event.target.closest('.card');
+            const cardMissing = event.target.closest('.card--missing');
             const price = card.querySelector('.card__price-current');
             const priceOld = card.querySelector('.card__price-old');
             const checkbox = card.querySelector('[data-checkbox]');
             const productsCounter = card.querySelector('[data-counter]');
             const counter = card.querySelector('[data-counter]');
+
+            if (cardMissing) {
+                cardMissing.remove();
+                const missingCards = document.querySelectorAll('.card--missing');
+                const qty = missingCards.length;
+                missingQty.innerText = `${getNoun(qty, 'Отсутствует', 'Отсутствуют', 'Отсутствуют')} · ${qty} ${getNoun(qty, 'товар', 'товара', 'товаров')}`;
+                return;
+            }
+
+            card.remove();
 
             const priceText = price.innerText;
             const priceTextNoSpaces = priceText.replace(/[^0-9]/g, '');
@@ -55,7 +67,7 @@ function removeCard() {
             //Расчет нового значения кол-ва товаров в корзине (где заголовок спойлера)
             const totalProductsCartText = totalProductsCart.innerText;
             const totalProductsCartNoSpaces = totalProductsCartText.replace(/[^0-9]/g, '');
-            const totalProductsCartNew = parseInt(totalProductsCartNoSpaces) - 1;
+            const totalProductsCartNew = parseInt(totalProductsCartNoSpaces) - parseInt(counter.value);
 
             //Новое значение кол-ва товаров в корзине (где заголовок спойлера)
             totalProductsCart.innerText = `${totalProductsCartNew} ${getNoun(totalProductsCartNew, 'товар', 'товара', 'товаров')} `;
@@ -113,8 +125,6 @@ function removeCard() {
                     label.style.display = 'none';
                 }
             });
-
-            card.remove();
         }
     });
 }

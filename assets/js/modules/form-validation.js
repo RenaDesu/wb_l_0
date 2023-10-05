@@ -72,6 +72,12 @@ function validateForm() {
             emailLabel.style.lineHeight = '16px';
 
         }
+        if (email.validity.typeMismatch) {
+            emailError.textContent = "Проверьте адрес электронной почты";
+            addErrorClass(email);
+        } else {
+            removeError(emailError, email);
+        }
     });
 
     //tel label
@@ -87,6 +93,12 @@ function validateForm() {
             telLabel.style.lineHeight = '16px';
 
         }
+        if (tel.validity.patternMismatch) {
+            telError.textContent = "Формат: +9 999 999 99 99";
+            addErrorClass(tel);
+        } else {
+            removeError(telError, tel); 
+        }
     });
 
     //inn label
@@ -101,6 +113,12 @@ function validateForm() {
             innLabel.style.fontSize = '13px';
             innLabel.style.lineHeight = '16px';
 
+        }
+        if (inn.validity.patternMismatch) {
+            innError.textContent = "Проверьте ИНН";
+            addErrorClass(inn);
+        } else {
+            removeError(innError, inn);  
         }
     });
 
@@ -128,7 +146,6 @@ function validateForm() {
             });
 
             email.addEventListener('change', function (event) {
-
                 if (email.validity.valid) {
                     removeError(emailError, email);
                 } else {

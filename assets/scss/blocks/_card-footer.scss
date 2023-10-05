@@ -95,35 +95,6 @@
         }
     }
 
-    &__button {
-        &-minus {
-            width: rem(9px);
-            height: rem(1px);
-            background: $black;
-        }
-
-        &-plus {
-            position: relative;
-
-            width: rem(9px);
-            height: rem(1px);
-            background: $black;
-
-            &::after {
-                content: "";
-                position: absolute;
-                left: 0;
-
-                width: rem(9px);
-                height: rem(1px);
-
-                background: $black;
-
-                transform: rotate(90deg);
-            }
-        }
-    }
-
     &__available {
         margin: 0;
 

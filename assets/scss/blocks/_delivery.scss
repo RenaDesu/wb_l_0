@@ -87,6 +87,10 @@
             background-color: $whisper-dark;
 
             border-radius: rem($border-radius-big);
+
+            @media #{$screen-tablet} {
+                background-color: $whisper;
+            }
         }
 
         &-icon {

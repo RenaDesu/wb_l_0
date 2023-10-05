@@ -56,7 +56,11 @@ $title-size-small: 20px;
 */
 // Пример указания медиазапросов, затем можно использовать ее как '@media #{$screen-medium} {...}'
 $screen-tablet: "(min-width: 1024px)";
+$screen-tablet-sm: "(min-width: 1100px)";
+$screen-tablet-md: "(min-width: 1200px)";
+$screen-tablet-lm: "(min-width: 1300px)";
 $screen-desktop: "(min-width: 1400px)";
+$screen-mobile-only: "(max-width: 1023px)";
 
 
 

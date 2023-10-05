@@ -14,6 +14,8 @@ const totalPriceEl = document.querySelector('.total__price');
 const totalPriceNoDiscountEl = document.querySelector('#total-price');
 const totalProductsEl = document.querySelector('#total-products');
 const totalDiscount = document.querySelector('#discount');
+const debitToggle = document.querySelector('#debit');
+const orderButton = document.querySelector('#order');
 
 const deliveryContainer = document.querySelector('[data-delivery-container]');
 
@@ -48,23 +50,14 @@ function productCounter() {
             if (card.getAttribute('data-id') === '1') {
                 counter.value = ++counter.value;
 
-                if (parseInt(counter.value) == 3) {
+                if (parseInt(counter.value) == 2) {
                     event.target.disabled = true;
                 }
 
             } else if (card.getAttribute('data-id') === '2') {
                 counter.value = ++counter.value;
-
-                if (parseInt(counter.value) == 210) {
-                    event.target.disabled = true;
-                }
-
             } else if (card.getAttribute('data-id') === '3') {
                 counter.value = ++counter.value;
-
-                if (parseInt(counter.value) == 4) {
-                    event.target.disabled = true;
-                }
             }
 
             //Цена товаров со скидкой и без
@@ -123,6 +116,12 @@ function productCounter() {
                 totalPriceEl.innerText = totalPriceElNewSpaces + ' ' + 'сом';
                 totalPriceNoDiscountEl.innerText = totalPriceNoDiscountElNewSpaces + ' ' + 'сом';
 
+                //Отображение цены в кнопке
+                if (debitToggle.checked) {
+                    const newText = totalPriceEl.innerText;
+                    orderButton.innerText = 'Оплатить' + ' ' + newText;
+                }
+
                 //Расчет суммы скидки выбранных товаров 
                 const discountTotal = totalDiscount.innerText;
                 const discountTotalNoSpaces = discountTotal.replace(/[^0-9]/g, '');
@@ -146,19 +145,29 @@ function productCounter() {
 
                 //Кол-во товаров в доставке
                 if (card.getAttribute('data-id') === '1') {
-                    const label = document.querySelector('[data-label="1"]')
+                    const label = document.querySelector('[data-label="1"]');
+                    if (parseInt(counter.value) == 1) {
+                        label.style.display = 'none';
+                    } else {
+                        label.style.display = 'block';
+                    }
                     label.innerText = counter.value;
                 } else if (card.getAttribute('data-id') === '2') {
-                    const label = document.querySelector('[data-label="2"]')
+                    const label = document.querySelector('[data-label="2"]');
+                    if (parseInt(counter.value) == 1) {
+                        label.style.display = 'none';
+                    } else {
+                        label.style.display = 'block';
+                    }
                     label.innerText = counter.value;
 
-                    if (parseInt(counter.value) == 11) {
-                        label.innerText = 10;
+                    if (parseInt(counter.value) == 185) {
+                        label.innerText = 184;
                         const productInfo = {
                             id: card.dataset.id,
                             imgSrc: card.querySelector('.checkbox__label-pic').getAttribute('src'),
                             imgSrcSet: card.querySelector('.checkbox__label-pic').getAttribute('srcset'),
-                            value: counter.value - 10 + 1,
+                            value: counter.value - 184 + 1,
                         };
 
 
@@ -171,15 +180,20 @@ function productCounter() {
                         deliveryContainer.appendChild(deliveryRow);
                     }
 
-                    if (parseInt(counter.value) > 10) {
-                        label.innerText = 10;
+                    if (parseInt(counter.value) > 184) {
+                        label.innerText = 184;
                         const liOtherDate = document.querySelector('[data-date="other"]')
                         const labelOtherDate = liOtherDate.querySelector('.button__label');
-                        labelOtherDate.innerText = counter.value - 10;
+                        labelOtherDate.innerText = counter.value - 184;
                     }
 
                 } else if (card.getAttribute('data-id') === '3') {
-                    const label = document.querySelector('[data-label="3"]')
+                    const label = document.querySelector('[data-label="3"]');
+                    if (parseInt(counter.value) == 1) {
+                        label.style.display = 'none';
+                    } else {
+                        label.style.display = 'block';
+                    }
                     label.innerText = counter.value;
                 }
             }
@@ -189,10 +203,6 @@ function productCounter() {
 
             if (parseInt(counter.value) > 1) {
                 if (card.getAttribute('data-id') === '1') {
-                    plus.disabled = false;
-                } else if (card.getAttribute('data-id') === '2') {
-                    plus.disabled = false;
-                } else if (card.getAttribute('data-id') === '3') {
                     plus.disabled = false;
                 }
 
@@ -262,6 +272,12 @@ function productCounter() {
                     totalPriceEl.innerText = totalPriceElNewSpaces + ' ' + 'сом';
                     totalPriceNoDiscountEl.innerText = totalPriceNoDiscountElNewSpaces + ' ' + 'сом';
 
+                    //Отображение цены в кнопке
+                    if (debitToggle.checked) {
+                        const newText = totalPriceEl.innerText;
+                        orderButton.innerText = 'Оплатить' + ' ' + newText;
+                    }
+
                     //Расчет суммы скидки выбранных товаров 
                     const discountTotal = totalDiscount.innerText;
                     const discountTotalNoSpaces = discountTotal.replace(/[^0-9]/g, '');
@@ -285,26 +301,41 @@ function productCounter() {
 
                     //Кол-во товаров в доставке
                     if (card.getAttribute('data-id') === '1') {
-                        const label = document.querySelector('[data-label="1"]')
+                        const label = document.querySelector('[data-label="1"]');
+                        if (parseInt(counter.value) == 1) {
+                            label.style.display = 'none';
+                        } else {
+                            label.style.display = 'block';
+                        }
                         label.innerText = counter.value;
                     } else if (card.getAttribute('data-id') === '2') {
-                        const label = document.querySelector('[data-label="2"]')
+                        const label = document.querySelector('[data-label="2"]');
+                        if (parseInt(counter.value) == 1) {
+                            label.style.display = 'none';
+                        } else {
+                            label.style.display = 'block';
+                        }
                         label.innerText = counter.value;
 
-                        if (parseInt(counter.value) >= 10) {
-                            label.innerText = 10;
+                        if (parseInt(counter.value) >= 184) {
+                            label.innerText = 184;
                             const liOtherDate = document.querySelector('[data-date="other"]')
                             const labelOtherDate = liOtherDate.querySelector('.button__label');
-                            labelOtherDate.innerText = counter.value - 10;
+                            labelOtherDate.innerText = counter.value - 184;
                         }
 
                         const row = document.querySelector('[data-rowid="2"]');
-                        if (parseInt(counter.value) == 10) {
+                        if (parseInt(counter.value) == 184) {
                             row.remove();
                         }
 
                     } else if (card.getAttribute('data-id') === '3') {
-                        const label = document.querySelector('[data-label="3"]')
+                        const label = document.querySelector('[data-label="3"]');
+                        if (parseInt(counter.value) == 1) {
+                            label.style.display = 'none';
+                        } else {
+                            label.style.display = 'block';
+                        }
                         label.innerText = counter.value;
                     }
                 }

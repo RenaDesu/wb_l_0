@@ -13,6 +13,10 @@
         &-hide {
             transform: rotate(180deg);
         }
+
+        &-favorites {
+            color: $red-violet;
+        }
     }
 
     &--star {
