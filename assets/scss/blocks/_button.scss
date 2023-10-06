@@ -57,6 +57,8 @@
             }
 
             &-arrow {
+                width: rem(28px);
+                height: rem(37px);
                 color: $santas-gray;
             }
 
@@ -83,6 +85,14 @@
                     align-items: flex-end;
 
                     color: $santas-gray;
+                }
+            }
+
+            &-missing {
+                width: rem(30px);
+
+                @media #{$screen-tablet} {
+                    width: rem(20px);
                 }
             }
         }
@@ -139,13 +149,17 @@
     }
 
     &--simple {
-        padding: rem(6px) 0;
+        padding: 0;
 
         font-size: rem($font-size-big);
         line-height: rem(24px);
         font-weight: $font-weight-bold;
 
         color: $red-violet;
+
+        @media #{$screen-tablet} {
+            padding: rem(6px) rem(6px) 0 0;
+        }
     }
 
     &--card {

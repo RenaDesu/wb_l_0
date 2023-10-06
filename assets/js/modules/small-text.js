@@ -6,7 +6,12 @@ function setSmallText(el) {
     if (text.length > 11) {
         el.style.fontSize = '16px';
     } else {
-        el.style.fontSize = '18px';
+        if (window.matchMedia('(max-width: 1023px)').matches) {
+            el.style.fontSize = '16px';
+        } else {
+            el.style.fontSize = '20px';
+        }
+        
     }
 
 }

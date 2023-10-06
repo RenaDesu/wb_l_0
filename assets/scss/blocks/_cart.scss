@@ -1,8 +1,8 @@
 .cart {
-    margin-bottom: rem(45px);
+    margin-bottom: rem(37px);
 
     @media #{$screen-tablet} {
-        margin-bottom: rem(33px);
+        margin-bottom: rem(24px);
     }
 
     &__heading {
@@ -13,7 +13,7 @@
         line-height: 56%;
 
         @media #{$screen-tablet} {
-            margin-bottom: rem(37px);
+            margin-bottom: rem(30px);
             margin-top: rem(20px);
             
             @include title-big;

@@ -5,13 +5,9 @@
         align-items: center;
         justify-content: space-between;
 
-        padding-bottom: rem(6px);
+        padding-bottom: rem(10px);
 
         border-bottom: rem(1px) solid rgba(0, 0, 0, 0.10);
-
-        @media #{$screen-tablet} {
-            padding-bottom: rem(16px);
-        }
     }
 
     &__heading {
@@ -39,7 +35,7 @@
 
         display: flex;
         flex-direction: column;
-        row-gap: rem(16px);
+        row-gap: rem(15px);
 
         list-style-type: none;
 

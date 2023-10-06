@@ -7,10 +7,11 @@
 
     display: grid;
     grid-template-columns: rem(80px) 1fr;
+    grid-template-rows: 17% auto 25%;
     gap: 0 rem(16px);
 
     @media #{$screen-tablet} {
-        grid-template-columns: rem(106px) 43% rem(100px) rem(115px);
+        grid-template-columns: rem(106px) 43% rem(100px) rem(108px);
         gap: 0 rem(16px);
 
         border: none;
@@ -94,6 +95,13 @@
         }
 
         &-current {
+            letter-spacing: rem(-0.52px);
+
+            @media #{$screen-tablet} {
+                font-size: rem($font-size-huge);
+                line-height: rem(24px);
+            }
+
             &-currency {
                 @media #{$screen-tablet} {
                     font-size: rem($font-size-big);
@@ -131,7 +139,7 @@
         margin-bottom: rem(8px);
 
         font-size: rem($font-size-medium);
-        line-height: rem(20px);
+        line-height: 142.857%;
 
         @media #{$screen-mobile-only} {
             overflow: hidden;

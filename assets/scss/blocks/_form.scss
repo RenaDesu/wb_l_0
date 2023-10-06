@@ -42,6 +42,15 @@
             align-self: flex-start;
         }
 
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: rem(15px);
+            width: 100%;
+            height: rem(1px);
+            background-color: rgba(0, 0, 0, 0.20);
+        }
+
         &--modal {
             width: 100%;
 
@@ -69,10 +78,9 @@
         display: block;
 
         width: 100%;
-        height: rem(45px);
+        height: rem(56px);
 
         padding: 0;
-        padding-top: rem(14px);
 
         font-size: rem($font-size-big);
         line-height: rem(24px);
@@ -81,7 +89,6 @@
         background-color: transparent;
 
         border: none;
-        border-bottom: rem(1px) solid rgba(0, 0, 0, 0.20);
 
         @media #{$screen-tablet} {
             min-width: rem(180px);
@@ -113,11 +120,15 @@
                 width: rem(338px);
             }
         }
+
+        &--inn {
+            height: rem(37px);
+        }
     }
 
     &__input:focus~&__label,
     &__input:valid~&__label {
-        top: 0;
+        top: -6px;
 
         font-size: rem($font-size-small);
         line-height: rem(16px);

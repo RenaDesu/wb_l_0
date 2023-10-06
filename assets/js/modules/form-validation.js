@@ -37,7 +37,7 @@ function validateForm() {
             nameLabel.style.lineHeight = '24px';
 
         } else {
-            nameLabel.style.top = 0;
+            nameLabel.style.top = '-6px';
             nameLabel.style.fontSize = '13px';
             nameLabel.style.lineHeight = '16px';
 

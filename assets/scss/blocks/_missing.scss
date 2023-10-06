@@ -2,7 +2,7 @@
     margin-bottom: rem(22px);
 
     @media #{$screen-tablet} {
-        margin-bottom: rem(31px);
+        margin-bottom: rem(35px);
     }
 
     &__header {
@@ -10,7 +10,7 @@
         align-items: center;
         justify-content: space-between;
 
-        margin-bottom: rem(18px);
+        margin-bottom: rem(11px);
     }
 
     &__heading {
@@ -26,7 +26,7 @@
 
         display: flex;
         flex-direction: column;
-        row-gap: rem(16px);
+        row-gap: rem(10px);
 
         list-style-type: none;
 

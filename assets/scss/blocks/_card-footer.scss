@@ -10,9 +10,11 @@
 
     &--missing {
         justify-content: flex-end;
+        grid-row: 3 / 4;
 
         @media #{$screen-tablet} {
             justify-content: flex-start;
+            grid-row: 1 / 2;
         }
     }
 
@@ -98,6 +100,8 @@
     &__available {
         margin: 0;
 
+        align-self: center;
+
         font-size: $font-size-small;
         line-height: rem(16px);
 
@@ -105,6 +109,8 @@
 
         @media #{$screen-tablet} {
             margin-bottom: rem(8px);
+
+            align-self: flex-start;
         }
     }
 
@@ -114,6 +120,10 @@
         @media #{$screen-tablet} {
             align-self: flex-end;
             column-gap: rem(16px);
+        }
+
+        &--missing {
+            column-gap: rem(13px);
         }
     }
 }

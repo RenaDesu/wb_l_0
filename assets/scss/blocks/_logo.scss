@@ -1,8 +1,8 @@
 .logo {
-    font-size: rem(22px);
+    font-size: rem(21px);
     line-height: rem(24px);
     font-weight: $font-weight-semibold;
-    letter-spacing: rem($letter-spacing-logo);
+    letter-spacing: rem(1.52px);
     text-transform: uppercase;
 
     @media #{$screen-tablet} {
