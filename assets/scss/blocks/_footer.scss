@@ -19,6 +19,10 @@
 
         border-bottom-right-radius: rem($border-radius-large);
         border-bottom-left-radius: rem($border-radius-large);
+
+        @media #{$screen-desktop} {
+            height: rem(22px);
+        }
     }
 
     &__copyright-wrapper {

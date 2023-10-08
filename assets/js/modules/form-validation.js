@@ -55,14 +55,22 @@ function validateForm() {
     //surename label
     surename.addEventListener('change', function (event) {
         if (isEmpty(this.value)) {
-            surenameLabel.style.top = '15px';
-            surenameLabel.style.fontSize = '16px';
-            surenameLabel.style.lineHeight = '24px';
+            if (window.matchMedia('(max-width: 1023px)').matches) {
+                nameLabel.style.top = '15px';
+            } else {
+                nameLabel.style.top = '15px';
+            }
+            nameLabel.style.top = '15px';
+            nameLabel.style.fontSize = '16px';
+            nameLabel.style.lineHeight = '24px';
 
         } else {
-            surenameLabel.style.top = 0;
-            surenameLabel.style.fontSize = '13px';
-            surenameLabel.style.lineHeight = '16px';
+            if (window.matchMedia('(max-width: 1023px)').matches) {
+                nameLabel.style.top = '-6px';
+            }
+            nameLabel.style.top = '-18px';
+            nameLabel.style.fontSize = '13px';
+            nameLabel.style.lineHeight = '16px';
 
         }
     });
@@ -70,14 +78,22 @@ function validateForm() {
     //email label
     email.addEventListener('change', function (event) {
         if (isEmpty(this.value)) {
-            emailLabel.style.top = '15px';
-            emailLabel.style.fontSize = '16px';
-            emailLabel.style.lineHeight = '24px';
+            if (window.matchMedia('(max-width: 1023px)').matches) {
+                nameLabel.style.top = '15px';
+            } else {
+                nameLabel.style.top = '15px';
+            }
+            nameLabel.style.top = '15px';
+            nameLabel.style.fontSize = '16px';
+            nameLabel.style.lineHeight = '24px';
 
         } else {
-            emailLabel.style.top = 0;
-            emailLabel.style.fontSize = '13px';
-            emailLabel.style.lineHeight = '16px';
+            if (window.matchMedia('(max-width: 1023px)').matches) {
+                nameLabel.style.top = '-6px';
+            }
+            nameLabel.style.top = '-18px';
+            nameLabel.style.fontSize = '13px';
+            nameLabel.style.lineHeight = '16px';
 
         }
         if (email.validity.typeMismatch) {
@@ -91,14 +107,22 @@ function validateForm() {
     //tel label
     tel.addEventListener('change', function (event) {
         if (isEmpty(this.value)) {
-            telLabel.style.top = '15px';
-            telLabel.style.fontSize = '16px';
-            telLabel.style.lineHeight = '24px';
+            if (window.matchMedia('(max-width: 1023px)').matches) {
+                nameLabel.style.top = '15px';
+            } else {
+                nameLabel.style.top = '15px';
+            }
+            nameLabel.style.top = '15px';
+            nameLabel.style.fontSize = '16px';
+            nameLabel.style.lineHeight = '24px';
 
         } else {
-            telLabel.style.top = 0;
-            telLabel.style.fontSize = '13px';
-            telLabel.style.lineHeight = '16px';
+            if (window.matchMedia('(max-width: 1023px)').matches) {
+                nameLabel.style.top = '-6px';
+            }
+            nameLabel.style.top = '-18px';
+            nameLabel.style.fontSize = '13px';
+            nameLabel.style.lineHeight = '16px';
 
         }
         if (tel.validity.patternMismatch) {
@@ -112,14 +136,22 @@ function validateForm() {
     //inn label
     inn.addEventListener('change', function (event) {
         if (isEmpty(this.value)) {
-            innLabel.style.top = '15px';
-            innLabel.style.fontSize = '16px';
-            innLabel.style.lineHeight = '24px';
+            if (window.matchMedia('(max-width: 1023px)').matches) {
+                nameLabel.style.top = '15px';
+            } else {
+                nameLabel.style.top = '15px';
+            }
+            nameLabel.style.top = '15px';
+            nameLabel.style.fontSize = '16px';
+            nameLabel.style.lineHeight = '24px';
 
         } else {
-            innLabel.style.top = 0;
-            innLabel.style.fontSize = '13px';
-            innLabel.style.lineHeight = '16px';
+            if (window.matchMedia('(max-width: 1023px)').matches) {
+                nameLabel.style.top = '-6px';
+            }
+            nameLabel.style.top = '-18px';
+            nameLabel.style.fontSize = '13px';
+            nameLabel.style.lineHeight = '16px';
 
         }
         if (inn.validity.patternMismatch) {
