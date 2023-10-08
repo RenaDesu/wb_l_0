@@ -93,7 +93,7 @@ function total() {
 
                 const discountSum = discountTotalClean + (parseInt(cleanNoDiscItem) - parseInt(cleanItem));
                 const discountSumSpaces = discountSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                const discountSumFinal = '-' + discountSumSpaces + ' ' + 'сом'
+                const discountSumFinal = '−' + discountSumSpaces + ' ' + 'сом'
                 totalDiscount.innerText = discountSumFinal;
             }
 
@@ -170,7 +170,7 @@ function total() {
 
                 const discountSum = discountTotalClean - (parseInt(cleanNoDiscItem) - parseInt(cleanItem));
                 const discountSumSpaces = discountSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                const discountSumFinal = '-' + discountSumSpaces + ' ' + 'сом'
+                const discountSumFinal = '−' + discountSumSpaces + ' ' + 'сом'
                 totalDiscount.innerText = discountSumFinal;
             }
 
@@ -255,7 +255,7 @@ function total() {
 
                 const discountSum = discountTotalClean + (priceTotalNoDiscClean - priceTotalClean);
                 const discountSumSpaces = discountSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                const discountSumFinal = '-' + discountSumSpaces + ' ' + 'сом'
+                const discountSumFinal = '−' + discountSumSpaces + ' ' + 'сом'
                 totalDiscount.innerText = discountSumFinal;
             }
 
@@ -292,7 +292,7 @@ function total() {
                 totalPriceNoDiscountEl.innerText = '0 сом';
 
                 //скидка
-                totalDiscount.innerText = '-0 сом';
+                totalDiscount.innerText = '−0 сом';
             }
 
             totalPrice();

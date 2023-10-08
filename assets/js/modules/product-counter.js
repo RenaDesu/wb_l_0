@@ -129,7 +129,7 @@ function productCounter() {
 
                 const discountSum = discountTotalClean + (parseInt(oldPriceSet) - parseInt(priceSet));
                 const discountSumSpaces = discountSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                const discountSumFinal = '-' + discountSumSpaces + ' ' + 'сом'
+                const discountSumFinal = '−' + discountSumSpaces + ' ' + 'сом'
 
                 // Новое значение суммы скидки выбранных товаров 
                 totalDiscount.innerText = discountSumFinal;
@@ -285,7 +285,7 @@ function productCounter() {
 
                     const discountSum = discountTotalClean - (parseInt(oldPriceSet) - parseInt(priceSet));
                     const discountSumSpaces = discountSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                    const discountSumFinal = '-' + discountSumSpaces + ' ' + 'сом'
+                    const discountSumFinal = '−' + discountSumSpaces + ' ' + 'сом'
 
                     // Новое значение суммы скидки выбранных товаров 
                     totalDiscount.innerText = discountSumFinal;
