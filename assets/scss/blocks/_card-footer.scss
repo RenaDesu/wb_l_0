@@ -46,6 +46,8 @@
             padding: rem(8px) rem(3px) rem(13px) rem(4px);
 
             width: rem(100px);
+
+            border-radius: rem($border-radius-big);
         }
     }
 
@@ -124,6 +126,10 @@
 
         &--missing {
             column-gap: rem(13px);
+
+            @media #{$screen-desktop} {
+                column-gap: rem(17px);
+            }
         }
     }
 }

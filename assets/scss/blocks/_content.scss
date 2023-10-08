@@ -3,12 +3,12 @@
 
     @media #{$screen-tablet} {
         display: grid;
-        grid-template-columns: 66% 31%;
-        column-gap: rem(30px);
+        grid-template-columns: 65.5% 31%;
+        column-gap: rem(33px);
     }
 
     @media #{$screen-desktop} {
-        grid-template-columns: 66% 32%;
+        grid-template-columns: 66% 31.5%;
     }
 
     &--left {

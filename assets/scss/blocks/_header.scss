@@ -36,12 +36,18 @@
         padding: rem(11px) 0 rem(46px) 0;
 
         @media #{$screen-tablet} {
-            column-gap: rem(30px);
             padding: rem(16px) rem(3px) rem(16px) rem(24px);
+            display: grid;
+            grid-template-columns: 20.2% 63% auto;
+        }
+
+        @media #{$screen-tablet-md} {
+            grid-template-columns: 17% 70% auto;
         }
 
         @media #{$screen-desktop} {
             padding: rem(16px) rem(3px) rem(16px) rem(12px);
+            grid-template-columns: 13% 71% auto;
         }
     }
 
@@ -51,13 +57,15 @@
 
         &--center {
             @media #{$screen-tablet} {
-                width: 60%;
+                width: 94.5%;
             }
+
             @media #{$screen-tablet-md} {
-                width: 65%;
+                width: 96%;
             }
+
             @media #{$screen-desktop} {
-                width: 71%;
+                width: 100%;
             }
         }
 
@@ -72,8 +80,9 @@
 
     &__menu-button {
         margin-right: rem(20px);
+
         @media #{$screen-tablet} {
-           margin-right: rem(16px); 
+            margin-right: rem(16px);
         }
     }
 

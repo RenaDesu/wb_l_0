@@ -3,7 +3,7 @@ const priceEl = document.querySelectorAll('.card__price-current');
 function setSmallText(el) {
 
     const text = el.innerText;
-    if (text.length > 11) {
+    if (text.length > 10) {
         el.style.fontSize = '16px';
     } else {
         if (window.matchMedia('(max-width: 1023px)').matches) {

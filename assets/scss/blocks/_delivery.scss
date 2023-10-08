@@ -10,7 +10,7 @@
     &__row {
         @media #{$screen-tablet} {
             display: grid;
-            grid-template-columns: 31% 69%;
+            grid-template-columns: 31.2% 69%;
         }
 
         @media #{$screen-desktop} {
@@ -18,7 +18,7 @@
         }
 
         &:not(:last-child) {
-            margin-bottom: rem(16px);
+            margin-bottom: rem(15px);
         }
     }
 
@@ -58,7 +58,11 @@
     }
 
     &__dates {
-        margin-bottom: rem(30px)
+        margin-bottom: rem(30px);
+
+        @media #{$screen-tablet} {
+            margin-bottom: rem(22px);
+        }
     }
 
     &__list {
@@ -82,6 +86,10 @@
         column-gap: rem(8px);
 
         padding: 0 rem(8px);
+
+        @media #{$screen-tablet} {
+            padding: 0;
+        }
 
         &--background {
             padding: rem(8px) rem(8px) rem(12px) rem(8px);

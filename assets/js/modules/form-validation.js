@@ -32,12 +32,20 @@ function validateForm() {
     //name label
     name.addEventListener('change', function (event) {
         if (isEmpty(this.value)) {
+            if (window.matchMedia('(max-width: 1023px)').matches) {
+                nameLabel.style.top = '15px';
+            } else {
+                nameLabel.style.top = '15px';
+            }
             nameLabel.style.top = '15px';
             nameLabel.style.fontSize = '16px';
             nameLabel.style.lineHeight = '24px';
 
         } else {
-            nameLabel.style.top = '-6px';
+            if (window.matchMedia('(max-width: 1023px)').matches) {
+                nameLabel.style.top = '-6px';
+            }
+            nameLabel.style.top = '-18px';
             nameLabel.style.fontSize = '13px';
             nameLabel.style.lineHeight = '16px';
 
