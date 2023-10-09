@@ -1,5 +1,5 @@
 import {
-    getNoun
+    getNoun, getPriceNoSpaces, getPriceSpaces
 } from './utils';
 
 const totalPriceEl = document.querySelector('.total__price');
@@ -35,52 +35,29 @@ function removeCard() {
 
             card.remove();
 
-            const priceText = price.innerText;
-            const priceTextNoSpaces = priceText.replace(/[^0-9]/g, '');
-            const priceTextClean = parseInt(priceTextNoSpaces);
-
-            const priceOldText = priceOld.innerText;
-            const priceOldTextNoSpaces = priceOldText.replace(/[^0-9]/g, '');
-            const priceOldTextClean = parseInt(priceOldTextNoSpaces);
-
-            const totalPriceElText = totalPriceEl.innerText;
-            const totalPriceElTextNoSpaces = totalPriceElText.replace(/[^0-9]/g, '');
-            const totalPriceElTextClean = parseInt(totalPriceElTextNoSpaces);
-
-            const totalPriceNoDiscountElText = totalPriceNoDiscountEl.innerText;
-            const totalPriceNoDiscountElTextNoSpaces = totalPriceNoDiscountElText.replace(/[^0-9]/g, '');
-            const totalPriceNoDiscountElTextClean = parseInt(totalPriceNoDiscountElTextNoSpaces);
-
-            const productsTotal = totalProductsEl.innerText;
-            const productsTotalTotalNoSpaces = productsTotal.replace(/[^0-9]/g, '');
-            let productsTotalClean = parseInt(productsTotalTotalNoSpaces);
+            const priceTextClean = getPriceNoSpaces(price);
+            const priceOldTextClean = getPriceNoSpaces(priceOld);
+            const totalPriceElTextClean = getPriceNoSpaces(totalPriceEl);
+            const totalPriceNoDiscountElTextClean = getPriceNoSpaces(totalPriceNoDiscountEl);
+            let productsTotalClean = getPriceNoSpaces(totalProductsEl);
 
             //Расчет нового значения цены товаров в корзине (где заголовок спойлера)
-            const totalSumCartText = totalSumCart.innerText;
-            const totalSumCartTextNoSpaces = totalSumCartText.replace(/[^0-9]/g, '');
-            const totalSumCartNew = parseInt(totalSumCartTextNoSpaces) - priceTextClean;
+            const totalSumCartNew = getPriceNoSpaces(totalSumCart) - priceTextClean;
             const totalSumCartNewSpaces = totalSumCartNew.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
             //Новое значение цены товаров в корзине (где заголовок спойлера)
             totalSumCart.innerText = totalSumCartNewSpaces + ' сом';
 
             //Расчет нового значения кол-ва товаров в корзине (где заголовок спойлера)
-            const totalProductsCartText = totalProductsCart.innerText;
-            const totalProductsCartNoSpaces = totalProductsCartText.replace(/[^0-9]/g, '');
-            const totalProductsCartNew = parseInt(totalProductsCartNoSpaces) - parseInt(counter.value);
+            const totalProductsCartNew = getPriceNoSpaces(totalProductsCart) - parseInt(counter.value);
 
             //Новое значение кол-ва товаров в корзине (где заголовок спойлера)
             totalProductsCart.innerText = `${totalProductsCartNew} ${getNoun(totalProductsCartNew, 'товар', 'товара', 'товаров')} `;
 
             if (checkbox.checked) {
                 const newTotalPrice = totalPriceElTextClean - priceTextClean;
-                const newTotalPriceSpaces = newTotalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-
                 const newTotalPriceNoDiscount = totalPriceNoDiscountElTextClean - priceOldTextClean;
-                const newTotalPriceNoDiscountSpaces = newTotalPriceNoDiscount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-
                 const newDiscount = newTotalPriceNoDiscount - newTotalPrice;
-                const newDiscountSpaces = newDiscount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
                 const productsCounterText = productsCounter.value;
                 productsTotalClean -= parseInt(productsCounterText);
@@ -88,9 +65,9 @@ function removeCard() {
                 totalProductsEl.innerText = `${productsTotalClean} ${getNoun(productsTotalClean, 'товар', 'товара', 'товаров')} `;
 
                 //Сброс итоговой цены со скидкой и без, сброс кол-ва товаров, сброс суммы скидки
-                totalPriceEl.innerText = newTotalPriceSpaces + ' сом'
-                totalPriceNoDiscountEl.innerText = newTotalPriceNoDiscountSpaces + ' сом'
-                totalDiscount.innerText = '-' + newDiscountSpaces + ' сом'
+                totalPriceEl.innerText = getPriceSpaces(newTotalPrice) + ' сом'
+                totalPriceNoDiscountEl.innerText = getPriceSpaces(newTotalPriceNoDiscount) + ' сом'
+                totalDiscount.innerText = '-' + getPriceSpaces(newDiscount) + ' сом'
 
                 //Сброс товаров в доставке
                 if (card.getAttribute('data-id') === '1') {

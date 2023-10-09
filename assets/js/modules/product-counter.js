@@ -1,5 +1,5 @@
 import {
-    getNoun
+    getNoun, getPriceSpaces, getPriceNoSpaces
 } from './utils';
 import {
     DATES
@@ -68,8 +68,8 @@ function productCounter() {
             priceTotal = (priceSet * parseInt(counter.value));
             priceOldTotal = (oldPriceSet * parseInt(counter.value));
 
-            const priceTotalSpaces = priceTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-            const priceOldTotalSpaces = priceOldTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+            const priceTotalSpaces = getPriceSpaces(priceTotal);
+            const priceOldTotalSpaces = getPriceSpaces(priceOldTotal);
 
             const newPrice = priceTotalSpaces + ' ' + 'сом';
             const newOldPrice = priceOldTotalSpaces + ' ' + 'сом';
@@ -79,9 +79,8 @@ function productCounter() {
             priceOld.innerText = newOldPrice;
 
             //Расчет нового значения цены товаров в корзине (где заголовок спойлера)
-            const totalSumText = totalSum.innerText;
-            const totalSumTextNoSpaces = totalSumText.replace(/[^0-9]/g, '');
-            const totalSumNew = parseInt(totalSumTextNoSpaces) + parseInt(priceSet);
+
+            const totalSumNew = getPriceNoSpaces(totalSum) + parseInt(priceSet);
 
             const totalSumNewSpaces = totalSumNew.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
@@ -89,9 +88,7 @@ function productCounter() {
             totalSum.innerText = totalSumNewSpaces + ' ' + 'сом';
 
             //Расчет нового значения кол-ва товаров в корзине (где заголовок спойлера)
-            const totalProductsText = totalProducts.innerText;
-            const totalProductsTextNoSpaces = totalProductsText.replace(/[^0-9]/g, '');
-            const totalProductsNew = parseInt(totalProductsTextNoSpaces) + 1;
+            const totalProductsNew = getPriceNoSpaces(totalProducts) + 1;
 
             //Новое значение кол-ва товаров в корзине (где заголовок спойлера)
             totalProducts.innerText = `${totalProductsNew} ${getNoun(totalProductsNew, 'товар', 'товара', 'товаров')} `;
@@ -100,21 +97,12 @@ function productCounter() {
 
             if (checkbox.checked) {
                 // Расчет итоговой цены выбранных товаров со скидкой и без
-                const totalPriceElText = totalPriceEl.innerText;
-                const totalPriceElTextNoSpaces = totalPriceElText.replace(/[^0-9]/g, '');
-
-                const totalPriceNoDiscountElText = totalPriceNoDiscountEl.innerText;
-                const totalPriceNoDiscountElNoSpaces = totalPriceNoDiscountElText.replace(/[^0-9]/g, '');
-
-                const totalPriceElNew = parseInt(totalPriceElTextNoSpaces) + parseInt(priceSet);
-                const totalPriceNoDiscountElNew = parseInt(totalPriceNoDiscountElNoSpaces) + parseInt(oldPriceSet);
-
-                const totalPriceElNewSpaces = totalPriceElNew.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                const totalPriceNoDiscountElNewSpaces = totalPriceNoDiscountElNew.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                const totalPriceElNew = getPriceNoSpaces(totalPriceEl) + parseInt(priceSet);
+                const totalPriceNoDiscountElNew = getPriceNoSpaces(totalPriceNoDiscountEl) + parseInt(oldPriceSet);
 
                 // Новое значение итоговой цены выбранных товаров со скидкой и без
-                totalPriceEl.innerText = totalPriceElNewSpaces + ' ' + 'сом';
-                totalPriceNoDiscountEl.innerText = totalPriceNoDiscountElNewSpaces + ' ' + 'сом';
+                totalPriceEl.innerText = getPriceSpaces(totalPriceElNew) + ' ' + 'сом';
+                totalPriceNoDiscountEl.innerText = getPriceSpaces(totalPriceNoDiscountElNew) + ' ' + 'сом';
 
                 //Отображение цены в кнопке
                 if (debitToggle.checked) {
@@ -123,22 +111,14 @@ function productCounter() {
                 }
 
                 //Расчет суммы скидки выбранных товаров 
-                const discountTotal = totalDiscount.innerText;
-                const discountTotalNoSpaces = discountTotal.replace(/[^0-9]/g, '');
-                const discountTotalClean = parseInt(discountTotalNoSpaces);
-
-                const discountSum = discountTotalClean + (parseInt(oldPriceSet) - parseInt(priceSet));
-                const discountSumSpaces = discountSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                const discountSumFinal = '−' + discountSumSpaces + ' ' + 'сом'
+                const discountSum = getPriceNoSpaces(totalDiscount) + (parseInt(oldPriceSet) - parseInt(priceSet));
+                const discountSumFinal = '−' + getPriceSpaces(discountSum) + ' ' + 'сом'
 
                 // Новое значение суммы скидки выбранных товаров 
                 totalDiscount.innerText = discountSumFinal;
 
                 //Расчет нового значения кол-ва выбранных товаров
-                const totalProductsText = totalProductsEl.innerText;
-                const totalProductsTextNoSpaces = totalProductsText.replace(/[^0-9]/g, '');
-
-                const totalProductsNew = parseInt(totalProductsTextNoSpaces) + 1;
+                const totalProductsNew = getPriceNoSpaces(totalProductsEl) + 1;
 
                 //Новое значение кол-ва выбранных товаров
                 totalProductsEl.innerText = `${totalProductsNew} ${getNoun(totalProductsNew, 'товар', 'товара', 'товаров')} `;
@@ -213,41 +193,24 @@ function productCounter() {
                 const oldPriceSet = priceOld.dataset.old;
 
                 //Расчет нового значения цены в карточке товара
-                const priceText = price.innerText;
-                const priceTextNoSpaces = priceText.replace(/[^0-9]/g, '');
-                const priceTextClean = parseInt(priceTextNoSpaces);
+                priceTotal = (getPriceNoSpaces(price) - priceSet);
+                priceOldTotal = (getPriceNoSpaces(priceOld) - oldPriceSet);
 
-                const priceOldText = priceOld.innerText;
-                const priceOldTextNoSpaces = priceOldText.replace(/[^0-9]/g, '');
-                const priceOldTextClean = parseInt(priceOldTextNoSpaces);
-
-                priceTotal = (priceTextClean - priceSet);
-                priceOldTotal = (priceOldTextClean - oldPriceSet);
-
-                const priceTotalSpaces = priceTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                const priceOldTotalSpaces = priceOldTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-
-                const newPrice = priceTotalSpaces + ' ' + 'сом';
-                const newOldPrice = priceOldTotalSpaces + ' ' + 'сом';
+                const newPrice = getPriceSpaces(priceTotal) + ' ' + 'сом';
+                const newOldPrice = getPriceSpaces(priceOldTotal) + ' ' + 'сом';
 
                 //Новое значение цены в карточке товара
                 price.innerText = newPrice;
                 priceOld.innerText = newOldPrice;
 
                 //Расчет нового значения цены товаров в корзине (где заголовок спойлера)
-                const totalSumText = totalSum.innerText;
-                const totalSumTextNoSpaces = totalSumText.replace(/[^0-9]/g, '');
-                const totalSumNew = parseInt(totalSumTextNoSpaces) - parseInt(priceSet);
-
-                const totalSumNewSpaces = totalSumNew.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                const totalSumNew = getPriceNoSpaces(totalSum) - parseInt(priceSet);
 
                 //Новое значение цены товаров в корзине (где заголовок спойлера)
-                totalSum.innerText = totalSumNewSpaces + ' ' + 'сом';
+                totalSum.innerText = getPriceSpaces(totalSumNew) + ' ' + 'сом';
 
                 //Расчет нового значения кол-ва товаров в корзине (где заголовок спойлера)
-                const totalProductsText = totalProducts.innerText;
-                const totalProductsTextNoSpaces = totalProductsText.replace(/[^0-9]/g, '');
-                const totalProductsNew = parseInt(totalProductsTextNoSpaces) - 1;
+                const totalProductsNew = getPriceNoSpaces(totalProducts) - 1;
 
                 //Новое значение кол-ва товаров в корзине (где заголовок спойлера)
                 totalProducts.innerText = `${totalProductsNew} ${getNoun(totalProductsNew, 'товар', 'товара', 'товаров')}`;
@@ -256,21 +219,12 @@ function productCounter() {
 
                 if (checkbox.checked) {
                     // Расчет итоговой цены выбранных товаров со скидкой и без
-                    const totalPriceElText = totalPriceEl.innerText;
-                    const totalPriceElTextNoSpaces = totalPriceElText.replace(/[^0-9]/g, '');
-
-                    const totalPriceNoDiscountElText = totalPriceNoDiscountEl.innerText;
-                    const totalPriceNoDiscountElNoSpaces = totalPriceNoDiscountElText.replace(/[^0-9]/g, '');
-
-                    const totalPriceElNew = parseInt(totalPriceElTextNoSpaces) - parseInt(priceSet);
-                    const totalPriceNoDiscountElNew = parseInt(totalPriceNoDiscountElNoSpaces) - parseInt(oldPriceSet);
-
-                    const totalPriceElNewSpaces = totalPriceElNew.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                    const totalPriceNoDiscountElNewSpaces = totalPriceNoDiscountElNew.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                    const totalPriceElNew = getPriceNoSpaces(totalPriceEl) - parseInt(priceSet);
+                    const totalPriceNoDiscountElNew = getPriceNoSpaces(totalPriceNoDiscountEl) - parseInt(oldPriceSet);
 
                     // Новое значение итоговой цены выбранных товаров со скидкой и без
-                    totalPriceEl.innerText = totalPriceElNewSpaces + ' ' + 'сом';
-                    totalPriceNoDiscountEl.innerText = totalPriceNoDiscountElNewSpaces + ' ' + 'сом';
+                    totalPriceEl.innerText = getPriceSpaces(totalPriceElNew) + ' ' + 'сом';
+                    totalPriceNoDiscountEl.innerText = getPriceSpaces(totalPriceNoDiscountElNew) + ' ' + 'сом';
 
                     //Отображение цены в кнопке
                     if (debitToggle.checked) {
@@ -279,22 +233,14 @@ function productCounter() {
                     }
 
                     //Расчет суммы скидки выбранных товаров 
-                    const discountTotal = totalDiscount.innerText;
-                    const discountTotalNoSpaces = discountTotal.replace(/[^0-9]/g, '');
-                    const discountTotalClean = parseInt(discountTotalNoSpaces);
-
-                    const discountSum = discountTotalClean - (parseInt(oldPriceSet) - parseInt(priceSet));
-                    const discountSumSpaces = discountSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                    const discountSumFinal = '−' + discountSumSpaces + ' ' + 'сом'
+                    const discountSum = getPriceNoSpaces(totalDiscount) - (parseInt(oldPriceSet) - parseInt(priceSet));
+                    const discountSumFinal = '−' + getPriceSpaces(discountSum) + ' ' + 'сом'
 
                     // Новое значение суммы скидки выбранных товаров 
                     totalDiscount.innerText = discountSumFinal;
 
                     //Расчет нового значения кол-ва выбранных товаров
-                    const totalProductsText = totalProductsEl.innerText;
-                    const totalProductsTextNoSpaces = totalProductsText.replace(/[^0-9]/g, '');
-
-                    const totalProductsNew = parseInt(totalProductsTextNoSpaces) - 1;
+                    const totalProductsNew = getPriceNoSpaces(totalProductsEl) - 1;
 
                     //Новое значение кол-ва выбранных товаров
                     totalProductsEl.innerText = `${totalProductsNew} ${getNoun(totalProductsNew, 'товар', 'товара', 'товаров')} `;

@@ -1,3 +1,5 @@
+import { getPriceNoSpaces, getPriceSpaces } from "./utils";
+
 const originBoxes = document.querySelectorAll('[data-container]');
 const priceBoxes = document.querySelectorAll('[data-container-price]');
 
@@ -52,20 +54,17 @@ function showPriceTooltip() {
         const priceOldTextNoSpaces = priceOldText.replace(/[^0-9]/g, '');
 
         //Расчет процента скидки и сумм для тултипов со скидками
-        const difference = parseInt(priceOldTextNoSpaces) - parseInt(priceTextNoSpaces);
-        const percentCount = (difference / parseInt(priceOldTextNoSpaces)) * 100;
+        const difference = getPriceNoSpaces(priceOld) - getPriceNoSpaces(price);
+        const percentCount = (difference / getPriceNoSpaces(priceOld)) * 100;
         const percentCountValue = percentCount.toFixed(1);
 
-        const percenValuetCount = parseInt(priceOldTextNoSpaces) - parseInt(priceTextNoSpaces);
-        const percenValuetCountSpaces = percenValuetCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-
-        const percentBuyerValueCount = (parseInt(priceOldTextNoSpaces) / 100) * 10;
-        const percentBuyerValueCountSpaces = percentBuyerValueCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        const percenValuetCount = getPriceNoSpaces(priceOld) - getPriceNoSpaces(price);
+        const percentBuyerValueCount = (getPriceNoSpaces(priceOld) / 100) * 10;
         
         //Значения процента скидки и сумм для тултипов со скидками
         percent.innerText = 'Скидка ' + percentCountValue + '%';
-        percentValue.innerText = percenValuetCountSpaces + ' сом';
-        percentBuyerValue.innerText = percentBuyerValueCountSpaces + ' сом';
+        percentValue.innerText = getPriceSpaces(percenValuetCount) + ' сом';
+        percentBuyerValue.innerText = getPriceSpaces(percentBuyerValueCount) + ' сом';
     }
 
     function tooltipHide(elemNode) {

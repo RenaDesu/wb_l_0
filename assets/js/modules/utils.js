@@ -14,4 +14,15 @@ function getNoun(number, one, two, five) {
     return five;
   }
 
-  export {getNoun};
+  function getPriceSpaces(price) {
+    const priceSpaces = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    return priceSpaces;
+}
+
+function getPriceNoSpaces(price) {
+  const priceText = price.innerText;
+  const priceTextNoSpaces = priceText.replace(/[^0-9]/g, '');
+  return parseInt(priceTextNoSpaces);
+}
+
+  export {getNoun, getPriceSpaces, getPriceNoSpaces};
