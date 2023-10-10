@@ -68,11 +68,8 @@ function productCounter() {
             priceTotal = (priceSet * parseInt(counter.value));
             priceOldTotal = (oldPriceSet * parseInt(counter.value));
 
-            const priceTotalSpaces = getPriceSpaces(priceTotal);
-            const priceOldTotalSpaces = getPriceSpaces(priceOldTotal);
-
-            const newPrice = priceTotalSpaces + ' ' + 'сом';
-            const newOldPrice = priceOldTotalSpaces + ' ' + 'сом';
+            const newPrice = getPriceSpaces(priceTotal) + ' ' + 'сом';
+            const newOldPrice = getPriceSpaces(priceOldTotal) + ' ' + 'сом';
 
             //Новое значение цены в карточке товара
             price.innerText = newPrice;
@@ -82,10 +79,8 @@ function productCounter() {
 
             const totalSumNew = getPriceNoSpaces(totalSum) + parseInt(priceSet);
 
-            const totalSumNewSpaces = totalSumNew.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-
             //Новое значение цены товаров в корзине (где заголовок спойлера)
-            totalSum.innerText = totalSumNewSpaces + ' ' + 'сом';
+            totalSum.innerText = getPriceSpaces(totalSumNew) + ' ' + 'сом';
 
             //Расчет нового значения кол-ва товаров в корзине (где заголовок спойлера)
             const totalProductsNew = getPriceNoSpaces(totalProducts) + 1;

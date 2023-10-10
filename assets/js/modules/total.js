@@ -1,4 +1,4 @@
-import {getNoun} from './utils';
+import {getNoun, getPriceNoSpaces, getPriceSpaces} from './utils';
 
 const totalPriceEl = document.querySelector('.total__price');
 const totalPriceNoDiscountEl = document.querySelector('#total-price');
@@ -37,9 +37,7 @@ function total() {
             function totalProducts() {
                 const productsCounter = card.querySelector('[data-counter]');
 
-                let productsTotal = totalProductsEl.innerText;
-                let productsTotalTotalNoSpaces = productsTotal.replace(/[^0-9]/g, '');
-                let productsTotalClean = parseInt(productsTotalTotalNoSpaces);
+                let productsTotalClean = getPriceNoSpaces(totalProductsEl);
 
                 const productsCounterText = productsCounter.value;
                 productsTotalClean += parseInt(productsCounterText);
@@ -56,17 +54,12 @@ function total() {
                 const descountElement = card.querySelector('.card__price-old');
 
                 //с учетом скидки
-                let priceTotal = totalPriceEl.innerText;
-                let priceTotalNoSpaces = priceTotal.replace(/[^0-9]/g, '');
-                let priceTotalClean = parseInt(priceTotalNoSpaces);
+                let priceTotalClean = getPriceNoSpaces(totalPriceEl);
 
-                const itemText = priceElement.innerText;
-                const cleanItem = itemText.replace(/[^0-9]/g, '');
-                priceTotalClean += parseInt(cleanItem);
+                const cleanItem = getPriceNoSpaces(priceElement);
+                priceTotalClean += cleanItem;
 
-                const priceTotalSpaces = priceTotalClean.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                const priceTotalFull = priceTotalSpaces + ' ' + 'сом';
-                totalPriceEl.innerText = priceTotalFull;
+                totalPriceEl.innerText = getPriceSpaces(priceTotalClean) + ' ' + 'сом';
 
                 if (debitToggle.checked) {
                     const newText = totalPriceEl.innerText;
@@ -74,27 +67,18 @@ function total() {
                 }
 
                 //без скидки
-                let priceTotalNoDisc = totalPriceNoDiscountEl.innerText;
-                let priceTotalNoDiscNoSpaces = priceTotalNoDisc.replace(/[^0-9]/g, '');
-                let priceTotalNoDiscClean = parseInt(priceTotalNoDiscNoSpaces);
+                let priceTotalNoDiscClean = getPriceNoSpaces(totalPriceNoDiscountEl);
 
-                const itemNoDiscText = descountElement.innerText;
-                const cleanNoDiscItem = itemNoDiscText.replace(/[^0-9]/g, '');
-                priceTotalNoDiscClean += parseInt(cleanNoDiscItem);
+                const cleanNoDiscItem = getPriceNoSpaces(descountElement);
+                priceTotalNoDiscClean += cleanNoDiscItem;
 
-                const priceTotalNoDiscSpaces = priceTotalNoDiscClean.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                const priceTotaNoDisclFull = priceTotalNoDiscSpaces + ' ' + 'сом';
-                totalPriceNoDiscountEl.innerText = priceTotaNoDisclFull;
+                totalPriceNoDiscountEl.innerText = getPriceSpaces(priceTotalNoDiscClean) + ' ' + 'сом';
 
                 //скидка
-                let discountTotal = totalDiscount.innerText;
-                let discountTotalNoSpaces = discountTotal.replace(/[^0-9]/g, '');
-                let discountTotalClean = parseInt(discountTotalNoSpaces);
+                let discountTotalClean = getPriceNoSpaces(totalDiscount);
 
-                const discountSum = discountTotalClean + (parseInt(cleanNoDiscItem) - parseInt(cleanItem));
-                const discountSumSpaces = discountSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                const discountSumFinal = '−' + discountSumSpaces + ' ' + 'сом'
-                totalDiscount.innerText = discountSumFinal;
+                const discountSum = discountTotalClean + (cleanNoDiscItem - cleanItem);
+                totalDiscount.innerText = '−' + getPriceSpaces(discountSum) + ' ' + 'сом';
             }
 
             totalPrice();
@@ -112,9 +96,7 @@ function total() {
             function totalProducts() {
                 const productsCounter = card.querySelector('[data-counter]');
 
-                let productsTotal = totalProductsEl.innerText;
-                let productsTotalTotalNoSpaces = productsTotal.replace(/[^0-9]/g, '');
-                let productsTotalClean = parseInt(productsTotalTotalNoSpaces);
+                let productsTotalClean = getPriceNoSpaces(totalProductsEl);
 
                 const productsCounterText = productsCounter.value;
                 productsTotalClean -= parseInt(productsCounterText);
@@ -131,17 +113,12 @@ function total() {
                 const descountElement = card.querySelector('.card__price-old');
 
                 //с учетом скидки
-                let priceTotal = totalPriceEl.innerText;
-                let priceTotalNoSpaces = priceTotal.replace(/[^0-9]/g, '');
-                let priceTotalClean = parseInt(priceTotalNoSpaces);
+                let priceTotalClean = getPriceNoSpaces(totalPriceEl);
 
-                const itemText = priceElement.innerText;
-                const cleanItem = itemText.replace(/[^0-9]/g, '');
-                priceTotalClean -= parseInt(cleanItem);
+                const cleanItem = getPriceNoSpaces(priceElement);
+                priceTotalClean -= cleanItem;
 
-                const priceTotalSpaces = priceTotalClean.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                const priceTotalFull = priceTotalSpaces + ' ' + 'сом';
-                totalPriceEl.innerText = priceTotalFull;
+                totalPriceEl.innerText = getPriceSpaces(priceTotalClean) + ' ' + 'сом';
 
 
                 if (debitToggle.checked) {
@@ -151,27 +128,18 @@ function total() {
 
 
                 //без скидки
-                let priceTotalNoDisc = totalPriceNoDiscountEl.innerText;
-                let priceTotalNoDiscNoSpaces = priceTotalNoDisc.replace(/[^0-9]/g, '');
-                let priceTotalNoDiscClean = parseInt(priceTotalNoDiscNoSpaces);
+                let priceTotalNoDiscClean = getPriceNoSpaces(totalPriceNoDiscountEl);
 
-                const itemNoDiscText = descountElement.innerText;
-                const cleanNoDiscItem = itemNoDiscText.replace(/[^0-9]/g, '');
-                priceTotalNoDiscClean -= parseInt(cleanNoDiscItem);
+                const cleanNoDiscItem = getPriceNoSpaces(descountElement);
+                priceTotalNoDiscClean -= cleanNoDiscItem;
 
-                const priceTotalNoDiscSpaces = priceTotalNoDiscClean.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                const priceTotaNoDisclFull = priceTotalNoDiscSpaces + ' ' + 'сом';
-                totalPriceNoDiscountEl.innerText = priceTotaNoDisclFull;
+                totalPriceNoDiscountEl.innerText = getPriceSpaces(priceTotalNoDiscClean) + ' ' + 'сом';
 
                 //скидка
-                let discountTotal = totalDiscount.innerText;
-                let discountTotalNoSpaces = discountTotal.replace(/[^0-9]/g, '');
-                let discountTotalClean = parseInt(discountTotalNoSpaces);
+                let discountTotalClean = getPriceNoSpaces(totalDiscount);
 
-                const discountSum = discountTotalClean - (parseInt(cleanNoDiscItem) - parseInt(cleanItem));
-                const discountSumSpaces = discountSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                const discountSumFinal = '−' + discountSumSpaces + ' ' + 'сом'
-                totalDiscount.innerText = discountSumFinal;
+                const discountSum = discountTotalClean - (cleanNoDiscItem - cleanItem);
+                totalDiscount.innerText = '−' + getPriceSpaces(discountSum) + ' ' + 'сом';
             }
 
             totalPrice();
@@ -188,9 +156,7 @@ function total() {
             function totalProducts() {
 
                 productsCounters.forEach((counter) => {
-                    let productsTotal = totalProductsEl.innerText;
-                    let productsTotalTotalNoSpaces = productsTotal.replace(/[^0-9]/g, '');
-                    let productsTotalClean = parseInt(productsTotalTotalNoSpaces);
+                    let productsTotalClean = getPriceNoSpaces(totalProductsEl);
 
                     const productsCounterText = counter.value;
                     productsTotalClean += parseInt(productsCounterText);
@@ -206,17 +172,12 @@ function total() {
 
                 //с учетом скидки 
                 priceEl.forEach((price) => {
-                    let priceTotal = totalPriceEl.innerText;
-                    let priceTotalNoSpaces = priceTotal.replace(/[^0-9]/g, '');
-                    let priceTotalClean = parseInt(priceTotalNoSpaces);
+                    let priceTotalClean = getPriceNoSpaces(totalPriceEl);
 
-                    const itemText = price.innerText;
-                    const cleanItem = itemText.replace(/[^0-9]/g, '');
-                    priceTotalClean += parseInt(cleanItem);
+                    const cleanItem = getPriceNoSpaces(price);
+                    priceTotalClean += cleanItem;
 
-                    const priceTotalSpaces = priceTotalClean.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                    const priceTotalFull = priceTotalSpaces + ' ' + 'сом';
-                    totalPriceEl.innerText = priceTotalFull;
+                    totalPriceEl.innerText = getPriceSpaces(priceTotalClean) + ' ' + 'сом';
 
                     if (debitToggle.checked) {
                         const newText = totalPriceEl.innerText;
@@ -226,37 +187,21 @@ function total() {
 
                 //без скидки
                 discountEl.forEach((discount) => {
-                    let priceTotalNoDisc = totalPriceNoDiscountEl.innerText;
-                    let priceTotalNoDiscNoSpaces = priceTotalNoDisc.replace(/[^0-9]/g, '');
-                    let priceTotalNoDiscClean = parseInt(priceTotalNoDiscNoSpaces);
+                    let priceTotalNoDiscClean = getPriceNoSpaces(totalPriceNoDiscountEl);
 
-                    const itemNoDiscText = discount.innerText;
-                    const cleanNoDiscItem = itemNoDiscText.replace(/[^0-9]/g, '');
-                    priceTotalNoDiscClean += parseInt(cleanNoDiscItem);
+                    const cleanNoDiscItem = getPriceNoSpaces(discount);
+                    priceTotalNoDiscClean += cleanNoDiscItem;
 
-                    const priceTotalNoDiscSpaces = priceTotalNoDiscClean.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                    const priceTotaNoDisclFull = priceTotalNoDiscSpaces + ' ' + 'сом';
-                    totalPriceNoDiscountEl.innerText = priceTotaNoDisclFull;
+                    totalPriceNoDiscountEl.innerText = getPriceSpaces(priceTotalNoDiscClean) + ' ' + 'сом';
                 });
 
                 //скидка
-                let discountTotal = totalDiscount.innerText;
-                let discountTotalNoSpaces = discountTotal.replace(/[^0-9]/g, '');
-                let discountTotalClean = parseInt(discountTotalNoSpaces);
-
-                let priceTotalNoDisc = totalPriceNoDiscountEl.innerText;
-                let priceTotalNoDiscNoSpaces = priceTotalNoDisc.replace(/[^0-9]/g, '');
-                let priceTotalNoDiscClean = parseInt(priceTotalNoDiscNoSpaces);
-
-                let priceTotal = totalPriceEl.innerText;
-                let priceTotalNoSpaces = priceTotal.replace(/[^0-9]/g, '');
-                let priceTotalClean = parseInt(priceTotalNoSpaces);
-
+                let discountTotalClean = getPriceNoSpaces(totalDiscount);
+                let priceTotalNoDiscClean = getPriceNoSpaces(totalPriceNoDiscountEl);
+                let priceTotalClean = getPriceNoSpaces(totalPriceEl);
 
                 const discountSum = discountTotalClean + (priceTotalNoDiscClean - priceTotalClean);
-                const discountSumSpaces = discountSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                const discountSumFinal = '−' + discountSumSpaces + ' ' + 'сом'
-                totalDiscount.innerText = discountSumFinal;
+                totalDiscount.innerText = '−' + getPriceSpaces(discountSum) + ' ' + 'сом';
             }
 
             totalPrice();

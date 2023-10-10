@@ -13,6 +13,8 @@ const totalSumCart = document.querySelector('[data-total-sum]');
 const totalProductsCart = document.querySelector('[data-total-products]');
 const cartLabels = document.querySelectorAll('[data-cart-label]');
 const missingQty = document.querySelector('[data-missing-qty]');
+const debitToggle = document.querySelector('#debit');
+const orderButton = document.querySelector('#order');
 
 function removeCard() {
     window.addEventListener('click', function (event) {
@@ -65,9 +67,15 @@ function removeCard() {
                 totalProductsEl.innerText = `${productsTotalClean} ${getNoun(productsTotalClean, 'товар', 'товара', 'товаров')} `;
 
                 //Сброс итоговой цены со скидкой и без, сброс кол-ва товаров, сброс суммы скидки
-                totalPriceEl.innerText = getPriceSpaces(newTotalPrice) + ' сом'
-                totalPriceNoDiscountEl.innerText = getPriceSpaces(newTotalPriceNoDiscount) + ' сом'
-                totalDiscount.innerText = '-' + getPriceSpaces(newDiscount) + ' сом'
+                totalPriceEl.innerText = getPriceSpaces(newTotalPrice) + ' сом';
+                totalPriceNoDiscountEl.innerText = getPriceSpaces(newTotalPriceNoDiscount) + ' сом';
+                totalDiscount.innerText = '-' + getPriceSpaces(newDiscount) + ' сом';
+
+                //Отображение цены в кнопке
+                if (debitToggle.checked) {
+                    const newText = totalPriceEl.innerText;
+                    orderButton.innerText = 'Оплатить' + ' ' + newText;
+                }
 
                 //Сброс товаров в доставке
                 if (card.getAttribute('data-id') === '1') {

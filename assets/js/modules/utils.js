@@ -25,4 +25,25 @@ function getPriceNoSpaces(price) {
   return parseInt(priceTextNoSpaces);
 }
 
-  export {getNoun, getPriceSpaces, getPriceNoSpaces};
+function setLabelStyle(str, label) {
+  const isEmpty = !str.trim().length;
+  if (isEmpty) {
+      if (window.matchMedia('(max-width: 1023px)').matches) {
+          label.style.top = '15px';
+      } else {
+          label.style.top = '0';
+      }
+      label.style.fontSize = '16px';
+      label.style.lineHeight = '24px';
+  } else {
+      if (window.matchMedia('(max-width: 1023px)').matches) {
+          label.style.top = '-6px';
+      } else {
+          label.style.top = '-18px'; 
+      }
+      label.style.fontSize = '13px';
+      label.style.lineHeight = '16px';
+  }
+}
+
+export {getNoun, getPriceSpaces, getPriceNoSpaces, setLabelStyle};

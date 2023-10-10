@@ -1,3 +1,5 @@
+import { setLabelStyle } from "./utils";
+
 const form = document.querySelector('[data-form]');
 
 const name = document.querySelector('#name');
@@ -18,8 +20,6 @@ const innLabel = document.querySelector('#inn ~ .form__label');
 
 
 function validateForm() {
-    const isEmpty = str => !str.trim().length;
-
     // Пробелы при заполнении телефона
     tel.addEventListener('keyup', function () {
         const txt = this.value;
@@ -31,71 +31,24 @@ function validateForm() {
 
     //name label
     name.addEventListener('change', function (event) {
-        if (isEmpty(this.value)) {
-            if (window.matchMedia('(max-width: 1023px)').matches) {
-                nameLabel.style.top = '15px';
-            } else {
-                nameLabel.style.top = '15px';
-            }
-            nameLabel.style.top = '15px';
-            nameLabel.style.fontSize = '16px';
-            nameLabel.style.lineHeight = '24px';
-
-        } else {
-            if (window.matchMedia('(max-width: 1023px)').matches) {
-                nameLabel.style.top = '-6px';
-            }
-            nameLabel.style.top = '-18px';
-            nameLabel.style.fontSize = '13px';
-            nameLabel.style.lineHeight = '16px';
-
-        }
+        setLabelStyle(this.value, nameLabel);
+    });
+    name.addEventListener('keydown', function (event) {
+        setLabelStyle(this.value, nameLabel);
     });
 
     //surename label
     surename.addEventListener('change', function (event) {
-        if (isEmpty(this.value)) {
-            if (window.matchMedia('(max-width: 1023px)').matches) {
-                nameLabel.style.top = '15px';
-            } else {
-                nameLabel.style.top = '15px';
-            }
-            nameLabel.style.top = '15px';
-            nameLabel.style.fontSize = '16px';
-            nameLabel.style.lineHeight = '24px';
-
-        } else {
-            if (window.matchMedia('(max-width: 1023px)').matches) {
-                nameLabel.style.top = '-6px';
-            }
-            nameLabel.style.top = '-18px';
-            nameLabel.style.fontSize = '13px';
-            nameLabel.style.lineHeight = '16px';
-
-        }
+        setLabelStyle(this.value, surenameLabel);
+    });
+    surename.addEventListener('keydown', function (event) {
+        setLabelStyle(this.value, surenameLabel);
     });
 
     //email label
     email.addEventListener('change', function (event) {
-        if (isEmpty(this.value)) {
-            if (window.matchMedia('(max-width: 1023px)').matches) {
-                nameLabel.style.top = '15px';
-            } else {
-                nameLabel.style.top = '15px';
-            }
-            nameLabel.style.top = '15px';
-            nameLabel.style.fontSize = '16px';
-            nameLabel.style.lineHeight = '24px';
+        setLabelStyle(this.value, emailLabel);
 
-        } else {
-            if (window.matchMedia('(max-width: 1023px)').matches) {
-                nameLabel.style.top = '-6px';
-            }
-            nameLabel.style.top = '-18px';
-            nameLabel.style.fontSize = '13px';
-            nameLabel.style.lineHeight = '16px';
-
-        }
         if (email.validity.typeMismatch) {
             emailError.textContent = "Проверьте адрес электронной почты";
             addErrorClass(email);
@@ -103,28 +56,14 @@ function validateForm() {
             removeError(emailError, email);
         }
     });
+    email.addEventListener('keydown', function (event) {
+        setLabelStyle(this.value, emailLabel);
+    });
 
     //tel label
     tel.addEventListener('change', function (event) {
-        if (isEmpty(this.value)) {
-            if (window.matchMedia('(max-width: 1023px)').matches) {
-                nameLabel.style.top = '15px';
-            } else {
-                nameLabel.style.top = '15px';
-            }
-            nameLabel.style.top = '15px';
-            nameLabel.style.fontSize = '16px';
-            nameLabel.style.lineHeight = '24px';
-
-        } else {
-            if (window.matchMedia('(max-width: 1023px)').matches) {
-                nameLabel.style.top = '-6px';
-            }
-            nameLabel.style.top = '-18px';
-            nameLabel.style.fontSize = '13px';
-            nameLabel.style.lineHeight = '16px';
-
-        }
+        setLabelStyle(this.value, telLabel);
+        
         if (tel.validity.patternMismatch) {
             telError.textContent = "Формат: +9 999 999 99 99";
             addErrorClass(tel);
@@ -132,34 +71,23 @@ function validateForm() {
             removeError(telError, tel); 
         }
     });
+    tel.addEventListener('keydown', function (event) {
+        setLabelStyle(this.value, telLabel);
+    });
 
     //inn label
     inn.addEventListener('change', function (event) {
-        if (isEmpty(this.value)) {
-            if (window.matchMedia('(max-width: 1023px)').matches) {
-                nameLabel.style.top = '15px';
-            } else {
-                nameLabel.style.top = '15px';
-            }
-            nameLabel.style.top = '15px';
-            nameLabel.style.fontSize = '16px';
-            nameLabel.style.lineHeight = '24px';
-
-        } else {
-            if (window.matchMedia('(max-width: 1023px)').matches) {
-                nameLabel.style.top = '-6px';
-            }
-            nameLabel.style.top = '-18px';
-            nameLabel.style.fontSize = '13px';
-            nameLabel.style.lineHeight = '16px';
-
-        }
+        setLabelStyle(this.value, innLabel);
+        
         if (inn.validity.patternMismatch) {
             innError.textContent = "Проверьте ИНН";
             addErrorClass(inn);
         } else {
             removeError(innError, inn);  
         }
+    });
+    inn.addEventListener('keydown', function (event) {
+        setLabelStyle(this.value, innLabel);
     });
 
     form.addEventListener('submit', function (event) {

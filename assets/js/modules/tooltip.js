@@ -47,12 +47,6 @@ function showPriceTooltip() {
         const price = parent.querySelector('[data-current]');
         const priceOld = parent.querySelector('[data-old]');
 
-        const priceText =  price.innerText;    
-        const priceOldText = priceOld.innerText;
-
-        const priceTextNoSpaces = priceText.replace(/[^0-9]/g, '');
-        const priceOldTextNoSpaces = priceOldText.replace(/[^0-9]/g, '');
-
         //Расчет процента скидки и сумм для тултипов со скидками
         const difference = getPriceNoSpaces(priceOld) - getPriceNoSpaces(price);
         const percentCount = (difference / getPriceNoSpaces(priceOld)) * 100;
